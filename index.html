@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdulmohsin Alharthi | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f1e8;--bg-alt:#ebe4d4;--ink:#1a2820;--ink-soft:#3d4a3f;--accent:#5b6f4a;--accent-deep:#3a4a30;--gold:#b8893b;--gold-soft:#d4a85a;--line:rgba(26,40,32,0.12);--shadow:0 30px 60px -20px rgba(58,74,48,0.18);--serif:'Playfair Display',serif;--sans:'Inter',sans-serif;--ard:'Tajawal',sans-serif;--ars:'IBM Plex Sans Arabic',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;overflow-x:hidden;background-image:radial-gradient(circle at 20% 10%,rgba(184,137,59,.08) 0%,transparent 40%),radial-gradient(circle at 80% 90%,rgba(91,111,74,.10) 0%,transparent 45%);min-height:100vh}
+[data-lang="ar"] body{font-family:var(--ars)}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%235b6f4a' stroke-width='0.4' opacity='0.15'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z'/%3E%3Cpath d='M30 15L45 30L30 45L15 30Z'/%3E%3C/g%3E%3C/svg%3E");opacity:.4;pointer-events:none;z-index:0}
+
+/* LANG TOGGLE + NAV */
+.lang-toggle{position:fixed;top:30px;inset-inline-end:30px;z-index:100;background:var(--ink);color:var(--bg);border:none;padding:12px 24px;border-radius:50px;cursor:pointer;font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;transition:all .3s;box-shadow:var(--shadow)}
+.lang-toggle:hover{background:var(--gold);transform:translateY(-2px)}
+nav{position:fixed;top:30px;inset-inline-start:30px;z-index:100;display:flex;gap:4px;background:rgba(245,241,232,.85);backdrop-filter:blur(20px);padding:8px 12px;border-radius:50px;border:1px solid var(--line);box-shadow:var(--shadow);flex-wrap:wrap;max-width:calc(100vw - 200px)}
+nav a{color:var(--ink-soft);text-decoration:none;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.8px;text-transform:uppercase;padding:7px 12px;border-radius:50px;transition:all .3s;white-space:nowrap}
+[data-lang="ar"] nav a{font-family:var(--ard);font-size:12px}
+nav a:hover{background:var(--ink);color:var(--bg)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 8vw 80px;position:relative;z-index:1}
+.hero-eyebrow{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:30px;display:flex;align-items:center;gap:16px;opacity:0;animation:fadeUp 1s .2s forwards}
+[data-lang="ar"] .hero-eyebrow{font-family:var(--ard);letter-spacing:2px;font-size:14px}
+.hero-eyebrow::before{content:'';width:60px;height:1px;background:var(--gold)}
+.hero h1{font-family:var(--serif);font-size:clamp(48px,9vw,130px);font-weight:500;font-style:italic;line-height:1;letter-spacing:-2px;color:var(--ink);margin-bottom:30px;opacity:0;animation:fadeUp 1.2s .4s forwards}
+[data-lang="ar"] .hero h1{font-family:var(--ard);font-style:normal;font-weight:700}
+.hero-title{font-family:var(--serif);font-size:clamp(18px,2.4vw,26px);color:var(--gold);font-weight:500;font-style:italic;margin-bottom:30px;opacity:0;animation:fadeUp 1.2s .5s forwards}
+[data-lang="ar"] .hero-title{font-family:var(--ard);font-style:normal}
+.hero-tagline{font-family:var(--serif);font-size:clamp(17px,2vw,22px);font-style:italic;color:var(--ink-soft);max-width:750px;line-height:1.7;margin-bottom:50px;opacity:0;animation:fadeUp 1.2s .6s forwards}
+[data-lang="ar"] .hero-tagline{font-family:var(--ars);font-style:normal}
+.hero-meta{display:flex;flex-wrap:wrap;gap:40px;padding-top:40px;border-top:1px solid var(--line);opacity:0;animation:fadeUp 1.2s .8s forwards}
+.meta-item{display:flex;flex-direction:column;gap:6px}
+.meta-label{font-family:var(--sans);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600}
+[data-lang="ar"] .meta-label{font-family:var(--ard);letter-spacing:1px;font-size:12px}
+.meta-value{font-family:var(--sans);font-size:16px;font-weight:500;color:var(--ink)}
+[data-lang="ar"] .meta-value{font-family:var(--ard)}
+.ornament{position:absolute;inset-inline-end:5vw;top:50%;transform:translateY(-50%);width:280px;height:280px;opacity:.15;pointer-events:none}
+.ornament svg{width:100%;height:100%;animation:rotate 60s linear infinite}
+
+/* SECTIONS */
+section{padding:100px 8vw;position:relative;z-index:1}
+.section-header{display:flex;align-items:baseline;gap:24px;margin-bottom:70px}
+.section-num{font-family:var(--serif);font-size:18px;font-style:italic;color:var(--gold);font-weight:500}
+.section-title{font-family:var(--serif);font-size:clamp(32px,4.5vw,56px);font-weight:500;font-style:italic;color:var(--ink);letter-spacing:-1px}
+[data-lang="ar"] .section-title{font-family:var(--ard);font-style:normal;font-weight:600}
+.section-line{flex:1;height:1px;background:var(--line)}
+.section-subtitle{font-family:var(--serif);font-size:26px;font-style:italic;color:var(--ink);margin-bottom:28px;padding-bottom:12px;border-bottom:2px solid var(--gold);display:inline-block;font-weight:600}
+[data-lang="ar"] .section-subtitle{font-family:var(--ard);font-style:normal}
+
+/* ABOUT */
+.about{background:var(--bg-alt);border-block:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.about-text{font-family:var(--serif);font-size:19px;font-style:italic;line-height:1.9;color:var(--ink-soft)}
+[data-lang="ar"] .about-text{font-family:var(--ars);font-style:normal;font-size:18px}
+.about-text p{margin-bottom:20px}
+.quote-block{background:var(--ink);color:var(--bg);padding:50px 40px;border-radius:4px;position:relative;box-shadow:var(--shadow)}
+.quote-block::before{content:'\201C';position:absolute;top:20px;inset-inline-start:30px;font-size:80px;color:var(--gold);font-family:var(--serif);opacity:.6;line-height:1}
+.quote-text{font-family:var(--serif);font-size:22px;font-style:italic;line-height:1.7;margin-top:50px}
+[data-lang="ar"] .quote-text{font-family:var(--ars);font-style:normal}
+.quote-source{margin-top:30px;padding-top:20px;border-top:1px solid rgba(245,241,232,.2);font-family:var(--sans);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-soft)}
+[data-lang="ar"] .quote-source{font-family:var(--ard);letter-spacing:1px}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}
+.value-card{background:var(--bg);border:1px solid var(--line);padding:30px 28px;border-radius:4px;transition:all .3s}
+.value-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--gold)}
+.value-name{font-family:var(--serif);font-size:22px;font-style:italic;color:var(--ink);margin-bottom:12px;font-weight:600}
+[data-lang="ar"] .value-name{font-family:var(--ard);font-style:normal}
+.value-desc{font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.7}
+[data-lang="ar"] .value-desc{font-family:var(--ars)}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--ink);color:var(--bg);border-radius:4px;overflow:hidden}
+.stat{padding:50px 30px;text-align:center;border-inline-end:1px solid rgba(245,241,232,.1);transition:background .3s}
+.stat:last-child{border-inline-end:none}
+.stat:hover{background:var(--accent-deep)}
+.stat-number{font-family:var(--serif);font-size:52px;font-weight:600;color:var(--gold);line-height:1;margin-bottom:12px;font-style:italic}
+.stat-label{font-family:var(--sans);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--bg);opacity:.85}
+[data-lang="ar"] .stat-label{font-family:var(--ard);letter-spacing:1px;font-size:13px}
+
+/* EXPERIENCE */
+.experience{background:var(--bg-alt);border-block:1px solid var(--line)}
+.timeline{position:relative;max-width:950px;margin:0 auto}
+.timeline::before{content:'';position:absolute;inset-inline-start:20px;top:0;bottom:0;width:1px;background:var(--line)}
+.timeline-item{position:relative;padding-inline-start:70px;padding-bottom:60px}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-dot{position:absolute;inset-inline-start:12px;top:8px;width:18px;height:18px;background:var(--bg-alt);border:2px solid var(--gold);border-radius:50%;z-index:2}
+.timeline-dot::after{content:'';position:absolute;inset:4px;background:var(--gold);border-radius:50%;transform:scale(0);transition:transform .3s}
+.timeline-item:hover .timeline-dot::after{transform:scale(1)}
+.timeline-period{font-family:var(--sans);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px}
+[data-lang="ar"] .timeline-period{font-family:var(--ard);letter-spacing:1px;font-size:14px}
+.timeline-role{font-family:var(--serif);font-size:24px;font-weight:600;font-style:italic;color:var(--ink);margin-bottom:6px}
+[data-lang="ar"] .timeline-role{font-family:var(--ard);font-style:normal}
+.timeline-org{font-family:var(--sans);font-size:16px;color:var(--accent);margin-bottom:16px;font-weight:700}
+[data-lang="ar"] .timeline-org{font-family:var(--ard)}
+.timeline-list{list-style:none;margin-top:14px}
+.timeline-list li{position:relative;padding-inline-start:22px;margin-bottom:8px;font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.7}
+[data-lang="ar"] .timeline-list li{font-family:var(--ars)}
+.timeline-list li::before{content:'\25C6';position:absolute;inset-inline-start:0;top:1px;color:var(--gold);font-size:10px}
+
+/* PROMOTION TRACK — clean vertical ladder */
+.timeline-company-name{font-family:var(--sans);font-size:16px;color:var(--accent);font-weight:700;margin-bottom:18px}
+[data-lang="ar"] .timeline-company-name{font-family:var(--ard)}
+.promo-ladder{display:flex;flex-direction:column;gap:0;margin-bottom:20px;background:var(--bg);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.promo-rung{display:flex;align-items:stretch;border-bottom:1px solid var(--line)}
+.promo-rung:last-child{border-bottom:none;background:rgba(184,137,59,.04)}
+.promo-left{display:flex;flex-direction:column;align-items:center;padding:16px 20px;gap:0;flex-shrink:0;width:56px}
+.promo-circle{width:12px;height:12px;border-radius:50%;border:2px solid var(--gold);background:var(--bg);flex-shrink:0}
+.promo-rung:last-child .promo-circle{background:var(--gold)}
+.promo-vert-line{width:1px;background:rgba(184,137,59,.25);flex:1;margin-top:4px}
+.promo-rung:last-child .promo-vert-line{display:none}
+.promo-right{padding:16px 16px 16px 0;flex:1}
+.promo-role{font-family:var(--sans);font-size:13px;font-weight:700;color:var(--ink);line-height:1.4;margin-bottom:4px}
+[data-lang="ar"] .promo-role{font-family:var(--ard)}
+.promo-dates{font-family:var(--sans);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);font-weight:600}
+[data-lang="ar"] .promo-dates{font-family:var(--ard);letter-spacing:.5px;font-size:12px}
+.promo-up{display:inline-block;margin-top:6px;padding:2px 10px;font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);background:rgba(184,137,59,.1);border:1px solid rgba(184,137,59,.25);border-radius:50px}
+[data-lang="ar"] .promo-up{font-family:var(--ard)}
+
+/* ACHIEVEMENTS */
+.achieve-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.achieve-card{background:var(--bg);border:1px solid var(--line);padding:28px 30px;border-radius:4px;transition:all .3s;position:relative;overflow:hidden}
+.achieve-card::after{content:'';position:absolute;top:0;inset-inline-start:0;width:0;height:3px;background:var(--gold);transition:width .4s}
+.achieve-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.achieve-card:hover::after{width:100%}
+.achieve-metric{font-family:var(--serif);font-size:42px;font-weight:600;font-style:italic;color:var(--gold);line-height:1;margin-bottom:8px}
+.achieve-title{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--ink);margin-bottom:8px;line-height:1.3}
+[data-lang="ar"] .achieve-title{font-family:var(--ard)}
+.achieve-desc{font-family:var(--sans);font-size:13px;color:var(--ink-soft);line-height:1.7}
+[data-lang="ar"] .achieve-desc{font-family:var(--ars)}
+.achieve-tag{display:inline-block;margin-top:12px;padding:4px 12px;background:rgba(91,111,74,.1);border-radius:50px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}
+[data-lang="ar"] .achieve-tag{font-family:var(--ard);letter-spacing:.5px;font-size:12px}
+
+/* EDUCATION / CERTS / COURSES */
+.edu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.edu-card{background:var(--bg);border:1px solid var(--line);padding:32px 28px;transition:all .4s;position:relative;overflow:hidden;cursor:default}
+.edu-card::before{content:'';position:absolute;top:0;inset-inline-start:0;width:4px;height:0;background:var(--gold);transition:height .4s}
+.edu-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--gold)}
+.edu-card:hover::before{height:100%}
+.edu-icon{width:42px;height:42px;margin-bottom:18px;color:var(--accent)}
+.edu-level{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+[data-lang="ar"] .edu-level{font-family:var(--ard);letter-spacing:1px;font-size:13px}
+.edu-degree{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);margin-bottom:6px;line-height:1.3}
+[data-lang="ar"] .edu-degree{font-family:var(--ard)}
+.edu-uni{font-family:var(--sans);font-size:13px;color:var(--accent);font-weight:700;margin-bottom:14px}
+[data-lang="ar"] .edu-uni{font-family:var(--ard)}
+.edu-status{margin-top:16px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--sans);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);font-weight:600;display:flex;align-items:center;gap:8px}
+[data-lang="ar"] .edu-status{font-family:var(--ard);font-size:12px}
+.edu-status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+/* CERT CARDS */
+.cert-list{display:flex;flex-direction:column;gap:14px}
+.cert-card{background:var(--bg);border:1px solid var(--line);padding:18px 22px;border-radius:4px;border-inline-start:3px solid var(--gold);display:flex;justify-content:space-between;align-items:center;gap:16px;transition:all .3s}
+.cert-card:hover{background:var(--ink);transform:translateY(-2px)}
+.cert-card:hover .cert-name{color:var(--bg)}
+.cert-card:hover .cert-issuer{color:var(--gold-soft)}
+.cert-card:hover .cert-year{color:var(--gold-soft)}
+.cert-info{flex:1}
+.cert-name{font-family:var(--sans);font-weight:700;color:var(--ink);font-size:14px;line-height:1.4;margin-bottom:4px}
+[data-lang="ar"] .cert-name{font-family:var(--ard)}
+.cert-issuer{font-family:var(--sans);font-size:12px;color:var(--accent);font-weight:600}
+[data-lang="ar"] .cert-issuer{font-family:var(--ard)}
+.cert-year{font-family:var(--serif);font-size:22px;font-style:italic;color:var(--gold);font-weight:600;flex-shrink:0}
+
+/* COURSES */
+.course-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.course-item{background:var(--bg-alt);padding:14px 18px;border-radius:4px;border-inline-start:3px solid rgba(184,137,59,.4);font-family:var(--sans);font-size:14px;color:var(--ink-soft);transition:all .3s}
+[data-lang="ar"] .course-item{font-family:var(--ars)}
+.course-item:hover{background:var(--ink);color:var(--bg);border-inline-start-color:var(--gold);transform:translateY(-2px)}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
+.skill-category{background:var(--bg-alt);padding:36px 32px;border-radius:4px;border:1px solid var(--line)}
+.skill-category h3{font-family:var(--serif);font-size:22px;font-style:italic;color:var(--ink);margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;font-weight:600}
+[data-lang="ar"] .skill-category h3{font-family:var(--ard);font-style:normal}
+.skill-category h3::before{content:'';width:22px;height:22px;background:var(--gold);clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);flex-shrink:0}
+.skill-desc{font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.8;margin-bottom:16px}
+[data-lang="ar"] .skill-desc{font-family:var(--ars)}
+.skill-list{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.skill-list li{background:var(--bg);border:1px solid var(--line);padding:8px 16px;border-radius:50px;font-family:var(--sans);font-size:13px;color:var(--ink-soft);transition:all .3s;cursor:default}
+[data-lang="ar"] .skill-list li{font-family:var(--ars);font-size:14px}
+.skill-list li:hover{background:var(--ink);color:var(--bg);border-color:var(--ink);transform:translateY(-2px)}
+
+/* CONTACT */
+.contact{text-align:center;padding:130px 8vw;background:linear-gradient(135deg,var(--ink) 0%,var(--accent-deep) 100%);color:var(--bg);position:relative;overflow:hidden}
+.contact::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23b8893b' stroke-width='0.5' opacity='0.15'%3E%3Cpath d='M50 0L100 50L50 100L0 50Z'/%3E%3Cpath d='M50 25L75 50L50 75L25 50Z'/%3E%3C/g%3E%3C/svg%3E");opacity:.5}
+.contact>*{position:relative;z-index:1}
+.contact h2{font-family:var(--serif);font-size:clamp(36px,5vw,64px);font-weight:500;font-style:italic;margin-bottom:24px;letter-spacing:-1px}
+[data-lang="ar"] .contact h2{font-family:var(--ard);font-style:normal;font-weight:600}
+.contact p{font-family:var(--serif);font-size:20px;font-style:italic;max-width:650px;margin:0 auto 50px;opacity:.85;line-height:1.7}
+[data-lang="ar"] .contact p{font-family:var(--ars);font-style:normal}
+.contact-links{display:flex;justify-content:center;flex-wrap:wrap;gap:16px}
+.contact-btn{background:transparent;color:var(--bg);border:1px solid var(--gold);padding:16px 30px;border-radius:50px;font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:1.5px;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-flex;align-items:center;gap:10px}
+[data-lang="ar"] .contact-btn{font-family:var(--ard);letter-spacing:1px;font-size:14px}
+.contact-btn:hover{background:var(--gold);color:var(--ink);transform:translateY(-3px)}
+
+/* FOOTER */
+footer.fe{padding:70px 8vw 50px;text-align:center;background:linear-gradient(180deg,var(--ink) 0%,#0d1813 100%);color:var(--bg);position:relative;overflow:hidden}
+footer.fe::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23b8893b' stroke-width='0.4' opacity='0.12'%3E%3Cpath d='M40 0L80 40L40 80L0 40Z'/%3E%3Cpath d='M40 20L60 40L40 60L20 40Z'/%3E%3C/g%3E%3C/svg%3E");opacity:.6;pointer-events:none}
+footer.fe>*{position:relative;z-index:1}
+.fo{width:140px;margin:0 auto 36px;color:var(--gold)}
+.fo svg{width:100%;height:auto}
+.fq{font-family:var(--serif);font-size:clamp(20px,2.5vw,28px);font-weight:500;font-style:italic;color:var(--bg);margin-bottom:20px;line-height:1.5}
+[data-lang="ar"] .fq{font-family:var(--ard);font-style:normal}
+.ft{font-family:var(--sans);font-size:12px;color:var(--gold-soft);letter-spacing:4px;margin-bottom:40px;font-weight:600;text-transform:uppercase}
+[data-lang="ar"] .ft{font-family:var(--ard);letter-spacing:1px;font-size:14px}
+.fd{width:60px;height:1px;background:var(--gold);margin:0 auto 30px;opacity:.5}
+.fc{font-family:var(--sans);font-size:12px;color:var(--bg);opacity:.5;letter-spacing:1.5px}
+[data-lang="ar"] .fc{font-family:var(--ard);font-size:13px}
+
+@keyframes rotate{to{transform:rotate(360deg)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:968px){
+  .about-grid,.skills-grid,.achieve-grid,.edu-grid,.course-list{grid-template-columns:1fr;gap:40px}
+  .values-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-inline-end:none}
+  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid rgba(245,241,232,.1)}
+  nav{display:none}.ornament{display:none}
+  .hero{padding:100px 6vw 60px}section{padding:70px 6vw}
+  .lang-toggle{top:20px;inset-inline-end:20px;padding:10px 18px;font-size:12px}
+}
+@media(max-width:600px){
+  .stats{grid-template-columns:1fr}
+  .stat{border-inline-end:none!important;border-bottom:1px solid rgba(245,241,232,.1)}
+  .hero-meta{gap:20px}.timeline-item{padding-inline-start:50px}
+}
+[data-lang="ar"] .en{display:none}
+[data-lang="en"] .ar{display:none}
+</style>
+</head>
+<body>
+
+<button class="lang-toggle" onclick="toggleLang()">
+  <span class="ar">English</span><span class="en">العربية</span>
+</button>
+
+<nav>
+  <a href="#about"><span class="ar">عني</span><span class="en">About</span></a>
+  <a href="#experience"><span class="ar">الخبرة</span><span class="en">Experience</span></a>
+  <a href="#achievements"><span class="ar">الإنجازات</span><span class="en">Achievements</span></a>
+  <a href="#education"><span class="ar">التعليم</span><span class="en">Education</span></a>
+  <a href="#skills"><span class="ar">المهارات</span><span class="en">Skills</span></a>
+  <a href="#contact"><span class="ar">تواصل</span><span class="en">Contact</span></a>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-eyebrow">
+    <span class="en">Business Development and Strategic Partnerships</span>
+    <span class="ar">تطوير الأعمال والشراكات الاستراتيجية</span>
+  </div>
+  <h1>
+    <span class="en">Abdulmohsin Alharthi</span>
+    <span class="ar">عبدالمحسن الحارثي</span>
+  </h1>
+  <div class="hero-title">
+    <span class="en">Business Development and Partnerships Leader</span>
+    <span class="ar">قائد تطوير الأعمال والشراكات الاستراتيجية</span>
+  </div>
+  <div class="hero-tagline">
+    <span class="en">From concept to execution — building national-scale ecosystems aligned with Vision 2030 priorities.</span>
+    <span class="ar">من الفكرة إلى التنفيذ — بناء منظومات أعمال وطنية متوافقة مع أولويات رؤية 2030.</span>
+  </div>
+  <div class="hero-meta">
+    <div class="meta-item">
+      <span class="meta-label"><span class="en">Specialty</span><span class="ar">التخصص</span></span>
+      <span class="meta-value"><span class="en">Business Dev · Partnerships</span><span class="ar">تطوير الأعمال · الشراكات</span></span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label"><span class="en">Sector</span><span class="ar">القطاع</span></span>
+      <span class="meta-value"><span class="en">Government · Non-Profit</span><span class="ar">حكومي · غير ربحي</span></span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label"><span class="en">Location</span><span class="ar">الموقع</span></span>
+      <span class="meta-value"><span class="en">Riyadh, Saudi Arabia</span><span class="ar">الرياض، المملكة العربية السعودية</span></span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label"><span class="en">Mobile</span><span class="ar">الجوال</span></span>
+      <span class="meta-value">+966 56 350 4555</span>
+    </div>
+  </div>
+  <div class="ornament">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#5b6f4a" stroke-width="0.8">
+        <circle cx="100" cy="100" r="90"/><circle cx="100" cy="100" r="70"/><circle cx="100" cy="100" r="50"/>
+        <path d="M100 10 L115 50 L160 50 L125 80 L140 125 L100 100 L60 125 L75 80 L40 50 L85 50 Z"/>
+        <path d="M100 30 L110 65 L145 65 L118 88 L128 123 L100 105 L72 123 L82 88 L55 65 L90 65 Z" transform="rotate(36 100 100)"/>
+        <path d="M100 50 L107 75 L132 75 L113 91 L120 116 L100 102 L80 116 L87 91 L68 75 L93 75 Z" transform="rotate(72 100 100)"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="about" id="about">
+  <div class="section-header reveal">
+    <span class="section-num">01</span>
+    <h2 class="section-title"><span class="en">Executive Summary</span><span class="ar">الملخص التنفيذي</span></h2>
+    <span class="section-line"></span>
+  </div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p class="en">Strategic Business Development and Partnerships leader with 6+ years driving high-impact initiatives across Saudi government entities. Proven ability to lead cross-functional teams, design large-scale ecosystem programs, and align multi-stakeholder objectives with national priorities, including Vision 2030.</p>
+      <p class="en">Experienced in developing regulatory frameworks, launching transformative initiatives, and overseeing complex projects from concept to execution. PMP® certified with an academic background in Risk Management and Insurance.</p>
+      <p class="ar">قائد استراتيجي في تطوير الأعمال والشراكات، يمتلك أكثر من 6 سنوات من الخبرة في قيادة مبادرات عالية الأثر داخل الجهات الحكومية السعودية. قدرة مثبتة على قيادة فرق متعددة التخصصات، وتصميم برامج منظومية واسعة النطاق، ومواءمة أهداف متعددي الأطراف مع الأولويات الوطنية بما فيها رؤية 2030.</p>
+      <p class="ar">خبرة في بناء الأطر التنظيمية، وإطلاق المبادرات التحويلية، والإشراف على المشاريع المعقدة من الفكرة حتى التنفيذ. حاصل على شهادة PMP® مع خلفية أكاديمية في إدارة المخاطر والتأمين.</p>
+    </div>
+    <div class="quote-block reveal">
+      <p class="quote-text">
+        <span class="en">Building ecosystems that outlast the initiative — sustainable growth through strategic alignment.</span>
+        <span class="ar">بناء منظومات تتجاوز عمر المبادرة — نمو مستدام عبر المواءمة الاستراتيجية.</span>
+      </p>
+      <p class="quote-source"><span class="en">— Working Philosophy</span><span class="ar">— الفلسفة المهنية</span></p>
+    </div>
+  </div>
+  <div class="values-grid">
+    <div class="value-card reveal">
+      <h3 class="value-name"><span class="en">Strategic Vision</span><span class="ar">الرؤية الاستراتيجية</span></h3>
+      <p class="value-desc"><span class="en">Translating national priorities into scalable, high-value initiatives with measurable cross-sector impact.</span><span class="ar">تحويل الأولويات الوطنية إلى مبادرات قابلة للتوسع وعالية القيمة ذات أثر قابل للقياس.</span></p>
+    </div>
+    <div class="value-card reveal">
+      <h3 class="value-name"><span class="en">Partnership Intelligence</span><span class="ar">ذكاء الشراكات</span></h3>
+      <p class="value-desc"><span class="en">Building and sustaining high-impact relationships across government, private, and non-profit sectors.</span><span class="ar">بناء علاقات عالية الأثر واستدامتها عبر القطاعات الحكومية والخاصة وغير الربحية.</span></p>
+    </div>
+    <div class="value-card reveal">
+      <h3 class="value-name"><span class="en">Execution Excellence</span><span class="ar">التميز في التنفيذ</span></h3>
+      <p class="value-desc"><span class="en">Overseeing complex projects from concept to completion with adaptive, results-oriented leadership.</span><span class="ar">الإشراف على المشاريع المعقدة من الفكرة حتى الإنجاز بقيادة مرنة وموجهة نحو النتائج.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section style="padding:0 8vw 100px;position:relative;z-index:1">
+  <div class="stats reveal">
+    <div class="stat"><div class="stat-number">6+</div><div class="stat-label"><span class="en">Years Experience</span><span class="ar">سنوات خبرة</span></div></div>
+    <div class="stat"><div class="stat-number">19</div><div class="stat-label"><span class="en">Business Offices Established</span><span class="ar">مكتب أعمال أسّسه</span></div></div>
+    <div class="stat"><div class="stat-number">100+</div><div class="stat-label"><span class="en">Regulations Reviewed</span><span class="ar">لائحة راجعها</span></div></div>
+    <div class="stat"><div class="stat-number">3</div><div class="stat-label"><span class="en">Vision 2030 Initiatives</span><span class="ar">مبادرات برؤية 2030</span></div></div>
+  </div>
+</section>
+
+<!-- ═══ EXPERIENCE ═══ -->
+<section class="experience" id="experience">
+  <div class="section-header reveal">
+    <span class="section-num">02</span>
+    <h2 class="section-title"><span class="en">Work Experience</span><span class="ar">الخبرة العملية</span></h2>
+    <span class="section-line"></span>
+  </div>
+  <div class="timeline">
+
+    <!-- Broker Care -->
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period"><span class="en">May 2019 – Sep 2019</span><span class="ar">مايو 2019 – سبتمبر 2019</span></div>
+      <h3 class="timeline-role"><span class="en">Insurance Underwriter</span><span class="ar">محتتب تأمين</span></h3>
+      <p class="timeline-org"><span class="en">Broker Care Company · Riyadh</span><span class="ar">شركة بروكر كير · الرياض</span></p>
+      <ul class="timeline-list">
+        <li><span class="en">Researched insurance policies and negotiated terms and costs with providers.</span><span class="ar">البحث في وثائق التأمين والتفاوض على الشروط والتكاليف مع مزودي التأمين.</span></li>
+        <li><span class="en">Arranged tailored insurance coverage for clients and advised on risk management opportunities.</span><span class="ar">ترتيب تغطية تأمينية مخصصة للعملاء وتقديم المشورة بشأن فرص إدارة المخاطر.</span></li>
+        <li><span class="en">Managed premium collection and supported client onboarding.</span><span class="ar">إدارة تحصيل الأقساط ودعم إجراءات استقبال العملاء الجدد.</span></li>
+      </ul>
+    </div>
+
+    <!-- GEA -->
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period"><span class="en">Sep 2019 – Jan 2020</span><span class="ar">سبتمبر 2019 – يناير 2020</span></div>
+      <h3 class="timeline-role"><span class="en">Protocol Team Leader</span><span class="ar">قائد فريق البروتوكول</span></h3>
+      <p class="timeline-org"><span class="en">General Entertainment Authority · Riyadh</span><span class="ar">الهيئة العامة للترفيه · الرياض</span></p>
+      <ul class="timeline-list">
+        <li><span class="en">Managed the Special Events and Protocol team ensuring successful delivery of high-profile events.</span><span class="ar">إدارة فريق الفعاليات الخاصة والبروتوكول وضمان التنفيذ الناجح للفعاليات البارزة.</span></li>
+        <li><span class="en">Developed Special Events strategy and tracked progress against strategic priorities.</span><span class="ar">تطوير استراتيجية الفعاليات الخاصة ومتابعة التقدم مقابل الأولويات الاستراتيجية.</span></li>
+        <li><span class="en">Advised on diplomatic protocol for official visits; hosted best-practice workshops.</span><span class="ar">تقديم المشورة بشأن البروتوكول الدبلوماسي للزيارات الرسمية وإقامة ورش عمل للممارسات المثلى.</span></li>
+      </ul>
+    </div>
+
+    <!-- MONSHAAT — promo ladder -->
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period"><span class="en">Oct 2020 – Oct 2024 · 4 yrs 1 mo</span><span class="ar">أكتوبر 2020 – أكتوبر 2024 · 4 سنوات</span></div>
+      <div class="timeline-company-name"><span class="en">Monsha'at (SMEA) · Riyadh</span><span class="ar">منشآت (الهيئة العامة للمنشآت الصغيرة والمتوسطة) · الرياض</span></div>
+      <div class="promo-ladder">
+        <div class="promo-rung">
+          <div class="promo-left"><div class="promo-circle"></div><div class="promo-vert-line"></div></div>
+          <div class="promo-right">
+            <div class="promo-role"><span class="en">Planning and Development Intern</span><span class="ar">متدرب في التخطيط والتطوير</span></div>
+            <div class="promo-dates"><span class="en">Oct 2020 – May 2021 · 8 mos</span><span class="ar">أكتوبر 2020 – مايو 2021 · 8 أشهر</span></div>
+          </div>
+        </div>
+        <div class="promo-rung">
+          <div class="promo-left"><div class="promo-circle"></div><div class="promo-vert-line"></div></div>
+          <div class="promo-right">
+            <div class="promo-role"><span class="en">Ease of Doing Business Initiatives and Regulations Analyst</span><span class="ar">محلل مبادرات وأنظمة تحسين بيئة الأعمال</span></div>
+            <div class="promo-dates"><span class="en">May 2021 – Sep 2022 · 1 yr 5 mos</span><span class="ar">مايو 2021 – سبتمبر 2022 · سنة وخمسة أشهر</span></div>
+            <span class="promo-up"><span class="en">Promoted</span><span class="ar">ترقية</span></span>
+          </div>
+        </div>
+        <div class="promo-rung">
+          <div class="promo-left"><div class="promo-circle"></div><div class="promo-vert-line"></div></div>
+          <div class="promo-right">
+            <div class="promo-role"><span class="en">Ease of Doing Business Initiatives and Regulations Specialist</span><span class="ar">أخصائي مبادرات وأنظمة تحسين بيئة الأعمال</span></div>
+            <div class="promo-dates"><span class="en">Sep 2022 – Sep 2023 · 1 yr 1 mo</span><span class="ar">سبتمبر 2022 – سبتمبر 2023 · سنة وشهر</span></div>
+            <span class="promo-up"><span class="en">Promoted</span><span class="ar">ترقية</span></span>
+          </div>
+        </div>
+        <div class="promo-rung">
+          <div class="promo-left"><div class="promo-circle"></div><div class="promo-vert-line"></div></div>
+          <div class="promo-right">
+            <div class="promo-role"><span class="en">Sr. Ease of Doing Business Initiatives and Regulations Specialist</span><span class="ar">أخصائي أول — مبادرات وأنظمة تحسين بيئة الأعمال</span></div>
+            <div class="promo-dates"><span class="en">Sep 2023 – Oct 2024 · 1 yr 2 mos</span><span class="ar">سبتمبر 2023 – أكتوبر 2024 · سنة وشهران</span></div>
+            <span class="promo-up"><span class="en">Promoted</span><span class="ar">ترقية</span></span>
+          </div>
+        </div>
+      </div>
+      <ul class="timeline-list">
+        <li><span class="en">Designed and developed the Estrdad Initiative (v1 and v2) — the Kingdom's largest commercial ecosystem initiative for SMEs.</span><span class="ar">تصميم وتطوير مبادرة استرداد (الإصداران 1 و2) — أكبر مبادرة منظومة تجارية في المملكة لدعم المنشآت الصغيرة والمتوسطة.</span></li>
+        <li><span class="en">Reviewed 100+ regulations and bylaws affecting SMEs; identified 30+ core challenges and developed sustainable solutions.</span><span class="ar">مراجعة أكثر من 100 لائحة وتنظيم يؤثر على المنشآت؛ وتحديد أكثر من 30 تحدياً جوهرياً وتطوير حلول مستدامة لها.</span></li>
+        <li><span class="en">Established 19 Ease of Doing Business Offices nationwide in partnership with Chambers of Commerce.</span><span class="ar">تأسيس 19 مكتباً لتحسين بيئة الأعمال على مستوى المملكة بالشراكة مع الغرف التجارية.</span></li>
+        <li><span class="en">Delivered 5 strategic projects, 3 directly linked to Vision 2030 national transformation programs.</span><span class="ar">إنجاز 5 مشاريع استراتيجية، 3 منها مرتبطة مباشرة ببرامج التحول الوطنية لرؤية 2030.</span></li>
+        <li><span class="en">Served as Strategic Consultant under the Thousand Mile Program (NIDLP), defining strategic direction for national industrial development.</span><span class="ar">العمل مستشاراً استراتيجياً ضمن برنامج الألف ميل (نيدلب)، وتحديد التوجه الاستراتيجي للتطوير الصناعي الوطني.</span></li>
+        <li><span class="en">Developed the Localization Through Social Investment Program, connecting localization goals with measurable social outcomes.</span><span class="ar">تطوير برنامج التوطين من خلال الاستثمار الاجتماعي، وربط أهداف التوطين بمخرجات اجتماعية قابلة للقياس.</span></li>
+        <li><span class="en">Launched 18+ internal initiatives; built government fee calculator and break-even analysis tools for SMEs.</span><span class="ar">إطلاق أكثر من 18 مبادرة داخلية؛ وبناء حاسبة الرسوم الحكومية وأدوات تحليل نقطة التعادل للمنشآت.</span></li>
+        <li><span class="en">Supported the planning head on urgent mega-projects directly requested by His Excellency the Minister.</span><span class="ar">دعم رئيس التخطيط في المشاريع الكبرى العاجلة المطلوبة مباشرة من معالي الوزير.</span></li>
+      </ul>
+    </div>
+
+    <!-- NCNS -->
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period"><span class="en">Sep 2024 – Present</span><span class="ar">سبتمبر 2024 – حتى الآن</span></div>
+      <h3 class="timeline-role"><span class="en">Sr. Business Development Specialist</span><span class="ar">أخصائي أول تطوير الأعمال</span></h3>
+      <p class="timeline-org"><span class="en">National Center for Non-Profit Sector · Riyadh</span><span class="ar">المركز الوطني لتنمية القطاع غير الربحي · الرياض</span></p>
+      <ul class="timeline-list">
+        <li><span class="en">Spearheaded establishment of "Marsad" — a non-profit entity for sector data analytics and decision support.</span><span class="ar">قيادة تأسيس "مرصد" — كيان غير ربحي متخصص في تحليل بيانات القطاع ودعم صنع القرار.</span></li>
+        <li><span class="en">Led development and launch of a national initiative connecting retired experts with non-profit organizations to enhance governance and operational effectiveness.</span><span class="ar">قيادة تطوير وإطلاق مبادرة وطنية لربط الخبراء المتقاعدين بالمنظمات غير الربحية لتعزيز الحوكمة والكفاءة التشغيلية.</span></li>
+        <li><span class="en">Designed a unified health insurance policy framework addressing workforce coverage challenges within the non-profit sector.</span><span class="ar">تصميم إطار موحد لسياسة التأمين الصحي لمعالجة تحديات تغطية القوى العاملة في القطاع غير الربحي.</span></li>
+        <li><span class="en">Developed and published a comprehensive operational guide enabling non-profit organizations to participate effectively during the Hajj season.</span><span class="ar">تطوير ونشر دليل تشغيلي شامل يمكّن المنظمات غير الربحية من المشاركة الفاعلة في موسم الحج.</span></li>
+        <li><span class="en">Analyze sector data to identify key challenges and develop strategic, sustainable solutions with government and private stakeholders.</span><span class="ar">تحليل بيانات القطاع لتحديد التحديات الرئيسية وتطوير حلول استراتيجية مستدامة بالتعاون مع الجهات الحكومية والقطاع الخاص.</span></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ ACHIEVEMENTS ═══ -->
+<section id="achievements" style="background:var(--bg-alt);border-block:1px solid var(--line)">
+  <div class="section-header reveal">
+    <span class="section-num">03</span>
+    <h2 class="section-title"><span class="en">Key Achievements</span><span class="ar">أبرز الإنجازات</span></h2>
+    <span class="section-line"></span>
+  </div>
+  <div class="achieve-grid">
+    <div class="achieve-card reveal">
+      <div class="achieve-metric">100+</div>
+      <div class="achieve-title"><span class="en">Regulations and Bylaws Reviewed</span><span class="ar">لائحة وتنظيم تمت مراجعتها</span></div>
+      <div class="achieve-desc"><span class="en">Led a large-scale regulatory review shaping the SME landscape across the Kingdom.</span><span class="ar">قيادة مراجعة تنظيمية واسعة النطاق أسهمت في تشكيل بيئة المنشآت في المملكة.</span></div>
+      <span class="achieve-tag">Monsha'at</span>
+    </div>
+    <div class="achieve-card reveal">
+      <div class="achieve-metric">30+</div>
+      <div class="achieve-title"><span class="en">Core SME Challenges Addressed</span><span class="ar">تحدياً جوهرياً للمنشآت عولج</span></div>
+      <div class="achieve-desc"><span class="en">Identified fundamental obstacles facing SMEs and developed practical, sustainable solutions.</span><span class="ar">تحديد العقبات الجوهرية التي تواجه المنشآت وتطوير حلول عملية ومستدامة لها.</span></div>
+      <span class="achieve-tag">Monsha'at</span>
+    </div>
+    <div class="achieve-card reveal">
+      <div class="achieve-metric">19</div>
+      <div class="achieve-title"><span class="en">Business Offices Established Nationwide</span><span class="ar">مكتب لتحسين بيئة الأعمال على مستوى المملكة</span></div>
+      <div class="achieve-desc"><span class="en">Established offices in partnership with Chambers of Commerce to identify and remove obstacles facing SMEs.</span><span class="ar">تأسيس مكاتب بالشراكة مع الغرف التجارية لتحديد العقبات ومعالجتها لصالح المنشآت.</span></div>
+      <span class="achieve-tag">Monsha'at · Vision 2030</span>
+    </div>
+    <div class="achieve-card reveal">
+      <div class="achieve-metric">18+</div>
+      <div class="achieve-title"><span class="en">Internal Initiatives Launched</span><span class="ar">مبادرة داخلية أُطلقت</span></div>
+      <div class="achieve-desc"><span class="en">Contributed to developing and operationalizing internal initiatives with cross-entity impact.</span><span class="ar">المساهمة في تطوير وتشغيل مبادرات داخلية ذات أثر ممتد عبر الجهات الحكومية.</span></div>
+      <span class="achieve-tag">Cross-Entity</span>
+    </div>
+    <div class="achieve-card reveal">
+      <div class="achieve-metric" style="font-size:34px">Estrdad</div>
+      <div class="achieve-title"><span class="en">Largest Commercial Ecosystem Initiative in the Kingdom</span><span class="ar">أكبر مبادرة منظومة تجارية في المملكة</span></div>
+      <div class="achieve-desc"><span class="en">Designed and developed the Estrdad Initiative (v1 and v2) — flagship program supporting SME commercial growth nationwide.</span><span class="ar">تصميم وتطوير مبادرة استرداد (الإصداران 1 و2) — البرنامج الرائد لدعم النمو التجاري للمنشآت.</span></div>
+      <span class="achieve-tag">Flagship Program</span>
+    </div>
+    <div class="achieve-card reveal">
+      <div class="achieve-metric" style="font-size:26px">NIDLP</div>
+      <div class="achieve-title"><span class="en">Strategic Consultant — Thousand Mile Program</span><span class="ar">مستشار استراتيجي — برنامج الألف ميل</span></div>
+      <div class="achieve-desc"><span class="en">Defined strategic direction under the National Industrial Development and Logistics Program.</span><span class="ar">تحديد التوجه الاستراتيجي ضمن برنامج التطوير الصناعي الوطني واللوجستيات (نيدلب).</span></div>
+      <span class="achieve-tag">National Program</span>
+    </div>
+    <div class="achieve-card reveal">
+      <div class="achieve-metric" style="font-size:24px">Social Invest.</div>
+      <div class="achieve-title"><span class="en">Localization Through Social Investment Program</span><span class="ar">برنامج التوطين من خلال الاستثمار الاجتماعي</span></div>
+      <div class="achieve-desc"><span class="en">Built a program connecting national localization goals with measurable social investment outcomes.</span><span class="ar">بناء برنامج يربط أهداف التوطين الوطنية بمخرجات الاستثمار الاجتماعي القابلة للقياس.</span></div>
+      <span class="achieve-tag">National Impact</span>
+    </div>
+    <div class="achieve-card reveal">
+      <div class="achieve-metric" style="font-size:26px">Marsad</div>
+      <div class="achieve-title"><span class="en">Founded Non-Profit Sector Intelligence Entity</span><span class="ar">تأسيس كيان ذكاء القطاع غير الربحي</span></div>
+      <div class="achieve-desc"><span class="en">Spearheaded establishment of "Marsad" — dedicated to collecting and leveraging sector data to improve decision-making.</span><span class="ar">قيادة تأسيس "مرصد" — كيان متخصص في جمع بيانات القطاع الخيري والاستفادة منها لتحسين صنع القرار.</span></div>
+      <span class="achieve-tag">NCNS · Current</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EDUCATION ═══ -->
+<section id="education">
+  <div class="section-header reveal">
+    <span class="section-num">04</span>
+    <h2 class="section-title"><span class="en">Education</span><span class="ar">التعليم</span></h2>
+    <span class="section-line"></span>
+  </div>
+  <div class="edu-grid">
+    <div class="edu-card reveal">
+      <svg class="edu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+      <div class="edu-level"><span class="en">Bachelor's Degree · 2019</span><span class="ar">بكالوريوس · 2019</span></div>
+      <h3 class="edu-degree"><span class="en">Risk Management and Insurance</span><span class="ar">إدارة المخاطر والتأمين</span></h3>
+      <p class="edu-uni"><span class="en">Imam Mohammed bin Saud Islamic University</span><span class="ar">جامعة الإمام محمد بن سعود الإسلامية</span></p>
+      <div class="edu-status"><span class="en">Completed</span><span class="ar">مكتمل</span></div>
+    </div>
+    <div class="edu-card reveal">
+      <svg class="edu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <div class="edu-level"><span class="en">Language Training · 2018</span><span class="ar">تدريب لغوي · 2018</span></div>
+      <h3 class="edu-degree"><span class="en">English Language Course</span><span class="ar">دورة اللغة الإنجليزية</span></h3>
+      <p class="edu-uni"><span class="en">Centre of English Studies (CES) · United Kingdom</span><span class="ar">مركز الدراسات الإنجليزية (CES) · المملكة المتحدة</span></p>
+      <div class="edu-status"><span class="en">Completed</span><span class="ar">مكتمل</span></div>
+    </div>
+  </div>
+
+  <!-- PROFESSIONAL CERTIFICATIONS -->
+  <div style="margin-top:70px" class="reveal">
+    <h3 class="section-subtitle"><span class="en">Professional Certifications</span><span class="ar">الشهادات الاحترافية</span></h3>
+    <div class="cert-list">
+      <div class="cert-card">
+        <div class="cert-info">
+          <div class="cert-name"><span class="en">Project Management Professional (PMP)</span><span class="ar">محترف إدارة المشاريع (PMP)</span></div>
+          <div class="cert-issuer"><span class="en">Project Management Institute (PMI)</span><span class="ar">معهد إدارة المشاريع (PMI)</span></div>
+        </div>
+        <div class="cert-year">2025</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-info">
+          <div class="cert-name"><span class="en">Certified Business Development Professional</span><span class="ar">محترف معتمد في تطوير الأعمال</span></div>
+          <div class="cert-issuer"><span class="en">IMD Business School</span><span class="ar">مدرسة IMD للأعمال</span></div>
+        </div>
+        <div class="cert-year">2023</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-info">
+          <div class="cert-name"><span class="en">Governance, Risk Management and Compliance Professional (GRCP)</span><span class="ar">محترف الحوكمة وإدارة المخاطر والامتثال (GRCP)</span></div>
+          <div class="cert-issuer"><span class="en">OCEG Academy</span><span class="ar">أكاديمية OCEG</span></div>
+        </div>
+        <div class="cert-year">2021</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-info">
+          <div class="cert-name"><span class="en">Compliance Foundations Professional</span><span class="ar">محترف أسس الامتثال</span></div>
+          <div class="cert-issuer"><span class="en">Saudi Financial Academy</span><span class="ar">الأكاديمية المالية السعودية</span></div>
+        </div>
+        <div class="cert-year">2021</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-info">
+          <div class="cert-name"><span class="en">Insurance Foundation Certificate Examination (IFCE)</span><span class="ar">شهادة أسس التأمين (IFCE)</span></div>
+          <div class="cert-issuer"><span class="en">Saudi Financial Academy</span><span class="ar">الأكاديمية المالية السعودية</span></div>
+        </div>
+        <div class="cert-year">2020</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COURSES -->
+  <div style="margin-top:60px" class="reveal">
+    <h3 class="section-subtitle"><span class="en">Courses and Training</span><span class="ar">الدورات والتدريب</span></h3>
+    <div class="course-list">
+      <div class="course-item"><span class="en">Certificate in Business Decision Models — Meirc Training and Consulting · 2022</span><span class="ar">شهادة نماذج اتخاذ القرار في الأعمال — ميرك للتدريب والاستشارات · 2022</span></div>
+      <div class="course-item"><span class="en">Data Analysis and Business Reporting Using Excel and Power BI — Virginia Institute of Finance · 2022</span><span class="ar">تحليل البيانات وإعداد التقارير باستخدام Excel وPower BI — معهد فيرجينيا للمالية · 2022</span></div>
+      <div class="course-item"><span class="en">Principles of Project Management — Ernst and Young (EY) · 2021</span><span class="ar">مبادئ إدارة المشاريع — إرنست ويونغ (EY) · 2021</span></div>
+      <div class="course-item"><span class="en">Risk Management Professional (PMI-RMP) — PMI · 2018</span><span class="ar">محترف إدارة المخاطر (PMI-RMP) — PMI · 2018</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SKILLS ═══ -->
+<section id="skills" style="background:var(--bg-alt);border-block:1px solid var(--line)">
+  <div class="section-header reveal">
+    <span class="section-num">05</span>
+    <h2 class="section-title"><span class="en">Core Competencies</span><span class="ar">المهارات والكفاءات الجوهرية</span></h2>
+    <span class="section-line"></span>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-category reveal">
+      <h3><span class="en">Strategic Business Development</span><span class="ar">تطوير الأعمال الاستراتيجي</span></h3>
+      <p class="skill-desc"><span class="en">Identifying growth opportunities and translating insights into scalable, high-value national initiatives.</span><span class="ar">تحديد فرص النمو وتحويل الرؤى إلى مبادرات وطنية قابلة للتوسع وعالية القيمة.</span></p>
+      <ul class="skill-list">
+        <li><span class="en">Ecosystem Design</span><span class="ar">تصميم المنظومات</span></li>
+        <li><span class="en">Initiative Development</span><span class="ar">تطوير المبادرات</span></li>
+        <li><span class="en">Feasibility Studies</span><span class="ar">دراسات الجدوى</span></li>
+        <li><span class="en">Market Strategy</span><span class="ar">استراتيجية السوق</span></li>
+      </ul>
+    </div>
+    <div class="skill-category reveal">
+      <h3><span class="en">Partnerships and Stakeholder Management</span><span class="ar">الشراكات وإدارة أصحاب المصلحة</span></h3>
+      <p class="skill-desc"><span class="en">Building and sustaining high-impact relationships across government, private, and non-profit sectors.</span><span class="ar">بناء علاقات عالية الأثر واستدامتها عبر القطاعات الحكومية والخاصة وغير الربحية.</span></p>
+      <ul class="skill-list">
+        <li><span class="en">Strategic Partnerships</span><span class="ar">الشراكات الاستراتيجية</span></li>
+        <li><span class="en">Stakeholder Alignment</span><span class="ar">مواءمة أصحاب المصلحة</span></li>
+        <li><span class="en">Negotiation</span><span class="ar">التفاوض</span></li>
+        <li><span class="en">Cross-sector Collaboration</span><span class="ar">التعاون متعدد القطاعات</span></li>
+      </ul>
+    </div>
+    <div class="skill-category reveal">
+      <h3><span class="en">Project and Program Management</span><span class="ar">إدارة المشاريع والبرامج</span></h3>
+      <p class="skill-desc"><span class="en">Leading complex programs from concept to execution using PMP methodology and adaptive leadership.</span><span class="ar">قيادة البرامج المعقدة من الفكرة حتى التنفيذ بمنهجية PMP وقيادة مرنة.</span></p>
+      <ul class="skill-list">
+        <li>PMP</li>
+        <li><span class="en">Program Management</span><span class="ar">إدارة البرامج</span></li>
+        <li><span class="en">Risk Management</span><span class="ar">إدارة المخاطر</span></li>
+        <li><span class="en">Regulatory Frameworks</span><span class="ar">الأطر التنظيمية</span></li>
+      </ul>
+    </div>
+    <div class="skill-category reveal">
+      <h3><span class="en">Analytics and Decision Making</span><span class="ar">التحليل وصنع القرار</span></h3>
+      <p class="skill-desc"><span class="en">Advanced analytical decision-making to address complex business challenges and mitigate risks.</span><span class="ar">صنع القرارات التحليلية المتقدمة لمعالجة التحديات التجارية المعقدة وتخفيف المخاطر.</span></p>
+      <ul class="skill-list">
+        <li>Power BI</li>
+        <li>Excel</li>
+        <li><span class="en">Data Analysis</span><span class="ar">تحليل البيانات</span></li>
+        <li><span class="en">Benchmarking</span><span class="ar">الدراسات المقارنة</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section class="contact" id="contact">
+  <h2><span class="en">Let's Connect</span><span class="ar">لنتواصل</span></h2>
+  <p>
+    <span class="en">Open to strategic partnerships, business development opportunities, and advisory roles across government and non-profit sectors.</span>
+    <span class="ar">منفتح على الشراكات الاستراتيجية وفرص تطوير الأعمال والأدوار الاستشارية عبر القطاعين الحكومي وغير الربحي.</span>
+  </p>
+  <div class="contact-links">
+    <a href="mailto:Abdulmohsin.a.alharthi@hotmail.com" class="contact-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      Abdulmohsin.a.alharthi@hotmail.com
+    </a>
+    <a href="tel:+966563504555" class="contact-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+      +966 56 350 4555
+    </a>
+    <a href="https://www.linkedin.com/in/abdulmohsinalharthi" target="_blank" rel="noopener noreferrer" class="contact-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M22 9h-4v12h4V9zM10 9h4v2a3 3 0 016 0v10h-4v-8a2 2 0 00-4 0v8h-2V9z"/></svg>
+      LinkedIn
+    </a>
+  </div>
+</section>
+
+<footer class="fe">
+  <div class="fo">
+    <svg viewBox="0 0 100 20" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="10" x2="35" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+      <path d="M50 2 L55 10 L50 18 L45 10 Z" fill="none" stroke="currentColor" stroke-width="0.8"/>
+      <circle cx="50" cy="10" r="1.5" fill="currentColor"/>
+      <line x1="65" y1="10" x2="100" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+    </svg>
+  </div>
+  <p class="fq">
+    <span class="en">"Where strategy meets execution, impact is born"</span>
+    <span class="ar">«حيث تلتقي الاستراتيجية بالتنفيذ، يُولَد الأثر»</span>
+  </p>
+  <p class="ft">
+    <span class="en">Building Ecosystems · Driving Growth · Creating Impact</span>
+    <span class="ar">بناء المنظومات · قيادة النمو · صناعة الأثر</span>
+  </p>
+  <div class="fd"></div>
+  <p class="fc">
+    <span class="en">2026 · Abdulmohsin Alharthi</span>
+    <span class="ar">2026 · عبدالمحسن الحارثي</span>
+  </p>
+</footer>
+
+<script>
+function toggleLang(){
+  const h=document.documentElement;
+  const c=h.getAttribute('data-lang');
+  const n=c==='ar'?'en':'ar';
+  h.setAttribute('data-lang',n);h.setAttribute('lang',n);h.setAttribute('dir',n==='ar'?'rtl':'ltr');
+}
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.querySelectorAll('nav a').forEach(l=>{l.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'});});});
+</script>
+</body>
+</html>
