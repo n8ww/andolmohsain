@@ -1,700 +1,2398 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abdulmohsin Alharthi | Portfolio</title>
+<title>Abdulmalek Alghamdi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Tajawal:wght@300;400;500;700;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f5f1e8;--bg-alt:#ebe4d4;--ink:#1a2820;--ink-soft:#3d4a3f;--accent:#5b6f4a;--accent-deep:#3a4a30;--gold:#b8893b;--gold-soft:#d4a85a;--line:rgba(26,40,32,0.12);--shadow:0 30px 60px -20px rgba(58,74,48,0.18);--serif:'Playfair Display',serif;--sans:'Inter',sans-serif;--ard:'Tajawal',sans-serif;--ars:'IBM Plex Sans Arabic',sans-serif}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;overflow-x:hidden;background-image:radial-gradient(circle at 20% 10%,rgba(184,137,59,.08) 0%,transparent 40%),radial-gradient(circle at 80% 90%,rgba(91,111,74,.10) 0%,transparent 45%);min-height:100vh}
-[data-lang="ar"] body{font-family:var(--ars)}
-body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%235b6f4a' stroke-width='0.4' opacity='0.15'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z'/%3E%3Cpath d='M30 15L45 30L30 45L15 30Z'/%3E%3C/g%3E%3C/svg%3E");opacity:.4;pointer-events:none;z-index:0}
+  :root {
+    --bg: #f4f1ea;
+    --bg-dark: #0d0c0a;
+    --ink: #1a1815;
+    --ink-soft: #3d3a35;
+    --ink-muted: #6b6862;
+    --paper: #ebe6dc;
+    --paper-dark: #1f1d19;
+    --accent: #c8451d;
+    --gold: #b8934d;
+    --line: rgba(26, 24, 21, 0.12);
+    --line-strong: rgba(26, 24, 21, 0.35);
+  }
 
-/* LANG TOGGLE + NAV */
-.lang-toggle{position:fixed;top:30px;inset-inline-end:30px;z-index:100;background:var(--ink);color:var(--bg);border:none;padding:12px 24px;border-radius:50px;cursor:pointer;font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;transition:all .3s;box-shadow:var(--shadow)}
-.lang-toggle:hover{background:var(--gold);transform:translateY(-2px)}
-nav{position:fixed;top:30px;inset-inline-start:30px;z-index:100;display:flex;gap:4px;background:rgba(245,241,232,.85);backdrop-filter:blur(20px);padding:8px 12px;border-radius:50px;border:1px solid var(--line);box-shadow:var(--shadow);flex-wrap:wrap;max-width:calc(100vw - 200px)}
-nav a{color:var(--ink-soft);text-decoration:none;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.8px;text-transform:uppercase;padding:7px 12px;border-radius:50px;transition:all .3s;white-space:nowrap}
-[data-lang="ar"] nav a{font-family:var(--ard);font-size:12px}
-nav a:hover{background:var(--ink);color:var(--bg)}
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
 
-/* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 8vw 80px;position:relative;z-index:1}
-.hero-eyebrow{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:30px;display:flex;align-items:center;gap:16px;opacity:0;animation:fadeUp 1s .2s forwards}
-[data-lang="ar"] .hero-eyebrow{font-family:var(--ard);letter-spacing:2px;font-size:14px}
-.hero-eyebrow::before{content:'';width:60px;height:1px;background:var(--gold)}
-.hero h1{font-family:var(--serif);font-size:clamp(48px,9vw,130px);font-weight:500;line-height:1;letter-spacing:-2px;color:var(--ink);margin-bottom:30px;opacity:0;animation:fadeUp 1.2s .4s forwards}
-[data-lang="ar"] .hero h1{font-family:var(--ard);font-style:normal;font-weight:700}
-.hero-title{font-family:var(--serif);font-size:clamp(18px,2.4vw,26px);color:var(--gold);font-weight:500;margin-bottom:30px;opacity:0;animation:fadeUp 1.2s .5s forwards}
-[data-lang="ar"] .hero-title{font-family:var(--ard);font-style:normal}
-.hero-tagline{font-family:var(--serif);font-size:clamp(17px,2vw,22px);color:var(--ink-soft);max-width:750px;line-height:1.7;margin-bottom:50px;opacity:0;animation:fadeUp 1.2s .6s forwards}
-[data-lang="ar"] .hero-tagline{font-family:var(--ars);font-style:normal}
-.hero-meta{display:flex;flex-wrap:wrap;gap:40px;padding-top:40px;border-top:1px solid var(--line);opacity:0;animation:fadeUp 1.2s .8s forwards}
-.meta-item{display:flex;flex-direction:column;gap:6px}
-.meta-label{font-family:var(--sans);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600}
-[data-lang="ar"] .meta-label{font-family:var(--ard);letter-spacing:1px;font-size:12px}
-.meta-value{font-family:var(--sans);font-size:16px;font-weight:500;color:var(--ink)}
-[data-lang="ar"] .meta-value{font-family:var(--ard)}
-.ornament{position:absolute;inset-inline-end:5vw;top:50%;transform:translateY(-50%);width:280px;height:280px;opacity:.15;pointer-events:none}
-.ornament svg{width:100%;height:100%;animation:rotate 60s linear infinite}
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    cursor: none;
+  }
+  body.ar { font-family: 'Tajawal', sans-serif; }
+  body.ar .italic, body.ar .arabic-serif { font-family: 'Amiri', serif; }
+  @media (hover: none) { body { cursor: auto; } }
 
-/* SECTIONS */
-section{padding:100px 8vw;position:relative;z-index:1}
-.section-header{display:flex;align-items:baseline;gap:24px;margin-bottom:70px}
-.section-num{font-family:var(--serif);font-size:18px;color:var(--gold);font-weight:500}
-.section-title{font-family:var(--serif);font-size:clamp(32px,4.5vw,56px);font-weight:500;color:var(--ink);letter-spacing:-1px}
-[data-lang="ar"] .section-title{font-family:var(--ard);font-style:normal;font-weight:600}
-.section-line{flex:1;height:1px;background:var(--line)}
-.section-subtitle{font-family:var(--serif);font-size:26px;color:var(--ink);margin-bottom:28px;padding-bottom:12px;border-bottom:2px solid var(--gold);display:inline-block;font-weight:600}
-[data-lang="ar"] .section-subtitle{font-family:var(--ard);font-style:normal}
+  /* CURSOR */
+  .cursor {
+    position: fixed; width: 8px; height: 8px;
+    background: var(--accent); border-radius: 50%;
+    pointer-events: none; z-index: 10000;
+    transition: width 0.3s, height 0.3s, background 0.3s;
+    transform: translate(-50%, -50%); mix-blend-mode: difference;
+  }
+  .cursor-follower {
+    position: fixed; width: 36px; height: 36px;
+    border: 1px solid var(--ink); border-radius: 50%;
+    pointer-events: none; z-index: 9999;
+    transition: width 0.3s, height 0.3s, border-color 0.3s, background 0.3s;
+    transform: translate(-50%, -50%);
+  }
+  body.cursor-hover .cursor { width: 0; height: 0; }
+  body.cursor-hover .cursor-follower {
+    width: 64px; height: 64px;
+    background: var(--accent); border-color: var(--accent);
+    mix-blend-mode: difference;
+  }
+  @media (hover: none) { .cursor, .cursor-follower { display: none; } }
 
-/* ABOUT */
-.about{background:var(--bg-alt);border-block:1px solid var(--line)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.about-text{font-family:var(--serif);font-size:19px;line-height:1.9;color:var(--ink-soft)}
-[data-lang="ar"] .about-text{font-family:var(--ars);font-style:normal;font-size:18px}
-.about-text p{margin-bottom:20px}
-.quote-block{background:var(--ink);color:var(--bg);padding:50px 40px;border-radius:4px;position:relative;box-shadow:var(--shadow)}
-.quote-block::before{content:'\201C';position:absolute;top:20px;inset-inline-start:30px;font-size:80px;color:var(--gold);font-family:var(--serif);opacity:.6;line-height:1}
-.quote-text{font-family:var(--serif);font-size:22px;line-height:1.7;margin-top:50px}
-[data-lang="ar"] .quote-text{font-family:var(--ars);font-style:normal}
-.quote-source{margin-top:30px;padding-top:20px;border-top:1px solid rgba(245,241,232,.2);font-family:var(--sans);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-soft)}
-[data-lang="ar"] .quote-source{font-family:var(--ard);letter-spacing:1px}
-.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}
-.value-card{background:var(--bg);border:1px solid var(--line);padding:30px 28px;border-radius:4px;transition:all .3s}
-.value-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--gold)}
-.value-name{font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:12px;font-weight:600}
-[data-lang="ar"] .value-name{font-family:var(--ard);font-style:normal}
-.value-desc{font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.7}
-[data-lang="ar"] .value-desc{font-family:var(--ars)}
+  /* LOADER */
+  .loader {
+    position: fixed; inset: 0;
+    background: var(--ink); z-index: 11000;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column;
+    transition: transform 1.2s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  .loader.done { transform: translateY(-100%); }
+  .loader-quote {
+    font-family: 'Inter', sans-serif;
+    font-style: italic; color: var(--bg); opacity: 0.4;
+    font-size: clamp(14px, 1.4vw, 18px);
+    text-align: center; max-width: 480px;
+    margin-bottom: 40px; padding: 0 20px;
+    animation: fadeInSlow 1.5s ease-out 0.5s both;
+  }
+  body.ar .loader-quote { font-family: 'Amiri', serif; font-size: clamp(15px, 1.5vw, 20px); }
+  .loader-text {
+    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500;
+    font-size: clamp(48px, 8vw, 120px);
+    color: var(--bg); letter-spacing: -0.03em; overflow: hidden;
+  }
+  body.ar .loader-text { font-family: 'Amiri', serif; font-weight: 700; }
+  .loader-text span {
+    display: inline-block;
+    animation: loaderUp 1.6s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+  }
+  .loader-bar {
+    width: min(400px, 70vw); height: 1px;
+    background: rgba(244, 241, 234, 0.2);
+    margin-top: 40px; position: relative; overflow: hidden;
+  }
+  .loader-bar::after {
+    content: ''; position: absolute; left: 0; top: 0; height: 100%;
+    background: var(--accent);
+    animation: loaderBar 2s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+  }
+  .loader-count {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--bg); opacity: 0.5;
+    margin-top: 16px; letter-spacing: 0.15em;
+  }
+  @keyframes loaderUp {
+    0% { transform: translateY(100%); opacity: 0; }
+    40%, 80% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100%); opacity: 0; }
+  }
+  @keyframes loaderBar { 0% { width: 0; } 100% { width: 100%; } }
+  @keyframes fadeInSlow { from { opacity: 0; } to { opacity: 0.4; } }
 
-/* STATS */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--ink);color:var(--bg);border-radius:4px;overflow:hidden}
-.stat{padding:50px 30px;text-align:center;border-inline-end:1px solid rgba(245,241,232,.1);transition:background .3s}
-.stat:last-child{border-inline-end:none}
-.stat:hover{background:var(--accent-deep)}
-.stat-number{font-family:var(--serif);font-size:52px;font-weight:600;color:var(--gold);line-height:1;margin-bottom:12px;}
-.stat-label{font-family:var(--sans);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--bg);opacity:.85}
-[data-lang="ar"] .stat-label{font-family:var(--ard);letter-spacing:1px;font-size:13px}
+  .scroll-progress {
+    position: fixed; top: 0; left: 0;
+    height: 2px; background: var(--accent);
+    z-index: 200; width: 0; transition: width 0.1s linear;
+  }
 
-/* EXPERIENCE */
-.experience{background:var(--bg-alt);border-block:1px solid var(--line)}
-.timeline{position:relative;max-width:950px;margin:0 auto}
-.timeline::before{content:'';position:absolute;inset-inline-start:20px;top:0;bottom:0;width:1px;background:var(--line)}
-.timeline-item{position:relative;padding-inline-start:70px;padding-bottom:60px}
-.timeline-item:last-child{padding-bottom:0}
-.timeline-dot{position:absolute;inset-inline-start:12px;top:8px;width:18px;height:18px;background:var(--bg-alt);border:2px solid var(--gold);border-radius:50%;z-index:2}
-.timeline-dot::after{content:'';position:absolute;inset:4px;background:var(--gold);border-radius:50%;transform:scale(0);transition:transform .3s}
-.timeline-item:hover .timeline-dot::after{transform:scale(1)}
-.timeline-period{font-family:var(--sans);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px}
-[data-lang="ar"] .timeline-period{font-family:var(--ard);letter-spacing:1px;font-size:14px}
-.timeline-role{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--ink);margin-bottom:6px}
-[data-lang="ar"] .timeline-role{font-family:var(--ard);font-style:normal}
-.timeline-org{font-family:var(--sans);font-size:16px;color:var(--accent);margin-bottom:16px;font-weight:700}
-[data-lang="ar"] .timeline-org{font-family:var(--ard)}
-.timeline-list{list-style:none;margin-top:14px}
-.timeline-list li{position:relative;padding-inline-start:22px;margin-bottom:8px;font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.7}
-[data-lang="ar"] .timeline-list li{font-family:var(--ars)}
-.timeline-list li::before{content:'\25C6';position:absolute;inset-inline-start:0;top:1px;color:var(--gold);font-size:10px}
+  body::before {
+    content: ''; position: fixed; inset: 0;
+    pointer-events: none; z-index: 9990; opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
 
-/* PROMOTION TRACK — clean vertical ladder */
-.timeline-company-name{font-family:var(--sans);font-size:16px;color:var(--accent);font-weight:700;margin-bottom:18px}
-[data-lang="ar"] .timeline-company-name{font-family:var(--ard)}
-.promo-ladder{display:flex;flex-direction:column;gap:0;margin-bottom:20px;background:var(--bg);border:1px solid var(--line);border-radius:6px;overflow:hidden}
-.promo-rung{display:flex;align-items:stretch;border-bottom:1px solid var(--line)}
-.promo-rung:last-child{border-bottom:none;background:rgba(184,137,59,.04)}
-.promo-left{display:flex;flex-direction:column;align-items:center;padding:16px 20px;gap:0;flex-shrink:0;width:56px}
-.promo-circle{width:12px;height:12px;border-radius:50%;border:2px solid var(--gold);background:var(--bg);flex-shrink:0}
-.promo-rung:last-child .promo-circle{background:var(--gold)}
-.promo-vert-line{width:1px;background:rgba(184,137,59,.25);flex:1;margin-top:4px}
-.promo-rung:last-child .promo-vert-line{display:none}
-.promo-right{padding:16px 16px 16px 0;flex:1}
-.promo-role{font-family:var(--sans);font-size:13px;font-weight:700;color:var(--ink);line-height:1.4;margin-bottom:4px}
-[data-lang="ar"] .promo-role{font-family:var(--ard)}
-.promo-dates{font-family:var(--sans);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);font-weight:600}
-[data-lang="ar"] .promo-dates{font-family:var(--ard);letter-spacing:.5px;font-size:12px}
-.promo-up{display:inline-block;margin-top:6px;padding:2px 10px;font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);background:rgba(184,137,59,.1);border:1px solid rgba(184,137,59,.25);border-radius:50px}
-[data-lang="ar"] .promo-up{font-family:var(--ard)}
+  .container { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
 
-/* ACHIEVEMENTS */
-.achieve-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.achieve-card{background:var(--bg);border:1px solid var(--line);padding:28px 30px;border-radius:4px;transition:all .3s;position:relative;overflow:hidden}
-.achieve-card::after{content:'';position:absolute;top:0;inset-inline-start:0;width:0;height:3px;background:var(--gold);transition:width .4s}
-.achieve-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.achieve-card:hover::after{width:100%}
-.achieve-metric{font-family:var(--serif);font-size:42px;font-weight:600;color:var(--gold);line-height:1;margin-bottom:8px}
-.achieve-title{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--ink);margin-bottom:8px;line-height:1.3}
-[data-lang="ar"] .achieve-title{font-family:var(--ard)}
-.achieve-desc{font-family:var(--sans);font-size:13px;color:var(--ink-soft);line-height:1.7}
-[data-lang="ar"] .achieve-desc{font-family:var(--ars)}
-.achieve-tag{display:inline-block;margin-top:12px;padding:4px 12px;background:rgba(91,111,74,.1);border-radius:50px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}
-[data-lang="ar"] .achieve-tag{font-family:var(--ard);letter-spacing:.5px;font-size:12px}
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100; padding: 24px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    background: rgba(244, 241, 234, 0.6);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+  }
+  nav.scrolled { border-bottom-color: var(--line); }
+  .nav-logo {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px; font-style: italic;
+    letter-spacing: -0.02em; text-decoration: none; color: var(--ink);
+  }
+  .nav-links {
+    display: flex; gap: 28px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+  body.ar .nav-links {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 13px; letter-spacing: 0;
+    text-transform: none; font-weight: 500;
+  }
+  .nav-links a {
+    color: var(--ink); text-decoration: none;
+    position: relative; padding: 4px 0; transition: color 0.3s;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; left: 0; bottom: 0;
+    width: 100%; height: 1px; background: var(--accent);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s;
+  }
+  body.ar .nav-links a::after { transform-origin: right; }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+  .lang-switch {
+    display: flex; gap: 2px; padding: 4px;
+    border: 1px solid var(--line-strong); border-radius: 100px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em;
+  }
 
-/* EDUCATION / CERTS / COURSES */
-.edu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.edu-card{background:var(--bg);border:1px solid var(--line);padding:32px 28px;transition:all .4s;position:relative;overflow:hidden;cursor:default}
-.edu-card::before{content:'';position:absolute;top:0;inset-inline-start:0;width:4px;height:0;background:var(--gold);transition:height .4s}
-.edu-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--gold)}
-.edu-card:hover::before{height:100%}
-.edu-icon{width:42px;height:42px;margin-bottom:18px;color:var(--accent)}
-.edu-level{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-[data-lang="ar"] .edu-level{font-family:var(--ard);letter-spacing:1px;font-size:13px}
-.edu-degree{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);margin-bottom:6px;line-height:1.3}
-[data-lang="ar"] .edu-degree{font-family:var(--ard)}
-.edu-uni{font-family:var(--sans);font-size:13px;color:var(--accent);font-weight:700;margin-bottom:14px}
-[data-lang="ar"] .edu-uni{font-family:var(--ard)}
-.edu-status{margin-top:16px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--sans);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);font-weight:600;display:flex;align-items:center;gap:8px}
-[data-lang="ar"] .edu-status{font-family:var(--ard);font-size:12px}
-.edu-status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent)}
+  .nav-book {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.12em; font-weight: 500;
+    color: var(--bg); background: var(--accent);
+    text-decoration: none;
+    padding: 9px 18px; border-radius: 100px;
+    margin-left: auto; margin-right: 12px;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    border: 1px solid var(--accent);
+  }
+  body[dir="rtl"] .nav-book { margin-left: 12px; margin-right: auto; }
+  body.ar .nav-book {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 13px; letter-spacing: 0;
+    text-transform: none; font-weight: 700;
+  }
+  .nav-book:hover {
+    background: var(--ink); border-color: var(--ink);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px -6px rgba(200, 69, 29, 0.4);
+  }
+  .nav-book-dot {
+    width: 6px; height: 6px;
+    background: var(--bg); border-radius: 50%;
+    animation: pulse 2s infinite;
+    flex-shrink: 0;
+  }
+  .lang-btn {
+    padding: 6px 14px; border-radius: 100px;
+    background: transparent; border: none;
+    color: var(--ink); cursor: none;
+    transition: all 0.3s ease;
+    font-family: inherit; font-size: inherit; font-weight: 500;
+  }
+  .lang-btn.active { background: var(--ink); color: var(--bg); }
 
-/* CERT CARDS */
-.cert-list{display:flex;flex-direction:column;gap:14px}
-.cert-card{background:var(--bg);border:1px solid var(--line);padding:18px 22px;border-radius:4px;border-inline-start:3px solid var(--gold);display:flex;justify-content:space-between;align-items:center;gap:16px;transition:all .3s}
-.cert-card:hover{background:var(--ink);transform:translateY(-2px)}
-.cert-card:hover .cert-name{color:var(--bg)}
-.cert-card:hover .cert-issuer{color:var(--gold-soft)}
-.cert-card:hover .cert-year{color:var(--gold-soft)}
-.cert-info{flex:1}
-.cert-name{font-family:var(--sans);font-weight:700;color:var(--ink);font-size:14px;line-height:1.4;margin-bottom:4px}
-[data-lang="ar"] .cert-name{font-family:var(--ard)}
-.cert-issuer{font-family:var(--sans);font-size:12px;color:var(--accent);font-weight:600}
-[data-lang="ar"] .cert-issuer{font-family:var(--ard)}
-.cert-year{font-family:var(--serif);font-size:22px;color:var(--gold);font-weight:600;flex-shrink:0}
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; padding: 140px 0 80px;
+  }
+  .hero-meta {
+    display: flex; justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em;
+    color: var(--ink-muted); margin-bottom: 80px;
+  }
+  body.ar .hero-meta {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px; letter-spacing: 0; text-transform: none;
+  }
+  .hero-meta span { display: flex; align-items: center; gap: 8px; }
+  .hero-meta .pulse::before {
+    content: ''; width: 6px; height: 6px;
+    background: var(--accent); border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  .hero-title {
+    font-size: clamp(56px, 11vw, 200px);
+    font-weight: 300; line-height: 0.92;
+    letter-spacing: -0.04em; margin-bottom: 40px;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  body.ar .hero-title {
+    font-family: 'Tajawal', sans-serif; font-weight: 700;
+    letter-spacing: -0.02em; line-height: 1;
+  }
+  .hero-title .italic {
+    font-family: 'Inter', sans-serif;
+    font-style: italic; font-weight: 400;
+  }
+  body.ar .hero-title .italic {
+    font-family: 'Amiri', serif; font-style: italic; font-weight: 700;
+  }
+  .hero-title .line { display: block; overflow: hidden; }
+  .hero-title .line > span {
+    display: inline-block;
+    animation: slideUp 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(var(--i) * 0.15s + 1.5s);
+  }
+  .hero-bottom {
+    display: grid; grid-template-columns: 1.2fr 1fr;
+    gap: 80px; margin-top: 60px; padding-top: 32px;
+    border-top: 1px solid var(--line);
+    animation: fadeIn 1s ease-out 2.5s both;
+  }
+  .hero-description {
+    font-size: 22px; line-height: 1.55;
+    color: var(--ink-soft); max-width: 580px; font-weight: 400;
+  }
+  body.ar .hero-description { font-size: 20px; line-height: 1.8; }
+  .hero-description em {
+    font-family: 'Inter', sans-serif;
+    font-style: italic; color: var(--accent);
+  }
+  body.ar .hero-description em {
+    font-family: 'Amiri', serif; font-weight: 700; color: var(--accent);
+  }
+  .hero-location {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em;
+    color: var(--ink-muted);
+    display: flex; flex-direction: column; gap: 6px; align-self: end;
+  }
+  body.ar .hero-location {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px; letter-spacing: 0; text-transform: none;
+  }
+  .hero-location strong { color: var(--ink); font-weight: 500; }
+  .hero-scroll-hint {
+    position: absolute; bottom: 40px; left: 50%;
+    transform: translateX(-50%);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em;
+    color: var(--ink-muted);
+    animation: fadeIn 1s ease-out 3s both, bounce 2s infinite 3.5s;
+  }
+  body.ar .hero-scroll-hint {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 13px; letter-spacing: 0; text-transform: none;
+  }
 
-/* COURSES */
-.course-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.course-item{background:var(--bg-alt);padding:14px 18px;border-radius:4px;border-inline-start:3px solid rgba(184,137,59,.4);font-family:var(--sans);font-size:14px;color:var(--ink-soft);transition:all .3s}
-[data-lang="ar"] .course-item{font-family:var(--ars)}
-.course-item:hover{background:var(--ink);color:var(--bg);border-inline-start-color:var(--gold);transform:translateY(-2px)}
+  /* MANIFESTO */
+  .manifesto {
+    background: var(--ink); color: var(--bg);
+    padding: 180px 0; position: relative; overflow: hidden;
+  }
+  .manifesto::before {
+    content: '✦'; position: absolute;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    font-size: 600px; color: rgba(200, 69, 29, 0.05);
+    line-height: 1; pointer-events: none; font-family: serif;
+  }
+  .manifesto-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.3em; color: var(--accent);
+    text-align: center; margin-bottom: 48px; position: relative; z-index: 2;
+  }
+  body.ar .manifesto-label {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px; letter-spacing: 0.1em; text-transform: none; font-weight: 500;
+  }
+  .manifesto-text {
+    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500;
+    font-size: clamp(32px, 5vw, 68px);
+    line-height: 1.25; text-align: center;
+    max-width: 1100px; margin: 0 auto;
+    letter-spacing: -0.02em;
+    position: relative; z-index: 2;
+  }
+  body.ar .manifesto-text {
+    font-family: 'Amiri', serif; font-weight: 400; line-height: 1.5;
+  }
+  .manifesto-text .accent { color: var(--accent); font-style: italic; }
+  .manifesto-text .strike { position: relative; opacity: 0.55; }
+  .manifesto-text .strike::after {
+    content: ''; position: absolute;
+    top: 55%; left: -6px; right: -6px; height: 3px;
+    background: var(--accent); transform: rotate(-2deg);
+  }
+  .manifesto-sig {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.2em; color: rgba(244, 241, 234, 0.5);
+    text-align: center; margin-top: 64px; position: relative; z-index: 2;
+  }
+  body.ar .manifesto-sig {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px; letter-spacing: 0; text-transform: none;
+  }
 
-/* SKILLS */
-.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
-.skill-category{background:var(--bg-alt);padding:36px 32px;border-radius:4px;border:1px solid var(--line)}
-.skill-category h3{font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;font-weight:600}
-[data-lang="ar"] .skill-category h3{font-family:var(--ard);font-style:normal}
-.skill-category h3::before{content:'';width:22px;height:22px;background:var(--gold);clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);flex-shrink:0}
-.skill-desc{font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.8;margin-bottom:16px}
-[data-lang="ar"] .skill-desc{font-family:var(--ars)}
-.skill-list{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
-.skill-list li{background:var(--bg);border:1px solid var(--line);padding:8px 16px;border-radius:50px;font-family:var(--sans);font-size:13px;color:var(--ink-soft);transition:all .3s;cursor:default}
-[data-lang="ar"] .skill-list li{font-family:var(--ars);font-size:14px}
-.skill-list li:hover{background:var(--ink);color:var(--bg);border-color:var(--ink);transform:translateY(-2px)}
+  /* MARQUEE */
+  .marquee {
+    background: var(--bg); color: var(--ink);
+    padding: 28px 0; overflow: hidden; white-space: nowrap;
+    border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line);
+  }
+  .marquee-track {
+    display: inline-flex; gap: 60px;
+    animation: scroll 40s linear infinite;
+    font-family: 'Inter', sans-serif;
+    font-style: italic; font-size: 42px;
+  }
+  body.ar .marquee-track {
+    font-family: 'Amiri', serif; font-weight: 400;
+    font-size: 36px; animation-direction: reverse;
+  }
+  .marquee-track span { display: flex; align-items: center; gap: 60px; }
+  .marquee-track span::after {
+    content: '✦'; font-size: 24px;
+    color: var(--accent); font-style: normal;
+  }
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
 
-/* CONTACT */
-.contact{text-align:center;padding:130px 8vw;background:linear-gradient(135deg,var(--ink) 0%,var(--accent-deep) 100%);color:var(--bg);position:relative;overflow:hidden}
-.contact::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23b8893b' stroke-width='0.5' opacity='0.15'%3E%3Cpath d='M50 0L100 50L50 100L0 50Z'/%3E%3Cpath d='M50 25L75 50L50 75L25 50Z'/%3E%3C/g%3E%3C/svg%3E");opacity:.5}
-.contact>*{position:relative;z-index:1}
-.contact h2{font-family:var(--serif);font-size:clamp(36px,5vw,64px);font-weight:500;margin-bottom:24px;letter-spacing:-1px}
-[data-lang="ar"] .contact h2{font-family:var(--ard);font-style:normal;font-weight:600}
-.contact p{font-family:var(--serif);font-size:20px;max-width:650px;margin:0 auto 50px;opacity:.85;line-height:1.7}
-[data-lang="ar"] .contact p{font-family:var(--ars);font-style:normal}
-.contact-links{display:flex;justify-content:center;flex-wrap:wrap;gap:16px}
-.contact-btn{background:transparent;color:var(--bg);border:1px solid var(--gold);padding:16px 30px;border-radius:50px;font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:1.5px;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-flex;align-items:center;gap:10px}
-[data-lang="ar"] .contact-btn{font-family:var(--ard);letter-spacing:1px;font-size:14px}
-.contact-btn:hover{background:var(--gold);color:var(--ink);transform:translateY(-3px)}
+  /* METRICS */
+  .metrics { padding: 140px 0; background: var(--bg); }
+  .metrics-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.3em; color: var(--accent);
+    text-align: center; margin-bottom: 32px;
+  }
+  body.ar .metrics-label {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px; letter-spacing: 0.1em; text-transform: none; font-weight: 500;
+  }
+  .metrics-title {
+    font-size: clamp(40px, 6vw, 96px);
+    font-weight: 300; line-height: 1.05;
+    letter-spacing: -0.03em; text-align: center;
+    margin-bottom: 100px; max-width: 980px;
+    margin-left: auto; margin-right: auto;
+  }
+  body.ar .metrics-title {
+    font-family: 'Tajawal', sans-serif; font-weight: 700; line-height: 1.2;
+  }
+  .metrics-title .italic {
+    font-family: 'Inter', sans-serif;
+    font-style: italic; color: var(--accent);
+  }
+  body.ar .metrics-title .italic {
+    font-family: 'Amiri', serif; font-weight: 700; color: var(--accent);
+  }
+  .metrics-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1px; background: var(--line);
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  }
+  .metric {
+    background: var(--bg); padding: 56px 36px;
+    text-align: center; transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative; overflow: hidden;
+  }
+  .metric::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: var(--accent);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s;
+  }
+  body[dir="rtl"] .metric::before { transform-origin: right; }
+  .metric:hover { background: var(--paper); }
+  .metric:hover::before { transform: scaleX(1); }
+  .metric-number {
+    font-family: 'Inter', sans-serif;
+    font-style: italic; font-size: clamp(64px, 8vw, 120px);
+    line-height: 1; color: var(--ink);
+    letter-spacing: -0.03em; margin-bottom: 16px;
+    display: flex; justify-content: center; align-items: baseline; gap: 4px;
+  }
+  .metric-suffix { font-size: 0.4em; color: var(--accent); font-style: italic; }
+  .metric-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.15em; color: var(--ink-muted);
+    line-height: 1.5;
+  }
+  body.ar .metric-label {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 13px; letter-spacing: 0;
+    text-transform: none; font-weight: 500;
+  }
+  .metrics-grid-2 {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 1px; background: var(--line);
+    border-bottom: 1px solid var(--line);
+  }
 
-/* FOOTER */
-footer.fe{padding:70px 8vw 50px;text-align:center;background:linear-gradient(180deg,var(--ink) 0%,#0d1813 100%);color:var(--bg);position:relative;overflow:hidden}
-footer.fe::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23b8893b' stroke-width='0.4' opacity='0.12'%3E%3Cpath d='M40 0L80 40L40 80L0 40Z'/%3E%3Cpath d='M40 20L60 40L40 60L20 40Z'/%3E%3C/g%3E%3C/svg%3E");opacity:.6;pointer-events:none}
-footer.fe>*{position:relative;z-index:1}
-.fo{width:140px;margin:0 auto 36px;color:var(--gold)}
-.fo svg{width:100%;height:auto}
-.fq{font-family:var(--serif);font-size:clamp(20px,2.5vw,28px);font-weight:500;color:var(--bg);margin-bottom:20px;line-height:1.5}
-[data-lang="ar"] .fq{font-family:var(--ard);font-style:normal}
-.ft{font-family:var(--sans);font-size:12px;color:var(--gold-soft);letter-spacing:4px;margin-bottom:40px;font-weight:600;text-transform:uppercase}
-[data-lang="ar"] .ft{font-family:var(--ard);letter-spacing:1px;font-size:14px}
-.fd{width:60px;height:1px;background:var(--gold);margin:0 auto 30px;opacity:.5}
-.fc{font-family:var(--sans);font-size:12px;color:var(--bg);opacity:.5;letter-spacing:1.5px}
-[data-lang="ar"] .fc{font-family:var(--ard);font-size:13px}
+  /* SECTION */
+  .section { padding: 140px 0; position: relative; }
+  .section-header {
+    display: grid; grid-template-columns: 1fr 3fr;
+    gap: 60px; margin-bottom: 80px;
+    padding-bottom: 40px; border-bottom: 1px solid var(--line);
+  }
+  .section-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.15em; color: var(--ink-muted);
+  }
+  body.ar .section-number {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 13px; letter-spacing: 0;
+    text-transform: none; font-weight: 500;
+  }
+  .section-title {
+    font-size: clamp(40px, 5.5vw, 84px);
+    font-weight: 300; line-height: 1; letter-spacing: -0.03em;
+  }
+  body.ar .section-title {
+    font-family: 'Tajawal', sans-serif; font-weight: 700; line-height: 1.15;
+  }
+  .section-title .italic { font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500; }
+  body.ar .section-title .italic {
+    font-family: 'Amiri', serif; font-style: italic;
+    font-weight: 700; color: var(--accent);
+  }
 
-@keyframes rotate{to{transform:rotate(360deg)}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s}
-.reveal.visible{opacity:1;transform:translateY(0)}
+  /* ABOUT */
+  .about-grid {
+    display: grid; grid-template-columns: 1.1fr 1fr;
+    gap: 80px; align-items: start;
+  }
+  .about-text { font-size: 22px; line-height: 1.65; color: var(--ink-soft); }
+  body.ar .about-text { font-size: 20px; line-height: 1.9; }
+  .about-text p + p { margin-top: 24px; }
+  .about-text em {
+    font-family: 'Inter', sans-serif;
+    font-style: italic; color: var(--accent);
+  }
+  body.ar .about-text em {
+    font-family: 'Amiri', serif; font-weight: 700; color: var(--accent);
+  }
+  .about-identity {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 40px 32px; position: sticky; top: 100px;
+  }
+  .about-identity-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em;
+    color: var(--accent); margin-bottom: 20px;
+  }
+  body.ar .about-identity-label {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 13px; letter-spacing: 0;
+    text-transform: none; font-weight: 700;
+  }
+  .identity-row {
+    padding: 18px 0; border-bottom: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 16px;
+  }
+  .identity-row:last-child { border-bottom: none; }
+  .identity-key {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.15em; color: var(--ink-muted);
+    flex-shrink: 0;
+  }
+  body.ar .identity-key {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 13px; letter-spacing: 0; text-transform: none;
+  }
+  .identity-val {
+    font-family: 'Inter', sans-serif;
+    font-style: italic; font-size: 20px;
+    color: var(--ink); text-align: right;
+  }
+  body.ar .identity-val {
+    font-family: 'Amiri', serif; font-weight: 700; text-align: left;
+  }
+  .identity-val .accent { color: var(--accent); }
 
-@media(max-width:968px){
-  .about-grid,.skills-grid,.achieve-grid,.edu-grid,.course-list{grid-template-columns:1fr;gap:40px}
-  .values-grid{grid-template-columns:1fr}
-  .stats{grid-template-columns:repeat(2,1fr)}
-  .stat:nth-child(2){border-inline-end:none}
-  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid rgba(245,241,232,.1)}
-  nav{display:none}.ornament{display:none}
-  .hero{padding:100px 6vw 60px}section{padding:70px 6vw}
-  .lang-toggle{top:20px;inset-inline-end:20px;padding:10px 18px;font-size:12px}
-}
-@media(max-width:600px){
-  .stats{grid-template-columns:1fr}
-  .stat{border-inline-end:none!important;border-bottom:1px solid rgba(245,241,232,.1)}
-  .hero-meta{gap:20px}.timeline-item{padding-inline-start:50px}
-}
-[data-lang="ar"] .en{display:none}
-[data-lang="en"] .ar{display:none}
+  /* JOURNEY */
+  .journey-section { background: var(--paper); }
+  .journey {
+    max-width: 900px; margin: 0 auto;
+    padding: 20px 0; position: relative;
+  }
+  .journey-row {
+    display: grid; grid-template-columns: 180px 1fr;
+    gap: 64px; padding: 56px 0;
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+  }
+  .journey-year {
+    font-family: 'Inter', sans-serif;
+    font-style: italic; font-size: 88px;
+    line-height: 0.95; color: var(--accent);
+    letter-spacing: -0.03em;
+    align-self: start;
+  }
+  .journey-content h3 {
+    font-size: 28px; font-weight: 400;
+    letter-spacing: -0.02em; line-height: 1.25;
+    margin-bottom: 14px; color: var(--ink);
+  }
+  body.ar .journey-content h3 {
+    font-family: 'Tajawal', sans-serif; font-weight: 700;
+  }
+  .journey-content h3 .italic {
+    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500; color: var(--accent);
+  }
+  body.ar .journey-content h3 .italic {
+    font-family: 'Amiri', serif; font-weight: 700;
+  }
+  .journey-tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.2em; color: var(--accent);
+    margin-bottom: 14px; font-weight: 500;
+    padding: 4px 10px;
+    border: 1px solid var(--accent);
+  }
+  body.ar .journey-tag {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 13px; letter-spacing: 0;
+    text-transform: none; font-weight: 700;
+  }
+  .journey-desc {
+    font-size: 16px; line-height: 1.7;
+    color: var(--ink-soft); max-width: 620px;
+  }
+  body.ar .journey-desc { font-size: 16px; line-height: 1.9; }
+  .journey-desc em {
+    font-family: 'Inter', sans-serif;
+    font-style: italic; color: var(--accent);
+  }
+  body.ar .journey-desc em {
+    font-family: 'Amiri', serif; font-weight: 700; color: var(--accent);
+  }
+
+  /* EXPERIENCE */
+  .experience-item {
+    display: grid; grid-template-columns: 200px 1fr auto;
+    gap: 40px; padding: 56px 0;
+    border-bottom: 1px solid var(--line);
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+  }
+  .experience-item:first-child { border-top: 1px solid var(--line); }
+  .experience-item::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; width: 0; height: 100%;
+    background: var(--paper);
+    transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: -1;
+  }
+  .experience-item:hover::before { width: 100%; }
+  .experience-item:hover { padding-left: 32px; padding-right: 32px; }
+  .exp-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.15em; color: var(--ink-muted); padding-top: 8px;
+  }
+  body.ar .exp-date {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px; letter-spacing: 0;
+    text-transform: none; font-weight: 500;
+  }
+  .exp-content h3 {
+    font-size: 34px; font-weight: 400;
+    letter-spacing: -0.02em; margin-bottom: 8px; line-height: 1.2;
+  }
+  body.ar .exp-content h3 { font-family: 'Tajawal', sans-serif; font-weight: 700; }
+  .exp-content h3 .company {
+    font-family: 'Inter', sans-serif;
+    font-style: italic; color: var(--accent);
+  }
+  body.ar .exp-content h3 .company {
+    font-family: 'Amiri', serif; font-weight: 700; color: var(--accent);
+  }
+  .exp-desc {
+    font-size: 17px; color: var(--ink-soft);
+    line-height: 1.65; margin-top: 16px; max-width: 680px;
+  }
+  body.ar .exp-desc { font-size: 17px; line-height: 1.9; }
+  .exp-desc em {
+    font-family: 'Inter', sans-serif;
+    font-style: italic; color: var(--accent);
+  }
+  body.ar .exp-desc em {
+    font-family: 'Amiri', serif; font-weight: 700; color: var(--accent);
+  }
+  .exp-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .exp-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em;
+    padding: 5px 11px; border: 1px solid var(--line-strong);
+    color: var(--ink-soft); transition: all 0.3s;
+  }
+  body.ar .exp-tag {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 12px; letter-spacing: 0;
+    text-transform: none; font-weight: 500;
+  }
+  .exp-tag:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .exp-arrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px; color: var(--ink-muted);
+    transition: transform 0.4s, color 0.3s; align-self: center;
+  }
+  body[dir="rtl"] .exp-arrow { transform: scaleX(-1); }
+  .experience-item:hover .exp-arrow {
+    transform: translateX(12px); color: var(--accent);
+  }
+  body[dir="rtl"] .experience-item:hover .exp-arrow {
+    transform: translateX(-12px) scaleX(-1);
+  }
+
+  /* CAPSTONE */
+  .capstone-card {
+    background: var(--bg-dark); color: var(--bg);
+    padding: 100px; position: relative; overflow: hidden;
+    border: 1px solid var(--ink);
+  }
+  .capstone-card::before {
+    content: 'HUMEX'; position: absolute;
+    bottom: -60px; right: -60px;
+    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500;
+    font-size: 320px; color: rgba(200, 69, 29, 0.08);
+    line-height: 1; letter-spacing: -0.04em;
+    pointer-events: none; font-weight: 400;
+  }
+  body[dir="rtl"] .capstone-card::before { right: auto; left: -60px; }
+  .capstone-badge-row {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-bottom: 48px; position: relative; z-index: 2;
+  }
+  .capstone-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em;
+    padding: 7px 14px; border: 1px solid rgba(244, 241, 234, 0.25);
+    color: rgba(244, 241, 234, 0.85);
+  }
+  body.ar .capstone-tag {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 12px; letter-spacing: 0;
+    text-transform: none; font-weight: 500;
+  }
+  .capstone-tag-accent {
+    background: var(--accent); border-color: var(--accent);
+    color: var(--bg); font-weight: 500;
+  }
+  .capstone-title {
+    font-size: clamp(72px, 14vw, 220px);
+    font-weight: 300; line-height: 0.92;
+    letter-spacing: -0.05em; margin-bottom: 24px;
+    position: relative; z-index: 2;
+  }
+  body.ar .capstone-title { font-family: 'Tajawal', sans-serif; font-weight: 900; }
+  .capstone-subtitle {
+    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500;
+    font-size: clamp(24px, 2.6vw, 36px);
+    margin-bottom: 56px; opacity: 0.8;
+    max-width: 780px; line-height: 1.4;
+    position: relative; z-index: 2;
+  }
+  body.ar .capstone-subtitle { font-family: 'Amiri', serif; font-weight: 400; }
+  .capstone-subtitle em { color: var(--accent); font-style: italic; }
+  .capstone-body {
+    max-width: 760px; font-size: 18px;
+    line-height: 1.75; opacity: 0.9;
+    margin-bottom: 64px; position: relative; z-index: 2;
+  }
+  body.ar .capstone-body {
+    font-family: 'Tajawal', sans-serif; font-size: 18px; line-height: 1.9;
+  }
+  .capstone-body p + p { margin-top: 20px; }
+  .capstone-body em {
+    font-family: 'Inter', sans-serif;
+    font-style: italic; color: var(--accent);
+  }
+  body.ar .capstone-body em { font-family: 'Amiri', serif; font-weight: 700; }
+  .capstone-meta-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 1px; background: rgba(244, 241, 234, 0.15);
+    border: 1px solid rgba(244, 241, 234, 0.15);
+    position: relative; z-index: 2;
+  }
+  .capstone-meta-item {
+    background: var(--bg-dark); padding: 28px 32px;
+    transition: background 0.3s;
+  }
+  .capstone-meta-item:hover { background: var(--paper-dark); }
+  .capstone-meta-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em;
+    opacity: 0.5; margin-bottom: 10px;
+  }
+  body.ar .capstone-meta-label {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 13px; letter-spacing: 0; text-transform: none;
+  }
+  .capstone-meta-value { font-size: 16px; line-height: 1.5; }
+
+  /* UNIVERSITY PROJECTS */
+  .university-intro {
+    font-size: 20px; line-height: 1.6; color: var(--ink-soft);
+    max-width: 780px; margin-bottom: 64px;
+  }
+  body.ar .university-intro { font-size: 19px; line-height: 1.9; }
+  .university-intro em {
+    font-family: 'Inter', sans-serif;
+    font-style: italic; color: var(--accent);
+  }
+  body.ar .university-intro em { font-family: 'Amiri', serif; font-weight: 700; }
+  .uni-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+  /* UNI CARDS SCROLL PARALLAX */
+  .uni-card {
+    padding: 40px 36px; background: var(--paper);
+    border: 1px solid var(--line);
+    --reveal-y: 70px;
+    --parallax-y: 0px;
+    transform: translateY(var(--reveal-y));
+    opacity: 0;
+    transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                background 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative; overflow: hidden;
+    will-change: transform;
+  }
+  .uni-card.card-visible {
+    opacity: 1;
+    --reveal-y: 0px;
+    transform: translateY(var(--parallax-y));
+  }
+  .uni-card:nth-child(1) { transition-delay: 0s; }
+  .uni-card:nth-child(2) { transition-delay: 0.08s; }
+  .uni-card:nth-child(3) { transition-delay: 0.16s; }
+  .uni-card:nth-child(4) { transition-delay: 0.24s; }
+  .uni-card:nth-child(5) { transition-delay: 0.32s; }
+
+
+  .uni-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; width: 3px; height: 100%;
+    background: var(--accent);
+    transform: scaleY(0); transform-origin: top;
+    transition: transform 0.4s ease;
+  }
+  body[dir="rtl"] .uni-card::before { left: auto; right: 0; }
+  .uni-card:hover::before { transform: scaleY(1); }
+  .uni-card:hover {
+    background: var(--bg);
+    box-shadow: 0 30px 50px -20px rgba(26, 24, 21, 0.18);
+  }
+  .uni-header {
+    display: flex; justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em;
+    color: var(--ink-muted); margin-bottom: 24px;
+    padding-bottom: 18px; border-bottom: 1px solid var(--line);
+  }
+  body.ar .uni-header {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 13px; letter-spacing: 0;
+    text-transform: none; font-weight: 500;
+  }
+  .uni-course { color: var(--accent); font-weight: 600; }
+  .uni-title {
+    font-size: 26px; font-weight: 400;
+    letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 8px;
+  }
+  body.ar .uni-title { font-family: 'Tajawal', sans-serif; font-weight: 700; }
+  .uni-title .italic {
+    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500; color: var(--ink-muted);
+  }
+  body.ar .uni-title .italic { font-family: 'Amiri', serif; font-weight: 400; }
+  .uni-course-name {
+    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500;
+    font-size: 15px; color: var(--ink-muted); margin-bottom: 18px;
+  }
+  body.ar .uni-course-name { font-family: 'Amiri', serif; font-size: 16px; }
+  .uni-desc {
+    font-size: 15px; line-height: 1.65;
+    color: var(--ink-soft); margin-bottom: 22px;
+  }
+  body.ar .uni-desc { line-height: 1.9; }
+  .uni-desc em {
+    font-family: 'Inter', sans-serif;
+    font-style: italic; color: var(--accent);
+  }
+  body.ar .uni-desc em { font-family: 'Amiri', serif; font-weight: 700; }
+  .uni-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .uni-tags .exp-tag { padding: 4px 10px; font-size: 9px; }
+  body.ar .uni-tags .exp-tag { font-size: 11px; }
+
+  /* HACKATHONS */
+  .hackathons-list { display: flex; flex-direction: column; }
+  .hack-item {
+    display: grid; grid-template-columns: 160px 1fr;
+    gap: 48px; padding: 56px 0;
+    border-bottom: 1px solid var(--line);
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+  }
+  .hack-item:first-child { border-top: 1px solid var(--line); }
+  .hack-item::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; width: 0; height: 100%;
+    background: var(--paper);
+    transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: -1;
+  }
+  .hack-item:hover::before { width: 100%; }
+  .hack-item:hover { padding-left: 32px; padding-right: 32px; }
+  .hack-year {
+    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500;
+    font-size: 72px; line-height: 1;
+    color: var(--accent); letter-spacing: -0.02em;
+  }
+  .hack-result { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+  .hack-medal { font-size: 22px; }
+  .hack-place {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.15em; color: var(--accent); font-weight: 500;
+  }
+  body.ar .hack-place {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px; letter-spacing: 0;
+    text-transform: none; font-weight: 700;
+  }
+  .hack-name {
+    font-size: 30px; font-weight: 400;
+    letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 14px;
+  }
+  body.ar .hack-name { font-family: 'Tajawal', sans-serif; font-weight: 700; }
+  .hack-name .italic {
+    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500; color: var(--ink-muted);
+  }
+  body.ar .hack-name .italic { font-family: 'Amiri', serif; }
+  .hack-desc {
+    font-size: 17px; color: var(--ink-soft);
+    line-height: 1.65; max-width: 720px; margin-bottom: 20px;
+  }
+  body.ar .hack-desc { line-height: 1.9; }
+  .hack-desc em {
+    font-family: 'Inter', sans-serif;
+    font-style: italic; color: var(--accent);
+  }
+  body.ar .hack-desc em { font-family: 'Amiri', serif; font-weight: 700; }
+  .hack-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  /* ARSENAL */
+  .arsenal-intro {
+    text-align: center; max-width: 720px;
+    margin: -20px auto 80px;
+    font-family: 'Inter', sans-serif;
+    font-style: italic; font-size: 24px;
+    color: var(--ink-soft); line-height: 1.5;
+  }
+  body.ar .arsenal-intro {
+    font-family: 'Amiri', serif; font-size: 22px; line-height: 1.8;
+  }
+  .arsenal-intro .accent { color: var(--accent); }
+
+  .arsenal {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px; position: relative;
+  }
+  .arsenal-column {
+    background: var(--ink); color: var(--bg);
+    padding: 48px 40px 44px;
+    position: relative; overflow: hidden;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .arsenal-column:hover { transform: translateY(-8px); }
+  .arsenal-column::before {
+    content: ''; position: absolute;
+    top: 0; right: 0;
+    width: 120px; height: 120px;
+    background: radial-gradient(circle at top right, rgba(200, 69, 29, 0.35) 0%, transparent 65%);
+    opacity: 0; transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+  .arsenal-column:hover::before { opacity: 1; }
+  .arsenal-column::after {
+    content: attr(data-index);
+    position: absolute;
+    bottom: -40px; right: -20px;
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-size: 280px; line-height: 1;
+    color: rgba(244, 241, 234, 0.04);
+    letter-spacing: -0.05em;
+    pointer-events: none;
+    transition: color 0.5s ease, transform 0.6s ease;
+  }
+  body[dir="rtl"] .arsenal-column::after { right: auto; left: -20px; }
+  .arsenal-column:hover::after {
+    color: rgba(200, 69, 29, 0.12);
+    transform: scale(1.08);
+  }
+  .arsenal-header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding-bottom: 20px; margin-bottom: 28px;
+    border-bottom: 1px solid rgba(244, 241, 234, 0.15);
+    position: relative; z-index: 2;
+  }
+  .arsenal-kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; text-transform: uppercase;
+    letter-spacing: 0.3em; color: var(--accent);
+    margin-bottom: 12px; font-weight: 500;
+  }
+  body.ar .arsenal-kicker {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 12px; letter-spacing: 0.1em;
+    text-transform: none; font-weight: 700;
+  }
+  .arsenal-title {
+    font-family: 'Inter', sans-serif;
+    font-style: italic; font-size: 36px;
+    line-height: 1.05; letter-spacing: -0.02em;
+    color: var(--bg);
+  }
+  body.ar .arsenal-title {
+    font-family: 'Amiri', serif; font-weight: 700;
+    font-size: 32px;
+  }
+  .arsenal-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: rgba(244, 241, 234, 0.4);
+    letter-spacing: 0.15em; text-align: right;
+    padding-top: 6px; flex-shrink: 0;
+  }
+  body[dir="rtl"] .arsenal-count { text-align: left; }
+  .arsenal-list {
+    list-style: none; position: relative; z-index: 2;
+  }
+  .arsenal-list li {
+    padding: 16px 0;
+    display: grid; grid-template-columns: 28px 1fr auto;
+    gap: 14px; align-items: center;
+    border-bottom: 1px solid rgba(244, 241, 234, 0.08);
+    color: rgba(244, 241, 234, 0.85);
+    font-size: 15px;
+    position: relative;
+    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  body.ar .arsenal-list li {
+    font-family: 'Tajawal', sans-serif; font-size: 16px;
+  }
+  .arsenal-list li:last-child { border-bottom: none; }
+  .arsenal-list li:hover { color: var(--bg); padding-left: 10px; }
+  body[dir="rtl"] .arsenal-list li:hover { padding-left: 0; padding-right: 10px; }
+  .arsenal-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: var(--accent);
+    letter-spacing: 0.1em; font-weight: 500;
+    opacity: 0.6; transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .arsenal-list li:hover .arsenal-num { opacity: 1; transform: scale(1.15); }
+  .arsenal-skill {
+    font-family: 'Inter', sans-serif; font-weight: 400;
+    letter-spacing: -0.005em;
+  }
+  body.ar .arsenal-skill { font-family: 'Tajawal', sans-serif; font-weight: 500; }
+  .arsenal-level { display: flex; gap: 3px; align-items: center; flex-shrink: 0; }
+  .arsenal-bar {
+    width: 18px; height: 4px;
+    background: rgba(244, 241, 234, 0.12);
+    border-radius: 1px; transition: background 0.4s ease;
+  }
+  .arsenal-bar.filled { background: rgba(244, 241, 234, 0.4); }
+  .arsenal-list li:hover .arsenal-bar.filled { background: var(--accent); }
+  .arsenal-list li:hover .arsenal-bar { background: rgba(200, 69, 29, 0.2); }
+  .arsenal-footer {
+    margin-top: 28px; padding-top: 20px;
+    border-top: 1px solid rgba(244, 241, 234, 0.15);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(244, 241, 234, 0.35);
+    display: flex; justify-content: space-between; align-items: center;
+    position: relative; z-index: 2;
+  }
+  body.ar .arsenal-footer {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 12px; letter-spacing: 0; text-transform: none;
+  }
+  .arsenal-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent); animation: pulse 2s infinite;
+  }
+
+  /* CERTIFICATIONS */
+  .cert-tier-label {
+    text-align: center; margin-bottom: 40px; padding-top: 20px;
+  }
+  .cert-tier-label-2 {
+    margin-top: 100px; padding-top: 60px;
+    border-top: 1px solid var(--line);
+  }
+  .cert-tier-kicker {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.3em; color: var(--accent);
+    padding: 6px 16px; border: 1px solid var(--accent);
+    margin-bottom: 20px; font-weight: 500;
+  }
+  body.ar .cert-tier-kicker {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 13px; letter-spacing: 0.05em;
+    text-transform: none; font-weight: 700;
+  }
+  .cert-tier-title {
+    font-size: clamp(28px, 3.5vw, 48px);
+    font-weight: 300; line-height: 1.1;
+    letter-spacing: -0.02em; margin-bottom: 14px;
+  }
+  body.ar .cert-tier-title {
+    font-family: 'Tajawal', sans-serif; font-weight: 700; line-height: 1.3;
+  }
+  .cert-tier-title .italic {
+    font-family: 'Inter', sans-serif;
+    font-style: italic; color: var(--accent);
+  }
+  body.ar .cert-tier-title .italic {
+    font-family: 'Amiri', serif; font-weight: 700; color: var(--accent);
+  }
+  .cert-tier-desc {
+    font-family: 'Inter', sans-serif;
+    font-style: italic; font-size: 18px; color: var(--ink-muted);
+  }
+  body.ar .cert-tier-desc { font-family: 'Amiri', serif; font-size: 18px; }
+
+  .certs-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+  .certs-grid-pro {
+    margin-bottom: 20px;
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .cert-card {
+    padding: 36px 32px; background: var(--paper);
+    border: 1px solid var(--line);
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative; overflow: hidden;
+  }
+  .cert-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: var(--accent);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  body[dir="rtl"] .cert-card::before { transform-origin: right; }
+  .cert-card:hover::before { transform: scaleX(1); }
+  .cert-card:hover {
+    transform: translateY(-6px); background: var(--bg);
+    box-shadow: 0 20px 40px -15px rgba(26, 24, 21, 0.18);
+  }
+  .cert-card-pro {
+    background: var(--ink); color: var(--bg);
+    border-color: var(--ink); padding: 44px 36px 40px;
+  }
+  .cert-card-pro::before { background: var(--gold); }
+  .cert-card-pro::after {
+    content: ''; position: absolute;
+    top: 0; right: 0;
+    width: 120px; height: 120px;
+    background: radial-gradient(circle at top right, rgba(184, 147, 77, 0.25) 0%, transparent 65%);
+    opacity: 0; transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+  .cert-card-pro:hover { background: var(--bg-dark); }
+  .cert-card-pro:hover::after { opacity: 1; }
+  .cert-badge {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 0.25em;
+    padding: 4px 10px;
+    background: var(--gold); color: var(--ink); margin-bottom: 20px;
+  }
+  body.ar .cert-badge {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 12px; letter-spacing: 0.05em; font-weight: 700;
+  }
+  .cert-card-pro .cert-issuer { color: var(--gold); }
+  .cert-card-pro .cert-name { color: var(--bg); }
+  .cert-card-pro .cert-name .italic { color: var(--bg); }
+  .cert-card-pro .cert-date {
+    color: rgba(244, 241, 234, 0.5);
+    border-top-color: rgba(244, 241, 234, 0.15);
+  }
+  .cert-issuer {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.15em; color: var(--accent);
+    margin-bottom: 14px; font-weight: 500;
+  }
+  body.ar .cert-issuer {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 13px; letter-spacing: 0;
+    text-transform: none; font-weight: 700;
+  }
+  .cert-name {
+    font-size: 22px; font-weight: 400; line-height: 1.3;
+    letter-spacing: -0.01em; margin-bottom: 20px;
+  }
+  body.ar .cert-name { font-family: 'Tajawal', sans-serif; font-weight: 700; }
+  .cert-name .italic { font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500; }
+  body.ar .cert-name .italic { font-family: 'Amiri', serif; }
+  .cert-date {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--ink-muted); padding-top: 16px;
+    border-top: 1px solid var(--line);
+  }
+  body.ar .cert-date { font-family: 'Tajawal', sans-serif; font-size: 13px; }
+
+  /* RECOGNITION */
+  .press-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+  .press-card {
+    padding: 40px 32px; background: var(--paper);
+    border: 1px solid var(--line);
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative; overflow: hidden;
+  }
+  .press-card::after {
+    content: '✦'; position: absolute;
+    top: 20px; right: 24px; font-size: 24px; color: var(--accent);
+    transition: transform 0.4s, opacity 0.4s; opacity: 0.4;
+  }
+  body[dir="rtl"] .press-card::after { right: auto; left: 24px; }
+  .press-card:hover {
+    transform: translateY(-6px); background: var(--bg);
+    box-shadow: 0 30px 50px -20px rgba(26, 24, 21, 0.18);
+    border-color: var(--accent);
+  }
+  .press-card:hover::after { transform: rotate(90deg) scale(1.2); opacity: 1; }
+  .press-source {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.2em; color: var(--accent);
+    margin-bottom: 24px; font-weight: 500;
+  }
+  body.ar .press-source {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 13px; letter-spacing: 0;
+    text-transform: none; font-weight: 700;
+  }
+  .press-quote {
+    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500;
+    font-size: 22px; line-height: 1.4;
+    color: var(--ink); margin-bottom: 24px; letter-spacing: -0.01em;
+  }
+  body.ar .press-quote {
+    font-family: 'Amiri', serif; font-size: 22px;
+    line-height: 1.6; font-weight: 400;
+  }
+  .press-quote .accent { color: var(--accent); }
+  .press-detail {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--ink-muted);
+    padding-top: 16px; border-top: 1px solid var(--line);
+  }
+  body.ar .press-detail { font-family: 'Tajawal', sans-serif; font-size: 13px; }
+
+  /* REQUEST */
+  .request-intro {
+    font-size: 20px; line-height: 1.65; color: var(--ink-soft);
+    max-width: 760px; margin-bottom: 56px;
+  }
+  body.ar .request-intro { font-size: 19px; line-height: 1.9; }
+  .request-intro em {
+    font-family: 'Inter', sans-serif;
+    font-style: italic; color: var(--accent);
+  }
+  body.ar .request-intro em { font-family: 'Amiri', serif; font-weight: 700; }
+  .request-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+  }
+  .request-card {
+    display: block; padding: 40px 36px;
+    background: var(--paper); border: 1px solid var(--line);
+    text-decoration: none; color: inherit;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative; overflow: hidden; cursor: none;
+  }
+  .request-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--ink);
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+    z-index: 0;
+  }
+  .request-card:hover::before { transform: translateY(0); }
+  .request-card:hover { color: var(--bg); border-color: var(--ink); }
+  .request-card > * { position: relative; z-index: 1; }
+  .request-meta {
+    display: flex; justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.15em; margin-bottom: 28px;
+    color: var(--ink-muted); transition: color 0.4s;
+  }
+  .request-card:hover .request-meta { color: rgba(244, 241, 234, 0.5); }
+  body.ar .request-meta {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 12px; letter-spacing: 0;
+    text-transform: none; font-weight: 500;
+  }
+  .request-type { color: var(--accent); font-weight: 500; }
+  .request-title {
+    font-size: 26px; font-weight: 400;
+    letter-spacing: -0.02em; line-height: 1.2;
+    margin-bottom: 12px; transition: color 0.4s;
+  }
+  body.ar .request-title { font-family: 'Tajawal', sans-serif; font-weight: 700; }
+  .request-title .italic {
+    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500; opacity: 0.7;
+  }
+  body.ar .request-title .italic { font-family: 'Amiri', serif; }
+  .request-desc {
+    font-size: 15px; line-height: 1.6;
+    color: var(--ink-soft); margin-bottom: 32px; transition: color 0.4s;
+  }
+  .request-card:hover .request-desc { color: rgba(244, 241, 234, 0.8); }
+  body.ar .request-desc { font-size: 16px; line-height: 1.85; }
+  .request-cta {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 20px; border-top: 1px solid var(--line); transition: border-color 0.4s;
+  }
+  .request-card:hover .request-cta { border-color: rgba(244, 241, 234, 0.25); }
+  .request-cta-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.15em; color: var(--accent);
+    font-weight: 500; transition: letter-spacing 0.3s;
+  }
+  body.ar .request-cta-text {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 13px; letter-spacing: 0;
+    text-transform: none; font-weight: 700;
+  }
+  .request-card:hover .request-cta-text { letter-spacing: 0.25em; }
+  body.ar .request-card:hover .request-cta-text { letter-spacing: 0.08em; }
+  .request-arrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px; color: var(--accent); transition: transform 0.4s;
+  }
+  body[dir="rtl"] .request-arrow { transform: scaleX(-1); }
+  .request-card:hover .request-arrow { transform: translateX(8px); }
+  body[dir="rtl"] .request-card:hover .request-arrow { transform: translateX(-8px) scaleX(-1); }
+
+  /* CONTACT */
+  .contact {
+    padding: 180px 0 120px; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .contact::before {
+    content: ''; position: absolute;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(200, 69, 29, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .contact-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em;
+    color: var(--ink-muted); margin-bottom: 32px; position: relative; z-index: 2;
+  }
+  body.ar .contact-label {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px; letter-spacing: 0; text-transform: none; font-weight: 500;
+  }
+  .contact-title {
+    font-size: clamp(56px, 10vw, 160px);
+    font-weight: 300; line-height: 1;
+    letter-spacing: -0.04em; margin-bottom: 60px; position: relative; z-index: 2;
+  }
+  body.ar .contact-title {
+    font-family: 'Tajawal', sans-serif; font-weight: 700; line-height: 1.15;
+  }
+  .contact-title .italic {
+    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500; color: var(--accent);
+  }
+  body.ar .contact-title .italic { font-family: 'Amiri', serif; font-weight: 700; }
+  .contact-email {
+    display: inline-block; font-size: 32px;
+    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500;
+    color: var(--ink); text-decoration: none;
+    padding: 20px 48px; border: 1px solid var(--ink);
+    border-radius: 100px;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    margin-bottom: 60px; position: relative; z-index: 2;
+  }
+  .contact-email:hover {
+    background: var(--ink); color: var(--bg); letter-spacing: 0.02em;
+  }
+  .contact-links {
+    display: flex; justify-content: center;
+    flex-wrap: wrap; gap: 40px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em;
+    position: relative; z-index: 2;
+  }
+  body.ar .contact-links {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px; letter-spacing: 0; text-transform: none; font-weight: 500;
+  }
+  .contact-links a {
+    color: var(--ink-soft); text-decoration: none;
+    position: relative; padding-bottom: 4px; transition: color 0.3s;
+  }
+  .contact-links a::after {
+    content: ''; position: absolute;
+    left: 0; bottom: 0; width: 100%; height: 1px;
+    background: var(--accent); transform: scaleX(0);
+    transform-origin: left; transition: transform 0.3s;
+  }
+  .contact-links a:hover { color: var(--accent); }
+  .contact-links a:hover::after { transform: scaleX(1); }
+
+  footer {
+    padding: 48px 40px; border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between;
+    flex-wrap: wrap; gap: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em;
+    color: var(--ink-muted);
+  }
+  body.ar footer {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 13px; letter-spacing: 0; text-transform: none;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideUp {
+    from { transform: translateY(110%); }
+    to { transform: translateY(0); }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  .reveal {
+    opacity: 0; transform: translateY(50px);
+    transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .container { padding: 0 22px; }
+    nav { padding: 14px 22px; }
+    body { cursor: auto; }
+    .nav-book { font-size: 9px; padding: 7px 12px; gap: 6px; margin-right: 8px; letter-spacing: 0.1em; }
+    body.ar .nav-book { font-size: 11px; }
+    body[dir="rtl"] .nav-book { margin-left: 8px; margin-right: auto; }
+    .nav-book-dot { width: 5px; height: 5px; }
+    .nav-links {
+      position: fixed; top: 60px; left: 0; right: 0;
+      background: rgba(244, 241, 234, 0.98);
+      backdrop-filter: blur(20px);
+      flex-direction: column; padding: 32px 24px; gap: 0;
+      border-bottom: 1px solid var(--line);
+      transform: translateY(-120%);
+      transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+      max-height: calc(100vh - 60px); overflow-y: auto;
+      box-shadow: 0 20px 40px -10px rgba(26, 24, 21, 0.15);
+    }
+    .nav-links.open { transform: translateY(0); display: flex; }
+    .nav-links a { padding: 16px 0; border-bottom: 1px solid var(--line); font-size: 16px; letter-spacing: 0.05em; }
+    body.ar .nav-links a { font-size: 17px; letter-spacing: 0; }
+    .nav-links a:last-child { border-bottom: none; }
+    .nav-toggle {
+      display: flex; flex-direction: column; gap: 5px;
+      background: transparent; border: none; cursor: pointer; padding: 10px; margin-right: 8px;
+    }
+    body[dir="rtl"] .nav-toggle { margin-right: 0; margin-left: 8px; }
+    .nav-toggle span { width: 22px; height: 1.5px; background: var(--ink); transition: all 0.3s ease; }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .hero { padding: 130px 0 80px; min-height: 95vh; }
+    .hero-meta { flex-direction: column; gap: 8px; align-items: flex-start; margin-bottom: 60px; font-size: 9px; }
+    body.ar .hero-meta { font-size: 12px; }
+    .hero-title { font-size: clamp(56px, 17vw, 100px); line-height: 0.95; margin-bottom: 36px; }
+    .hero-bottom { grid-template-columns: 1fr; gap: 36px; padding-top: 24px; }
+    .hero-description { font-size: 18px; line-height: 1.6; }
+    body.ar .hero-description { font-size: 18px; line-height: 1.85; }
+    .hero-location { align-self: start; gap: 4px; }
+    .hero-scroll-hint { display: none; }
+    .manifesto { padding: 100px 0; }
+    .manifesto::before { font-size: 280px; }
+    .manifesto-text { font-size: clamp(28px, 6.5vw, 42px); line-height: 1.3; padding: 0 4px; }
+    body.ar .manifesto-text { font-size: clamp(26px, 6vw, 38px); line-height: 1.55; }
+    .manifesto-sig { margin-top: 48px; }
+    .marquee { padding: 22px 0; }
+    .marquee-track { font-size: 30px; gap: 40px; }
+    body.ar .marquee-track { font-size: 24px; }
+    .metrics { padding: 90px 0; }
+    .metrics-title { font-size: clamp(36px, 8.5vw, 56px); margin-bottom: 56px; }
+    body.ar .metrics-title { font-size: clamp(32px, 7.5vw, 48px); line-height: 1.25; }
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+    .metrics-grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .metric { padding: 36px 14px; }
+    .metric-number { font-size: clamp(56px, 14vw, 84px); margin-bottom: 12px; }
+    .metric-label { font-size: 9px; letter-spacing: 0.12em; line-height: 1.4; }
+    body.ar .metric-label { font-size: 11px; line-height: 1.5; }
+    .section { padding: 90px 0; }
+    .section-header { grid-template-columns: 1fr; gap: 16px; margin-bottom: 50px; padding-bottom: 28px; }
+    .section-title { font-size: clamp(36px, 9vw, 56px); line-height: 1.05; }
+    body.ar .section-title { font-size: clamp(32px, 8vw, 48px); line-height: 1.25; }
+    .about-grid { grid-template-columns: 1fr; gap: 36px; }
+    .about-text { font-size: 18px; line-height: 1.7; }
+    body.ar .about-text { font-size: 17px; line-height: 1.95; }
+    .about-identity { position: relative; top: 0; padding: 32px 26px; }
+    .identity-row { flex-wrap: wrap; padding: 14px 0; }
+    .identity-key { font-size: 9px; }
+    body.ar .identity-key { font-size: 12px; }
+    .identity-val { font-size: 17px; }
+    .journey-row { grid-template-columns: 1fr; gap: 14px; padding: 40px 0; }
+    .journey-year { font-size: 80px; margin-bottom: 4px; }
+    .journey-content h3 { font-size: 22px; line-height: 1.3; }
+    .journey-tag { font-size: 9px; padding: 3px 8px; }
+    body.ar .journey-tag { font-size: 11px; }
+    .experience-item { grid-template-columns: 1fr; gap: 12px; padding: 40px 0; }
+    .experience-item:hover { padding-left: 0; padding-right: 0; }
+    .exp-arrow { display: none; }
+    .exp-date { padding-top: 0; font-size: 10px; }
+    body.ar .exp-date { font-size: 13px; }
+    .exp-content h3 { font-size: 24px; line-height: 1.25; }
+    body.ar .exp-content h3 { font-size: 24px; line-height: 1.4; }
+    .exp-desc { font-size: 16px; line-height: 1.7; }
+    body.ar .exp-desc { font-size: 16px; line-height: 1.95; }
+    .capstone-card { padding: 56px 26px; }
+    .capstone-meta-grid { grid-template-columns: 1fr; }
+    .capstone-meta-item { padding: 22px 24px; }
+    .capstone-card::before { font-size: 160px; bottom: -40px; right: -40px; }
+    .capstone-title { font-size: clamp(64px, 18vw, 110px); line-height: 0.95; margin-bottom: 18px; }
+    .capstone-subtitle { font-size: clamp(20px, 5vw, 26px); line-height: 1.4; margin-bottom: 40px; }
+    body.ar .capstone-subtitle { font-size: clamp(20px, 4.8vw, 26px); line-height: 1.6; }
+    .capstone-body { font-size: 16px; line-height: 1.75; margin-bottom: 48px; }
+    body.ar .capstone-body { font-size: 16px; line-height: 1.95; }
+    .capstone-badge-row { gap: 6px; margin-bottom: 36px; }
+    .capstone-tag { font-size: 9px; padding: 6px 10px; }
+    body.ar .capstone-tag { font-size: 11px; }
+    .uni-grid { grid-template-columns: 1fr; gap: 18px; }
+    .uni-card { padding: 32px 26px; }
+    .uni-title { font-size: 22px; line-height: 1.25; }
+    body.ar .uni-title { font-size: 22px; line-height: 1.4; }
+    .university-intro { font-size: 17px; line-height: 1.7; margin-bottom: 44px; }
+    body.ar .university-intro { font-size: 17px; line-height: 1.95; }
+    .hack-item { grid-template-columns: 1fr; gap: 14px; padding: 44px 0; }
+    .hack-item:hover { padding-left: 0; padding-right: 0; }
+    .hack-year { font-size: 64px; line-height: 1; }
+    .hack-name { font-size: 22px; line-height: 1.25; }
+    body.ar .hack-name { font-size: 22px; line-height: 1.4; }
+    .hack-desc { font-size: 15px; line-height: 1.7; }
+    body.ar .hack-desc { font-size: 15px; line-height: 1.95; }
+    .arsenal { grid-template-columns: 1fr; gap: 18px; }
+    .arsenal-intro { font-size: 18px; line-height: 1.55; margin: -8px auto 48px; }
+    body.ar .arsenal-intro { font-size: 18px; line-height: 1.85; }
+    .arsenal-column { padding: 36px 28px 32px; }
+    .arsenal-title { font-size: 28px; line-height: 1.1; }
+    body.ar .arsenal-title { font-size: 26px; line-height: 1.3; }
+    .arsenal-column::after { font-size: 180px; bottom: -28px; }
+    .arsenal-list li { grid-template-columns: 24px 1fr auto; gap: 10px; padding: 14px 0; font-size: 14px; }
+    body.ar .arsenal-list li { font-size: 15px; }
+    .arsenal-bar { width: 14px; height: 3px; }
+    .cert-tier-label { margin-bottom: 32px; padding-top: 14px; }
+    .cert-tier-label-2 { margin-top: 70px; padding-top: 50px; }
+    .cert-tier-title { font-size: clamp(26px, 6.5vw, 36px); }
+    body.ar .cert-tier-title { font-size: clamp(24px, 6vw, 32px); }
+    .cert-tier-desc { font-size: 16px; }
+    .certs-grid { grid-template-columns: 1fr; gap: 16px; }
+    .certs-grid-pro { grid-template-columns: 1fr !important; }
+    .cert-card { padding: 32px 26px; }
+    .cert-card-pro { padding: 36px 26px; }
+    .cert-name { font-size: 20px; line-height: 1.3; }
+    body.ar .cert-name { font-size: 20px; line-height: 1.45; }
+    .press-grid { grid-template-columns: 1fr; gap: 16px; }
+    .press-card { padding: 32px 26px; }
+    .press-quote { font-size: 19px; line-height: 1.4; }
+    body.ar .press-quote { font-size: 19px; line-height: 1.55; }
+    .request-grid { grid-template-columns: 1fr; gap: 16px; }
+    .request-card { padding: 32px 26px; }
+    .request-intro { font-size: 17px; line-height: 1.7; margin-bottom: 40px; }
+    body.ar .request-intro { font-size: 17px; line-height: 1.95; }
+    .request-title { font-size: 22px; line-height: 1.25; }
+    body.ar .request-title { font-size: 22px; line-height: 1.4; }
+    .request-desc { font-size: 14px; line-height: 1.65; }
+    body.ar .request-desc { font-size: 15px; line-height: 1.85; }
+    .contact { padding: 120px 0 90px; }
+    .contact::before { width: 400px; height: 400px; }
+    .contact-title { font-size: clamp(48px, 13vw, 80px); line-height: 0.98; margin-bottom: 44px; }
+    body.ar .contact-title { font-size: clamp(42px, 11vw, 72px); line-height: 1.2; }
+    .contact-email { font-size: 16px; padding: 16px 28px; letter-spacing: -0.005em; word-break: break-all; }
+    body.ar .contact-email { font-size: 17px; }
+    .contact-links { gap: 18px 28px; flex-direction: row; flex-wrap: wrap; justify-content: center; }
+    footer { padding: 32px 22px; flex-direction: column; text-align: center; gap: 10px; }
+  }
+
+  @media (min-width: 901px) { .nav-toggle { display: none; } }
+
+  @media (max-width: 380px) {
+    .container { padding: 0 18px; }
+    .hero-title { font-size: clamp(48px, 16vw, 80px); }
+    .metrics-grid { grid-template-columns: 1fr; }
+    .metric { padding: 32px 18px; }
+    .metric-number { font-size: 72px; }
+    .capstone-card { padding: 44px 20px; }
+    .capstone-card::before { font-size: 120px; }
+  }
 </style>
 </head>
-<body>
+<body class="en">
 
-<button class="lang-toggle" onclick="toggleLang()">
-  <span class="ar">English</span><span class="en">العربية</span>
-</button>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
 
-<nav>
-  <a href="#about"><span class="ar">عني</span><span class="en">About</span></a>
-  <a href="#experience"><span class="ar">الخبرة</span><span class="en">Experience</span></a>
-  <a href="#achievements"><span class="ar">الإنجازات</span><span class="en">Achievements</span></a>
-  <a href="#education"><span class="ar">التعليم</span><span class="en">Education</span></a>
-  <a href="#skills"><span class="ar">المهارات</span><span class="en">Skills</span></a>
-  <a href="#contact"><span class="ar">تواصل</span><span class="en">Contact</span></a>
+<div id="mobile-warning" style="display:none;position:fixed;inset:0;background:#0f0e0c;z-index:99999;align-items:center;justify-content:center;text-align:center;padding:40px;font-family:'Inter',sans-serif;">
+  <div style="max-width:320px;">
+    <div style="font-size:48px;margin-bottom:24px;">🖥️</div>
+    <p style="color:#e8e4dc;font-size:18px;line-height:1.6;margin-bottom:8px;">This portfolio is designed for desktop.</p>
+    <p style="color:#6b6560;font-size:14px;line-height:1.7;">For the best experience, open it on a computer using a web browser like Chrome or Safari.</p>
+    <p style="color:#6b6560;font-size:13px;margin-top:20px;direction:rtl;">هذا الملف مُصمَّم للحاسوب — افتحه من متصفّح ويب على الكمبيوتر للحصول على أفضل تجربة.</p>
+  </div>
+</div>
+<div class="loader" id="loader">
+  <div class="loader-quote" data-en='"I don&apos;t build products. I build clarity."' data-ar="«أنا لا أبني منتجات. أبني وضوحاً.»">"I don't build products. I build clarity."</div>
+  <div class="loader-text" data-en="Abdulmalek." data-ar="عبدالملك."><span>Abdulmalek.</span></div>
+  <div class="loader-bar"></div>
+  <div class="loader-count" id="loader-count">00</div>
+</div>
+
+<div class="scroll-progress" id="scroll-progress"></div>
+
+<nav id="nav">
+  <a href="#" class="nav-logo">A.A</a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="#manifesto" data-en="Manifesto" data-ar="الرؤية">Manifesto</a>
+    <a href="#metrics" data-en="Numbers" data-ar="الأرقام">Numbers</a>
+    <a href="#about" data-en="About" data-ar="عن">About</a>
+    <a href="#journey" data-en="Journey" data-ar="المسيرة">Journey</a>
+    <a href="#experience" data-en="Work" data-ar="العمل">Work</a>
+    <a href="#capstone" data-en="Capstone" data-ar="التخرج">Capstone</a>
+    <a href="#projects" data-en="Projects" data-ar="المشاريع">Projects</a>
+    <a href="#recognition" data-en="Recognition" data-ar="التقدير">Recognition</a>
+    <a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a>
+  </div>
+  <a href="https://calendar.app.google/KYRBsKQYZcfU3mPaA" target="_blank" rel="noopener" class="nav-book">
+    <span class="nav-book-dot"></span>
+    <span data-en="Book Meeting" data-ar="احجز اجتماعاً">Book Meeting</span>
+  </a>
+  <div class="lang-switch">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="ar">ع</button>
+  </div>
 </nav>
 
-<!-- ═══ HERO ═══ -->
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-eyebrow">
-    <span class="en">Business Development and Strategic Partnerships</span>
-    <span class="ar">تطوير الأعمال والشراكات الاستراتيجية</span>
-  </div>
-  <h1>
-    <span class="en">Abdulmohsin Alharthi</span>
-    <span class="ar">عبدالمحسن الحارثي</span>
-  </h1>
-  <div class="hero-title">
-    <span class="en">Business Development and Partnerships Leader</span>
-    <span class="ar">قائد تطوير الأعمال والشراكات الاستراتيجية</span>
-  </div>
-  <div class="hero-tagline">
-    <span class="en">From concept to execution — building national-scale ecosystems aligned with Vision 2030 priorities.</span>
-    <span class="ar">من الفكرة إلى التنفيذ — بناء منظومات أعمال وطنية متوافقة مع أولويات رؤية 2030.</span>
-  </div>
-  <div class="hero-meta">
-    <div class="meta-item">
-      <span class="meta-label"><span class="en">Specialty</span><span class="ar">التخصص</span></span>
-      <span class="meta-value"><span class="en">Business Dev · Partnerships</span><span class="ar">تطوير الأعمال · الشراكات</span></span>
+  <div class="container">
+    <div class="hero-meta">
+      <span class="pulse" data-en="Available for opportunities — 2026" data-ar="مُتاحٌ للفرص — ٢٠٢٦">Available for opportunities — 2026</span>
+      <span data-en="Portfolio / vol.03" data-ar="بورتفوليو / إصدار ٣">Portfolio / vol.03</span>
     </div>
-    <div class="meta-item">
-      <span class="meta-label"><span class="en">Sector</span><span class="ar">القطاع</span></span>
-      <span class="meta-value"><span class="en">Government</span><span class="ar">حكومي</span></span>
+    <h1 class="hero-title">
+      <span class="line"><span style="--i:0" data-en="Abdulmalek" data-ar="عبدالملك">Abdulmalek</span></span>
+      <span class="line"><span style="--i:1" data-en="&lt;em class='italic'&gt;Alghamdi&lt;/em&gt;" data-ar="&lt;em class='italic'&gt;الغامدي&lt;/em&gt;"><em class="italic">Alghamdi</em></span></span>
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-description" data-en="CS &amp; Engineering graduate, Top 10% of Class 2026. Former IT Business Analyst Intern at Channels by stc — open to new opportunities." data-ar="خرّيج علوم وهندسة الحاسب، ضمن أعلى ١٠٪ من دفعة ٢٠٢٦. متدرّب سابق كمحلّل أعمال في قنوات stc — مستعدٌّ لفرص جديدة.">CS &amp; Engineering graduate, Top 10% of Class 2026. Former IT Business Analyst Intern at Channels by stc — open to new opportunities.</p>
+      <div class="hero-location">
+        <span data-en="Based in" data-ar="مُقيمٌ في">Based in</span>
+        <strong data-en="Saudi Arabia" data-ar="المملكة العربيّة السّعوديّة">Saudi Arabia</strong>
+        <span style="margin-top: 12px;" data-en="Open to" data-ar="مستعدٌّ لـ">Open to</span>
+        <strong data-en="Opportunities" data-ar="فرص جديدة">Opportunities</strong>
+      </div>
     </div>
-    <div class="meta-item">
-      <span class="meta-label"><span class="en">Location</span><span class="ar">الموقع</span></span>
-      <span class="meta-value"><span class="en">Riyadh, Saudi Arabia</span><span class="ar">الرياض، المملكة العربية السعودية</span></span>
-    </div>
-    <div class="meta-item">
-      <span class="meta-label"><span class="en">Mobile</span><span class="ar">الجوال</span></span>
-      <span class="meta-value">+966 56 350 4555</span>
-    </div>
-  </div>
-  <div class="ornament">
-    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" stroke="#5b6f4a" stroke-width="0.8">
-        <circle cx="100" cy="100" r="90"/><circle cx="100" cy="100" r="70"/><circle cx="100" cy="100" r="50"/>
-        <path d="M100 10 L115 50 L160 50 L125 80 L140 125 L100 100 L60 125 L75 80 L40 50 L85 50 Z"/>
-        <path d="M100 30 L110 65 L145 65 L118 88 L128 123 L100 105 L72 123 L82 88 L55 65 L90 65 Z" transform="rotate(36 100 100)"/>
-        <path d="M100 50 L107 75 L132 75 L113 91 L120 116 L100 102 L80 116 L87 91 L68 75 L93 75 Z" transform="rotate(72 100 100)"/>
-      </g>
-    </svg>
+    <div class="hero-scroll-hint" data-en="Scroll to witness ↓" data-ar="اسحب لترى ↓">Scroll to witness ↓</div>
   </div>
 </section>
 
-<!-- ═══ ABOUT ═══ -->
-<section class="about" id="about">
-  <div class="section-header reveal">
-    <span class="section-num">01</span>
-    <h2 class="section-title"><span class="en">Executive Summary</span><span class="ar">الملخص التنفيذي</span></h2>
-    <span class="section-line"></span>
+<!-- MANIFESTO -->
+<section class="manifesto" id="manifesto">
+  <div class="container">
+    <div class="manifesto-label" data-en="The Manifesto" data-ar="البيان">The Manifesto</div>
+    <div class="manifesto-text" data-en="I don&apos;t build <span class='strike'>products</span>. I build <span class='accent'>clarity</span>. <br>Everything else is just <span class='accent'>the follow-through</span>." data-ar="لا أبني <span class='strike'>المنتجات</span>. بل أبني <span class='accent'>الوضوح</span>. <br>وما سوى ذلك، مُجرّد <span class='accent'>تنفيذٍ للخطّة</span>.">I don't build <span class="strike">products</span>. I build <span class="accent">clarity</span>. <br>Everything else is just <span class="accent">the follow-through</span>.</div>
+    <div class="manifesto-sig" data-en="— Abdulmalek Alghamdi, 2026" data-ar="— عبدالملك الغامدي، ٢٠٢٦">— Abdulmalek Alghamdi, 2026</div>
   </div>
-  <div class="about-grid">
-    <div class="about-text reveal">
-      <p class="en">Strategic Business Development and Partnerships leader with 6+ years driving high-impact initiatives across Saudi government entities. Proven ability to lead cross-functional teams, design large-scale ecosystem programs, and align multi-stakeholder objectives with national priorities, including Vision 2030.</p>
-      <p class="en">Experienced in developing regulatory frameworks, launching transformative initiatives, and overseeing complex projects from concept to execution. PMP® certified with an academic background in Risk Management and Insurance.</p>
-      <p class="ar">قائد استراتيجي في تطوير الأعمال والشراكات، يمتلك أكثر من 6 سنوات من الخبرة في قيادة مبادرات عالية الأثر داخل الجهات الحكومية السعودية. قدرة مثبتة على قيادة فرق متعددة التخصصات، وتصميم برامج منظومية واسعة النطاق، ومواءمة أهداف متعددي الأطراف مع الأولويات الوطنية بما فيها رؤية 2030.</p>
-      <p class="ar">خبرة في بناء الأطر التنظيمية، وإطلاق المبادرات التحويلية، والإشراف على المشاريع المعقدة من الفكرة حتى التنفيذ. حاصل على شهادة PMP® مع خلفية أكاديمية في إدارة المخاطر والتأمين.</p>
+</section>
+
+<!-- METRICS -->
+<section class="metrics reveal" id="metrics">
+  <div class="container">
+    <div class="metrics-label" data-en="By The Numbers" data-ar="بلغة الأرقام">By The Numbers</div>
+    <h2 class="metrics-title" data-en="Four years. &lt;span class='italic'&gt;One path.&lt;/span&gt; No shortcuts." data-ar="أربع سنوات. &lt;span class='italic'&gt;طريقٌ واحد.&lt;/span&gt; بلا اختصارات.">Four years. <span class="italic">One path.</span> No shortcuts.</h2>
+    <div class="metrics-grid">
+      <div class="metric">
+        <div class="metric-number"><span class="metric-suffix" style="font-size: 0.5em; margin-right: 8px;" data-en="TOP" data-ar="">TOP</span><span class="count" data-target="3">0</span></div>
+        <div class="metric-label" data-en="Top of Graduates" data-ar="ضمن أعلى الخرّيجين">Top of Graduates</div>
+      </div>
+      <div class="metric">
+        <div class="metric-number"><span class="count" data-target="8">0</span><span class="metric-suffix">+</span></div>
+        <div class="metric-label" data-en="Projects Led as Team Leader" data-ar="مشروعاً قدتُها قائداً للفريق">Projects Led as Team Leader</div>
+      </div>
+      <div class="metric">
+        <div class="metric-number"><span class="count" data-target="4">0</span></div>
+        <div class="metric-label" data-en="Hackathons Conquered" data-ar="هاكاثوناتٌ خضتُها">Hackathons Conquered</div>
+      </div>
+      <div class="metric">
+        <div class="metric-number"><span class="count" data-target="3">0</span></div>
+        <div class="metric-label" data-en="Professional Certifications" data-ar="شهادات احترافية معتمدة">Professional Certifications</div>
+      </div>
     </div>
-    <div class="quote-block reveal">
-      <p class="quote-text">
-        <span class="en">Building ecosystems that outlast the initiative — sustainable growth through strategic alignment.</span>
-        <span class="ar">بناء منظومات تتجاوز عمر المبادرة — نمو مستدام عبر المواءمة الاستراتيجية.</span>
-      </p>
-      <p class="quote-source"><span class="en">— Working Philosophy</span><span class="ar">— الفلسفة المهنية</span></p>
-    </div>
-  </div>
-  <div class="values-grid">
-    <div class="value-card reveal">
-      <h3 class="value-name"><span class="en">Strategic Vision</span><span class="ar">الرؤية الاستراتيجية</span></h3>
-      <p class="value-desc"><span class="en">Translating national priorities into scalable, high-value initiatives with measurable cross-sector impact.</span><span class="ar">تحويل الأولويات الوطنية إلى مبادرات قابلة للتوسع وعالية القيمة ذات أثر قابل للقياس.</span></p>
-    </div>
-    <div class="value-card reveal">
-      <h3 class="value-name"><span class="en">Partnership Intelligence</span><span class="ar">ذكاء الشراكات</span></h3>
-      <p class="value-desc"><span class="en">Building and sustaining high-impact relationships across government, private, and non-profit sectors.</span><span class="ar">بناء علاقات عالية الأثر واستدامتها عبر القطاعات الحكومية والخاصة وغير الربحية.</span></p>
-    </div>
-    <div class="value-card reveal">
-      <h3 class="value-name"><span class="en">Execution Excellence</span><span class="ar">التميز في التنفيذ</span></h3>
-      <p class="value-desc"><span class="en">Overseeing complex projects from concept to completion with adaptive, results-oriented leadership.</span><span class="ar">الإشراف على المشاريع المعقدة من الفكرة حتى الإنجاز بقيادة مرنة وموجهة نحو النتائج.</span></p>
+    <div class="metrics-grid-2">
+      <div class="metric">
+        <div class="metric-number"><span class="count" data-target="6">0</span></div>
+        <div class="metric-label" data-en="Months as Analyst at stc" data-ar="أشهرٌ مُحلِّلاً في stc">Months as Analyst at stc</div>
+      </div>
+      <div class="metric">
+        <div class="metric-number">∞</div>
+        <div class="metric-label" data-en="Problems Worth Solving" data-ar="مشكلاتٌ تستحقّ الحلّ">Problems Worth Solving</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<section style="padding:0 8vw 100px;position:relative;z-index:1">
-  <div class="stats reveal">
-    <div class="stat"><div class="stat-number">6+</div><div class="stat-label"><span class="en">Years Experience</span><span class="ar">سنوات خبرة</span></div></div>
-    <div class="stat"><div class="stat-number">19</div><div class="stat-label"><span class="en">Business Offices Established</span><span class="ar">مكتب أعمال أسّسه</span></div></div>
-    <div class="stat"><div class="stat-number">100+</div><div class="stat-label"><span class="en">Regulations Reviewed</span><span class="ar">لائحة راجعها</span></div></div>
-    <div class="stat"><div class="stat-number">3</div><div class="stat-label"><span class="en">Vision 2030 Initiatives</span><span class="ar">مبادرات برؤية 2030</span></div></div>
+<div class="marquee">
+  <div class="marquee-track">
+    <span data-en="Systems Analysis" data-ar="تحليل الأنظمة">Systems Analysis</span>
+    <span data-en="Business Requirements" data-ar="متطلبات الأعمال">Business Requirements</span>
+    <span data-en="Product Thinking" data-ar="تفكير منتجي">Product Thinking</span>
+    <span data-en="Process Modeling" data-ar="نمذجة العمليات">Process Modeling</span>
+    <span data-en="Digital Transformation" data-ar="التحول الرقمي">Digital Transformation</span>
+    <span data-en="Systems Analysis" data-ar="تحليل الأنظمة">Systems Analysis</span>
+    <span data-en="Business Requirements" data-ar="متطلبات الأعمال">Business Requirements</span>
+    <span data-en="Product Thinking" data-ar="تفكير منتجي">Product Thinking</span>
+    <span data-en="Process Modeling" data-ar="نمذجة العمليات">Process Modeling</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section reveal" id="about">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number" data-en="01 / About" data-ar="٠١ / عن">01 / About</div>
+      <h2 class="section-title" data-en="A bridge between &lt;span class='italic'&gt;business&lt;/span&gt; &amp; &lt;span class='italic'&gt;engineering&lt;/span&gt;." data-ar="جسرٌ بين &lt;span class='italic'&gt;الأعمال&lt;/span&gt; و&lt;span class='italic'&gt;الهندسة&lt;/span&gt;.">A bridge between <span class="italic">business</span> &amp; <span class="italic">engineering</span>.</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text" data-en="<p>I'm a <em>Computer Science &amp; Engineering</em> graduate from the University of Hafr Al-Batin — Top 10%, Class of 2026. My path was never pure code.</p><p>I found my edge in the <em>in-between</em> — sitting with stakeholders, mapping their intent, and handing engineers a blueprint they can build from. At <em>stc</em> I shaped digital channel requirements across 10K+ users. At <em>Al-Rakeen</em> I led digital product delivery. Now at <em>T2</em>, shipping Ru'a — a real estate platform.</p><p>Professionally certified in <em>CAPM</em> and Udacity's <em>AI Product Manager</em> Nanodegree. I write user stories, draw BPMN diagrams, argue with SQL, lead six-person teams, and ship things that matter — all in a day's work.</p>" data-ar="<p>خرّيج <em>علوم وهندسة الحاسب</em> من جامعة حفر الباطن — ضمن <em>أعلى ١٠٪</em>، دفعة ٢٠٢٦. لم يكن طريقي برمجةً صرفة في يوم من الأيّام.</p><p>وجدتُ موطئ قدمي في <em>المنطقة الوسطى</em> — أجلس مع أصحاب القرار، وأترجم نيّاتهم إلى خرائط عمل، ثمّ أسلّم المهندسين مُخطّطاً جاهزاً للبناء. في <em>stc</em> صغتُ متطلّبات القنوات الرّقميّة ودعمتُ أكثر من ١٠ آلاف مستخدم. وفي <em>الرّكين</em> قدتُ تسليم المنتج الرّقميّ. الآن في <em>T2</em>، أبني منصّة رؤى للعقارات.</p><p>معتمدٌ احترافيّاً في <em>CAPM</em>، وخرّيج برنامج <em>AI Product Manager</em> من Udacity. أكتب قصص المستخدم، وأرسم مخطّطات BPMN، وأتحاور مع قواعد البيانات، وأقود فرقاً من ستّة أعضاء، وأُسلّم ما له قيمة — كلّ ذلك في يوم عمل واحد.</p>">
+        <p>I'm a <em>Computer Science &amp; Engineering</em> graduate from the University of Hafr Al-Batin — Top 10%, Class of 2026. My path was never pure code.</p>
+        <p>I found my edge in the <em>in-between</em> — sitting with stakeholders, mapping their intent, and handing engineers a blueprint they can build from. At <em>stc</em> I shaped digital channel requirements and supported 10K+ users. At <em>Al-Rakeen</em> I led a website build team and turned digital concepts into shipped products.</p>
+        <p>Professionally certified in <em>CAPM</em> and Udacity's <em>AI Product Manager</em> Nanodegree. I write user stories, draw BPMN diagrams, argue with SQL, lead six-person teams, and ship things that matter — all in a day's work.</p>
+      </div>
+      <div class="about-identity">
+        <div class="about-identity-label" data-en="Identity" data-ar="الهوية">Identity</div>
+        <div class="identity-row">
+          <span class="identity-key" data-en="Name" data-ar="الاسم">Name</span>
+          <span class="identity-val" data-en="Abdulmalek Alghamdi" data-ar="عبدالملك الغامدي">Abdulmalek Alghamdi</span>
+        </div>
+        <div class="identity-row">
+          <span class="identity-key" data-en="Role" data-ar="الدور">Role</span>
+          <span class="identity-val"><span class="accent" data-en="The Analyst" data-ar="المُحلِّل">The Analyst</span></span>
+        </div>
+        <div class="identity-row">
+          <span class="identity-key" data-en="Degree" data-ar="الشهادة">Degree</span>
+          <span class="identity-val" data-en="B.Sc. CS&amp;E" data-ar="بكالوريوس علوم وهندسة حاسب">B.Sc. CS&amp;E</span>
+        </div>
+        <div class="identity-row">
+          <span class="identity-key" data-en="Graduating" data-ar="التخرج">Graduating</span>
+          <span class="identity-val">2026</span>
+        </div>
+        <div class="identity-row">
+          <span class="identity-key" data-en="Rank" data-ar="المرتبة">Rank</span>
+          <span class="identity-val"><span class="accent" data-en="Top 10% Graduate" data-ar="أعلى ١٠٪">Top 10% Graduate</span></span>
+        </div>
+        <div class="identity-row">
+          <span class="identity-key" data-en="Licensed" data-ar="مرخّص">Licensed</span>
+          <span class="identity-val" style="font-size: 16px;">SCE #1009232</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ═══ EXPERIENCE ═══ -->
-<section class="experience" id="experience">
-  <div class="section-header reveal">
-    <span class="section-num">02</span>
-    <h2 class="section-title"><span class="en">Work Experience</span><span class="ar">الخبرة العملية</span></h2>
-    <span class="section-line"></span>
+<!-- JOURNEY -->
+<section class="section journey-section reveal" id="journey">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number" data-en="02 / The Journey" data-ar="٠٢ / المسيرة">02 / The Journey</div>
+      <h2 class="section-title" data-en="From first line of &lt;span class='italic'&gt;code&lt;/span&gt; to final &lt;span class='italic'&gt;capstone&lt;/span&gt;." data-ar="من أوّل سطرٍ في &lt;span class='italic'&gt;الكود&lt;/span&gt; إلى آخر &lt;span class='italic'&gt;مشروع تخرّج&lt;/span&gt;.">From first line of <span class="italic">code</span> to final <span class="italic">capstone</span>.</h2>
+    </div>
+    <div class="journey">
+      <div class="journey-row">
+        <div class="journey-year">2023</div>
+        <div class="journey-content">
+          <div class="journey-tag" data-en="The Beginning" data-ar="البداية">The Beginning</div>
+          <h3 data-en="First &lt;span class='italic'&gt;Hackathon&lt;/span&gt; · Python · OOP" data-ar="أول &lt;span class='italic'&gt;هاكاثون&lt;/span&gt; · بايثون · OOP">First <span class="italic">Hackathon</span> · Python · OOP</h3>
+          <p class="journey-desc" data-en="Entered the 3rd Programming Hackathon at Hafr Al-Batin. Led three course projects — Student Attendance (Python), Inventory System (Java/OOP), Route Optimizer (Graphs). Found my love for building systems, not just writing code." data-ar="دخلتُ هاكاثون البرمجة الثّالث بجامعة حفر الباطن. قدتُ ثلاثة مشاريع جامعيّة — نظام حضور الطّلّاب (بايثون)، ونظام إدارة المخزون (جافا / كائنيّة التّوجّه)، ومُحسِّن المسارات (الرّسوم البيانيّة). اكتشفتُ هنا شغفي ببناء الأنظمة، لا مُجرّد كتابة الكود.">Entered the 3rd Programming Hackathon at Hafr Al-Batin. Led three course projects — Student Attendance (Python), Inventory System (Java/OOP), Route Optimizer (Graphs). Found my love for building systems, not just writing code.</p>
+        </div>
+      </div>
+      <div class="journey-row">
+        <div class="journey-year">2024</div>
+        <div class="journey-content">
+          <div class="journey-tag" data-en="The Ascent" data-ar="الصّعود">The Ascent</div>
+          <h3 data-en="&lt;span class='italic'&gt;2nd Place&lt;/span&gt; CyberThon · Tuwaiq Finalist" data-ar="&lt;span class='italic'&gt;المركز الثاني&lt;/span&gt; في سايبرثون · نهائيات طويق"><span class="italic">2nd Place</span> CyberThon · Tuwaiq Finalist</h3>
+          <p class="journey-desc" data-en="Won 2nd place at CyberThon with a phishing detection platform. Reached Absher Tuwaiq finals with RASHID, a GPT-powered smart gate. Trained by SDAIA, Huawei Cloud, and NCA/SITE/KAUST cybersecurity programs. Three major course projects: E-Library, Campus Network, Clinic Management System." data-ar="حصدتُ <em>المركز الثّاني</em> في سايبرثون بمنصّةٍ تكشف روابط التّصيّد. وصلتُ إلى نهائيّات أبشر طويق بمشروع <em>رشيد</em> — بوّابة ذكيّة مدعومة بـ GPT. تدرّبتُ عبر برامج سدايا، وهواوي كلاود، والهيئة الوطنيّة / سايت / كاوست للأمن السّيبرانيّ. وقدتُ ثلاثة مشاريع جامعيّة كبرى: المكتبة الإلكترونيّة، والشّبكة الجامعيّة، ونظام إدارة العيادة.">Won 2nd place at CyberThon with a phishing detection platform. Reached Absher Tuwaiq finals with RASHID, a GPT-powered smart gate. Trained by SDAIA, Huawei Cloud, and NCA/SITE/KAUST cybersecurity programs. Three major course projects: E-Library, Campus Network, Clinic Management System.</p>
+        </div>
+      </div>
+      <div class="journey-row">
+        <div class="journey-year">2025</div>
+        <div class="journey-content">
+          <div class="journey-tag" data-en="The Pivot" data-ar="نقطةُ التّحوّل">The Pivot</div>
+          <h3 data-en="stc Co-op · AOUN AI · &lt;span class='italic'&gt;RAG Research&lt;/span&gt;" data-ar="تدريب stc · عون AI · &lt;span class='italic'&gt;بحث RAG&lt;/span&gt;">stc Co-op · AOUN AI · <span class="italic">RAG Research</span></h3>
+          <p class="journey-desc" data-en="Seven months at Channels by stc as IT Business Analyst — supporting 10K+ users across critical systems. The year I stopped writing code and started writing blueprints. Co-built AOUN AI, qualifying to Stage 2 of the Channels hackathon. Led a 6-member research team analyzing landmark Retrieval-Augmented Generation papers. Earned Udacity's AI Product Manager Nanodegree." data-ar="سبعة أشهرٍ في قنوات stc كمحلّل أعمال تقنيّة المعلومات — دعمتُ خلالها أكثر من ١٠ آلاف مستخدم عبر أنظمةٍ حيويّة. كانت السّنة الّتي توقّفتُ فيها عن كتابة الكود، وبدأتُ أكتب المُخطّطات. ساهمتُ في بناء <em>عون AI</em>، الّذي تأهّل للمرحلة الثّانية من هاكاثون القنوات. قدتُ فريقاً بحثيّاً من ستّة أعضاء لتحليل أوراقٍ بحثيّة محوريّة في التّوليد المُعزَّز بالاسترجاع. حصلتُ على شهادة <em>AI Product Manager</em> الاحترافيّة من Udacity.">Seven months at Channels by stc as IT Business Analyst — supporting 10K+ users across critical systems. The year I stopped writing code and started writing blueprints. Co-built AOUN AI, qualifying to Stage 2 of the Channels hackathon. Led a 6-member research team analyzing landmark Retrieval-Augmented Generation papers. Earned Udacity's AI Product Manager Nanodegree.</p>
+        </div>
+      </div>
+      <div class="journey-row">
+        <div class="journey-year">2026</div>
+        <div class="journey-content">
+          <div class="journey-tag" data-en="The Climax" data-ar="الذّروة">The Climax</div>
+          <h3 data-en="HumeX Capstone · Al-Rakeen · &lt;span class='italic'&gt;Graduation&lt;/span&gt;" data-ar="تخرج HumeX · الركين · &lt;span class='italic'&gt;التخرج&lt;/span&gt;">HumeX Capstone · Al-Rakeen · <span class="italic">Graduation</span></h3>
+          <p class="journey-desc" data-en="Graduated Top 10% — leading HumeX as 6-person capstone team leader. Led digital delivery at Al-Rakeen. Earned CAPM. Associate Product Manager at T2 for 3 months." data-ar="تخرّجتُ ضمن أعلى ١٠٪ — قدتُ مشروع <em>HumeX</em> فريقاً من ستّة. أشرفتُ على تسليم الموقع في <em>الرّكين</em>. حصلتُ على شهادة <em>CAPM</em>. عملتُ مديراً مساعداً للمنتج في T2 لمدّة ٣ أشهر.">Graduated Top 10% — leading HumeX as 6-person capstone team leader. Led digital delivery at Al-Rakeen. Earned CAPM. Associate Product Manager at T2 for 3 months.</p>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="timeline">
+</section>
 
-    <!-- Broker Care -->
-    <div class="timeline-item reveal">
-      <div class="timeline-dot"></div>
-      <div class="timeline-period"><span class="en">May 2019 – Sep 2019</span><span class="ar">مايو 2019 – سبتمبر 2019</span></div>
-      <h3 class="timeline-role"><span class="en">Insurance Underwriting Intern</span><span class="ar">مكتتب التأمين العام</span></h3>
-      <p class="timeline-org"><span class="en">Broker Care Company · Riyadh</span><span class="ar">شركة بروكر كير · الرياض</span></p>
-      <ul class="timeline-list">
-        <li><span class="en">Researched insurance policies and negotiated terms and costs with providers.</span><span class="ar">البحث في وثائق التأمين والتفاوض على الشروط والتكاليف مع مزودي التأمين.</span></li>
-        <li><span class="en">Arranged tailored insurance coverage for clients and advised on risk management opportunities.</span><span class="ar">ترتيب تغطية تأمينية مخصصة للعملاء وتقديم المشورة بشأن فرص إدارة المخاطر.</span></li>
-        <li><span class="en">Supported client onboarding procedures.</span><span class="ar">دعم إجراءات استقبال العملاء الجدد.</span></li>
-      </ul>
+<!-- CAPSTONE -->
+<section class="section reveal" id="capstone">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number" data-en="03 / Capstone" data-ar="٠٣ / مشروع التخرج">03 / Capstone</div>
+      <h2 class="section-title" data-en="The &lt;span class='italic'&gt;graduation&lt;/span&gt; project." data-ar="مشروع &lt;span class='italic'&gt;التّخرّج&lt;/span&gt;.">The <span class="italic">graduation</span> project.</h2>
     </div>
-
-    <!-- GEA -->
-    <div class="timeline-item reveal">
-      <div class="timeline-dot"></div>
-      <div class="timeline-period"><span class="en">Sep 2019 – Jan 2020</span><span class="ar">سبتمبر 2019 – يناير 2020</span></div>
-      <h3 class="timeline-role"><span class="en">Protocol Team Leader</span><span class="ar">قائد فريق البروتوكول</span></h3>
-      <p class="timeline-org"><span class="en">General Entertainment Authority · Riyadh</span><span class="ar">الهيئة العامة للترفيه · الرياض</span></p>
-      <ul class="timeline-list">
-        <li><span class="en">Managed the Special Events and Protocol team ensuring successful delivery of high-profile events.</span><span class="ar">إدارة فريق الفعاليات الخاصة والبروتوكول وضمان التنفيذ الناجح للفعاليات البارزة.</span></li>
-        <li><span class="en">Developed Special Events strategy and tracked progress against strategic priorities.</span><span class="ar">تطوير استراتيجية الفعاليات الخاصة ومتابعة التقدم مقابل الأولويات الاستراتيجية.</span></li>
-        <li><span class="en">Advised on diplomatic protocol for official visits; hosted best-practice workshops.</span><span class="ar">تقديم المشورة بشأن البروتوكول الدبلوماسي للزيارات الرسمية وإقامة ورش عمل للممارسات المثلى.</span></li>
-      </ul>
+    <div class="capstone-card">
+      <div class="capstone-badge-row">
+        <span class="capstone-tag" data-en="Senior Capstone" data-ar="مشروع التخرج">Senior Capstone</span>
+        <span class="capstone-tag">2026</span>
+        <span class="capstone-tag capstone-tag-accent" data-en="★ Team Leader" data-ar="★ قائد الفريق">★ Team Leader</span>
+      </div>
+      <h3 class="capstone-title">HUMEX</h3>
+      <p class="capstone-subtitle" data-en="An AI occupancy measurement system for &lt;em&gt;smart campuses&lt;/em&gt; and facility management." data-ar="نظام ذكي لقياس الإشغال بالرؤية الحاسوبية للـ&lt;em&gt;حرم الجامعي الذكي&lt;/em&gt; وإدارة المرافق.">An AI occupancy measurement system for <em>smart campuses</em> and facility management.</p>
+      <div class="capstone-body" data-en="&lt;p&gt;HUMEX is a computer-vision platform that turns ordinary surveillance cameras into &lt;em&gt;real-time occupancy sensors&lt;/em&gt;. Instead of recording footage that no one watches, the system detects people, tracks movement, and surfaces density signals the moment they matter.&lt;/p&gt;&lt;p&gt;I led the end-to-end design: system analysis, requirements definition, architecture, and the interactive dashboard. The pipeline runs on &lt;em&gt;YOLOv8&lt;/em&gt; for detection, a tracking layer for movement continuity, and a React + Streamlit front-end that lets facility managers see what's happening — not just what happened.&lt;/p&gt;" data-ar="&lt;p&gt;HUMEX منصّةُ رؤيةٍ حاسوبيّة تُحوّل كاميرات المراقبة الاعتياديّة إلى &lt;em&gt;مُستشعرات إشغالٍ لحظيّة&lt;/em&gt;. فبدلاً من أن تُسجّل الكاميرا مشاهد لا يُطالعها أحد، يكتشف النّظام الأشخاص، ويتتبّع حركتهم، ويرفع مؤشّرات الكثافة في لحظتها.&lt;/p&gt;&lt;p&gt;قدتُ التّصميم من أوّله إلى آخره: تحليل النّظام، وتحديد المتطلّبات، والعمارة البرمجيّة، ولوحة التّحكّم التّفاعليّة. تعتمد المنظومة على &lt;em&gt;YOLOv8&lt;/em&gt; للاكتشاف، وطبقة تتبّعٍ لاستمراريّة الحركة، وواجهة React و Streamlit تمنح مُدراء المرافق رؤيةً لحظيّة.&lt;/p&gt;">
+        <p>HUMEX is a computer-vision platform that turns ordinary surveillance cameras into <em>real-time occupancy sensors</em>. Instead of recording footage that no one watches, the system detects people, tracks movement, and surfaces density signals the moment they matter.</p>
+        <p>I led the end-to-end design: system analysis, requirements definition, architecture, and the interactive dashboard. The pipeline runs on <em>YOLOv8</em> for detection, a tracking layer for movement continuity, and a React + Streamlit front-end that lets facility managers see what's happening — not just what happened.</p>
+      </div>
+      <div class="capstone-meta-grid">
+        <div class="capstone-meta-item">
+          <div class="capstone-meta-label" data-en="My Role" data-ar="دوري">My Role</div>
+          <div class="capstone-meta-value" data-en="Team Leader · Systems Analyst · Architect" data-ar="قائد فريق · محلل أنظمة · مهندس معماري">Team Leader · Systems Analyst · Architect</div>
+        </div>
+        <div class="capstone-meta-item">
+          <div class="capstone-meta-label" data-en="Team Size" data-ar="حجم الفريق">Team Size</div>
+          <div class="capstone-meta-value" data-en="6 Members" data-ar="٦ أعضاء">6 Members</div>
+        </div>
+        <div class="capstone-meta-item">
+          <div class="capstone-meta-label" data-en="Stack" data-ar="التقنيات">Stack</div>
+          <div class="capstone-meta-value">YOLOv8 · Python · OpenCV · React · Streamlit · AWS RDS</div>
+        </div>
+        <div class="capstone-meta-item">
+          <div class="capstone-meta-label" data-en="Domain" data-ar="المجال">Domain</div>
+          <div class="capstone-meta-value" data-en="Computer Vision · IoT · Smart Buildings" data-ar="رؤية حاسوبية · إنترنت الأشياء · مبانٍ ذكية">Computer Vision · IoT · Smart Buildings</div>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
 
-    <!-- MONSHAAT — promo ladder -->
-    <div class="timeline-item reveal">
-      <div class="timeline-dot"></div>
-      <div class="timeline-period"><span class="en">Oct 2020 – Oct 2024 · 4 yrs 1 mo</span><span class="ar">أكتوبر 2020 – أكتوبر 2024 · 4 سنوات</span></div>
-      <div class="timeline-company-name"><span class="en">Monsha'at (SMEA) · Riyadh</span><span class="ar">منشآت (الهيئة العامة للمنشآت الصغيرة والمتوسطة) · الرياض</span></div>
-      <div class="promo-ladder">
-        <div class="promo-rung">
-          <div class="promo-left"><div class="promo-circle"></div><div class="promo-vert-line"></div></div>
-          <div class="promo-right">
-            <div class="promo-role"><span class="en">Business Development Intern</span><span class="ar">متدرب تطوير أعمال</span></div>
-            <div class="promo-dates"><span class="en">Oct 2020 – May 2021 · 8 mos</span><span class="ar">أكتوبر 2020 – مايو 2021 · 8 أشهر</span></div>
+<!-- EXPERIENCE -->
+<section class="section reveal" id="experience">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number" data-en="04 / Experience" data-ar="٠٤ / الخبرات">04 / Experience</div>
+      <h2 class="section-title" data-en="Where I've &lt;span class='italic'&gt;worked&lt;/span&gt;." data-ar="أين &lt;span class='italic'&gt;عملت&lt;/span&gt;.">Where I've <span class="italic">worked</span>.</h2>
+    </div>
+    <div class="experience-list">
+      <div class="experience-item">
+        <div class="exp-date" data-en="Apr — Jun 2026 · 3 mos" data-ar="أبريل — يونيو ٢٠٢٦ · ٣ أشهر">Apr — Jun 2026 · 3 mos</div>
+        <div class="exp-content">
+          <h3 data-en="Associate Product Manager <span class='company'>— T2</span>" data-ar="مدير منتج مساعد <span class='company'>— T2</span>">Associate Product Manager <span class="company">— T2</span></h3>
+          <p class="exp-desc" data-en="Contributing to &lt;em&gt;Ru'a&lt;/em&gt;, a digital platform improving access to real estate services. Drove a measurable increase in site visits through structured discovery and product iteration." data-ar="أساهم في تطوير &lt;em&gt;رؤى&lt;/em&gt;، منصّةٌ رقميّة تُيسّر الوصول إلى خدمات العقارات. حقّقتُ ارتفاعاً ملموساً في زيارات الموقع من خلال عمليّات اكتشاف منظّمة وتطوير تكراريّ للمنتج.">Contributing to <em>Ru'a</em>, a digital platform improving access to real estate services. Drove a measurable increase in site visits through structured discovery and product iteration.</p>
+          <div class="exp-tags">
+            <span class="exp-tag" data-en="Riyadh · On-site" data-ar="الرياض · حضوري">Riyadh · On-site</span>
+            <span class="exp-tag" data-en="Product Management" data-ar="إدارة المنتج">Product Management</span>
+            <span class="exp-tag">Roadmapping</span>
+            <span class="exp-tag" data-en="Discovery" data-ar="اكتشاف">Discovery</span>
           </div>
         </div>
-        <div class="promo-rung">
-          <div class="promo-left"><div class="promo-circle"></div><div class="promo-vert-line"></div></div>
-          <div class="promo-right">
-            <div class="promo-role"><span class="en">Business Development Analyst</span><span class="ar">محلل تطوير أعمال</span></div>
-            <div class="promo-dates"><span class="en">May 2021 – Sep 2022 · 1 yr 5 mos</span><span class="ar">مايو 2021 – سبتمبر 2022 · سنة وخمسة أشهر</span></div>
-            <span class="promo-up"><span class="en">Promoted</span><span class="ar">ترقية</span></span>
+        <div class="exp-arrow">→</div>
+      </div>
+      <div class="experience-item">
+        <div class="exp-date" data-en="Jan — Mar 2026 · 3 mos" data-ar="يناير — مارس ٢٠٢٦ · ٣ أشهر">Jan — Mar 2026 · 3 mos</div>
+        <div class="exp-content">
+          <h3 data-en="Digital Product and Growth Intern <span class='company'>— AL-RAKEEN</span>" data-ar="متدرّب منتج رقمي ونموّ <span class='company'>— الركين</span>">Digital Product and Growth Intern <span class="company">— AL-RAKEEN</span></h3>
+          <p class="exp-desc" data-en="Led end-to-end delivery of the company website. Worked across digital product development, B2B solutions, and &lt;em&gt;low-code and AI-enabled workflows&lt;/em&gt;." data-ar="أشرفتُ على تسليم موقع الشّركة من البداية إلى النّهاية. عملتُ في تطوير المنتجات الرّقميّة وحلول B2B وسير عمل &lt;em&gt;مُمكَّن بالذّكاء الاصطناعيّ&lt;/em&gt;.">Led end-to-end delivery of the company website. Worked across digital product development, B2B solutions, and <em>low-code and AI-enabled workflows</em>.</p>
+          <div class="exp-tags">
+            <span class="exp-tag" data-en="Riyadh · Remote" data-ar="الرياض · عن بُعد">Riyadh · Remote</span>
+            <span class="exp-tag" data-en="Internship" data-ar="تدريب">Internship</span>
+            <span class="exp-tag" data-en="Product Development" data-ar="تطوير منتجات">Product Development</span>
+            <span class="exp-tag">B2B</span>
+            <span class="exp-tag" data-en="Growth" data-ar="نموّ">Growth</span>
           </div>
         </div>
-        <div class="promo-rung">
-          <div class="promo-left"><div class="promo-circle"></div><div class="promo-vert-line"></div></div>
-          <div class="promo-right">
-            <div class="promo-role"><span class="en">Business Development Specialist</span><span class="ar">أخصائي تطوير أعمال</span></div>
-            <div class="promo-dates"><span class="en">Sep 2022 – Sep 2023 · 1 yr 1 mo</span><span class="ar">سبتمبر 2022 – سبتمبر 2023 · سنة وشهر</span></div>
-            <span class="promo-up"><span class="en">Promoted</span><span class="ar">ترقية</span></span>
+        <div class="exp-arrow">→</div>
+      </div>
+      <div class="experience-item">
+        <div class="exp-date" data-en="Jun — Dec 2025 · 7 mos" data-ar="يونيو — ديسمبر ٢٠٢٥ · ٧ أشهر">Jun — Dec 2025 · 7 mos</div>
+        <div class="exp-content">
+          <h3 data-en="IT Business Analyst <span class='company'>— Channels by stc</span>" data-ar="محلل أعمال تقنية المعلومات <span class='company'>— قنوات stc</span>">IT Business Analyst <span class="company">— Channels by stc</span></h3>
+          <p class="exp-desc" data-en="Supported &lt;em&gt;10K+ users&lt;/em&gt; across critical systems. Managed change requests, led BRD and requirements gathering, executed UAT. Co-built &lt;em&gt;AOUN AI&lt;/em&gt; — qualified for Stage 2 of the Channels hackathon." data-ar="دعمتُ &lt;em&gt;أكثر من ١٠ آلاف مستخدم&lt;/em&gt; عبر أنظمةٍ حيويّة. أدرتُ طلبات التّغيير وقدتُ جمع المتطلّبات ونفّذتُ UAT. ساهمتُ في بناء &lt;em&gt;عون AI&lt;/em&gt; الّذي تأهّل للمرحلة الثّانية من هاكاثون قنوات stc.">Supported <em>10K+ users</em> across critical systems. Managed change requests, led BRD and requirements gathering, executed UAT. Co-built <em>AOUN AI</em> — qualified for Stage 2 of the Channels hackathon.</p>
+          <div class="exp-tags">
+            <span class="exp-tag" data-en="Riyadh · On-site" data-ar="الرياض · حضوري">Riyadh · On-site</span>
+            <span class="exp-tag" data-en="Internship" data-ar="تدريب">Internship</span>
+            <span class="exp-tag">JIRA</span>
+            <span class="exp-tag">BRD</span>
+            <span class="exp-tag">UAT</span>
           </div>
         </div>
-        <div class="promo-rung">
-          <div class="promo-left"><div class="promo-circle"></div><div class="promo-vert-line"></div></div>
-          <div class="promo-right">
-            <div class="promo-role"><span class="en">Sr. Business Development Specialist</span><span class="ar">أخصائي أول تطوير أعمال</span></div>
-            <div class="promo-dates"><span class="en">Sep 2023 – Oct 2024 · 1 yr 2 mos</span><span class="ar">سبتمبر 2023 – أكتوبر 2024 · سنة وشهران</span></div>
-            <span class="promo-up"><span class="en">Promoted</span><span class="ar">ترقية</span></span>
+        <div class="exp-arrow">→</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNIVERSITY PROJECTS -->
+<section class="section reveal" id="projects">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number" data-en="05 / University Projects" data-ar="٠٥ / المشاريع الجامعية">05 / University Projects</div>
+      <h2 class="section-title" data-en="Led as &lt;span class='italic'&gt;team leader&lt;/span&gt;, across every course." data-ar="قدتها كـ&lt;span class='italic'&gt;قائد فريق&lt;/span&gt;، في كل مقرّر.">Led as <span class="italic">team leader</span>, across every course.</h2>
+    </div>
+    <p class="university-intro" data-en="Over four years of Computer Science &amp; Engineering, I led &lt;em&gt;8+ major course projects&lt;/em&gt; — from AI research surveys to full-stack systems and digital transformation proposals. Every project below was led end-to-end: requirements, design, team coordination, and delivery." data-ar="على مدى أربع سنواتٍ من دراسة علوم وهندسة الحاسب، قدتُ &lt;em&gt;أكثر من ثمانية مشاريع&lt;/em&gt; كبرى — من الأبحاث في الذّكاء الاصطناعيّ إلى الأنظمة المُتكاملة ومُقترحات التّحوّل الرّقميّ. كلّ مشروعٍ منها قدتُه من أوّله إلى آخره.">Over four years of Computer Science &amp; Engineering, I led <em>8+ major course projects</em> — from AI research surveys to full-stack systems and digital transformation proposals. Every project below was led end-to-end: requirements, design, team coordination, and delivery.</p>
+    <div class="uni-grid">
+<div class="uni-card">
+        <div class="uni-header"><span class="uni-course">CSEN 3201</span><span class="uni-year">2024</span></div>
+        <h3 class="uni-title" data-en="Database Systems &lt;span class='italic'&gt;— E-Library Platform&lt;/span&gt;" data-ar="أنظمة قواعد البيانات &lt;span class='italic'&gt;— منصة مكتبة رقمية&lt;/span&gt;">Database Systems <span class="italic">— E-Library Platform</span></h3>
+        <p class="uni-course-name" data-en="Database Design &amp; SQL" data-ar="تصميم قواعد البيانات وSQL">Database Design &amp; SQL</p>
+        <p class="uni-desc" data-en="Built an ER model, normalized schema, and SQL back-end for a &lt;em&gt;university e-library&lt;/em&gt;. Normalized to 3NF and stress-tested with 10K+ synthetic records." data-ar="بنيتُ نموذج ER ومُخطّطاً مُطبَّعاً وواجهةً خلفيّة بـ SQL لـ &lt;em&gt;مكتبةٍ جامعيّةٍ إلكترونيّة&lt;/em&gt;. أوصلتُ العلاقات إلى الصّيغة الطّبيعيّة الثّالثة.">Built an ER model, normalized schema, and SQL back-end for a <em>university e-library</em>. Normalized to 3NF and stress-tested with 10K+ synthetic records.</p>
+        <div class="uni-tags"><span class="exp-tag" data-en="Team Leader" data-ar="قائد فريق">Team Leader</span><span class="exp-tag">MySQL</span><span class="exp-tag" data-en="ER Modeling" data-ar="نمذجة ER">ER Modeling</span><span class="exp-tag" data-en="Normalization" data-ar="التطبيع">Normalization</span></div>
+      </div>
+      <div class="uni-card">
+        <div class="uni-header"><span class="uni-course">CSEN 3301</span><span class="uni-year">2024</span></div>
+        <h3 class="uni-title" data-en="Computer Networks &lt;span class='italic'&gt;— Campus Network&lt;/span&gt;" data-ar="شبكات الحاسب &lt;span class='italic'&gt;— شبكة جامعية&lt;/span&gt;">Computer Networks <span class="italic">— Campus Network</span></h3>
+        <p class="uni-course-name" data-en="Networking &amp; Protocols" data-ar="الشبكات والبروتوكولات">Networking &amp; Protocols</p>
+        <p class="uni-desc" data-en="Simulated a full &lt;em&gt;enterprise network&lt;/em&gt; using Cisco Packet Tracer: VLANs, subnetting, routing protocols, DHCP, and ACLs." data-ar="حاكيتُ &lt;em&gt;شبكةً مؤسّسيّة متكاملة&lt;/em&gt; باستخدام Cisco Packet Tracer: شبكات VLAN، والتّقسيم الفرعيّ، وبروتوكولات التّوجيه.">Simulated a full <em>enterprise network</em> using Cisco Packet Tracer: VLANs, subnetting, routing protocols, DHCP, and ACLs.</p>
+        <div class="uni-tags"><span class="exp-tag" data-en="Team Leader" data-ar="قائد فريق">Team Leader</span><span class="exp-tag">Cisco</span><span class="exp-tag">VLANs</span><span class="exp-tag" data-en="Subnetting" data-ar="تقسيم فرعي">Subnetting</span></div>
+      </div>
+      <div class="uni-card">
+        <div class="uni-header"><span class="uni-course">CSEN 3102</span><span class="uni-year">2024</span></div>
+        <h3 class="uni-title" data-en="Software Engineering &lt;span class='italic'&gt;— Clinic System&lt;/span&gt;" data-ar="هندسة البرمجيات &lt;span class='italic'&gt;— نظام عيادة&lt;/span&gt;">Software Engineering <span class="italic">— Clinic System</span></h3>
+        <p class="uni-course-name" data-en="Software Engineering &amp; SDLC" data-ar="هندسة البرمجيات ودورة الحياة">Software Engineering &amp; SDLC</p>
+        <p class="uni-desc" data-en="Designed and documented a full-stack &lt;em&gt;clinic management system&lt;/em&gt; following SDLC best practices. Delivered SRS, use-case diagrams, and a working prototype." data-ar="صمّمتُ ووثّقتُ &lt;em&gt;نظام إدارة عيادةٍ متكامل&lt;/em&gt; وفق أفضل ممارسات دورة حياة تطوير البرمجيّات.">Designed and documented a full-stack <em>clinic management system</em> following SDLC best practices. Delivered SRS, use-case diagrams, and a working prototype.</p>
+        <div class="uni-tags"><span class="exp-tag" data-en="Team Leader" data-ar="قائد فريق">Team Leader</span><span class="exp-tag">UML</span><span class="exp-tag">SRS</span><span class="exp-tag">Java</span></div>
+      </div>
+      <div class="uni-card">
+        <div class="uni-header"><span class="uni-course">CSEN 4302</span><span class="uni-year">2025</span></div>
+        <h3 class="uni-title" data-en="Artificial Intelligence &lt;span class='italic'&gt;— RAG Survey&lt;/span&gt;" data-ar="الذكاء الاصطناعي &lt;span class='italic'&gt;— دراسة RAG&lt;/span&gt;">Artificial Intelligence <span class="italic">— RAG Survey</span></h3>
+        <p class="uni-course-name" data-en="AI / Natural Language Processing" data-ar="ذكاء اصطناعي / معالجة لغة طبيعية">AI / Natural Language Processing</p>
+        <p class="uni-desc" data-en="Led a 6-member team analyzing three landmark &lt;em&gt;Retrieval-Augmented Generation&lt;/em&gt; papers — mapping RAG's evolution into modular self-reflective systems." data-ar="قدتُ فريقاً من ستّة أعضاء في تحليل ثلاث أوراقٍ بحثيّة محوريّة في &lt;em&gt;التّوليد المُعزَّز بالاسترجاع&lt;/em&gt;.">Led a 6-member team analyzing three landmark <em>Retrieval-Augmented Generation</em> papers — mapping RAG's evolution into modular self-reflective systems.</p>
+        <div class="uni-tags"><span class="exp-tag" data-en="Team Leader" data-ar="قائد فريق">Team Leader</span><span class="exp-tag">LLMs</span><span class="exp-tag">RAG</span><span class="exp-tag" data-en="Research" data-ar="بحث علمي">Research</span></div>
+      </div>
+      <div class="uni-card">
+        <div class="uni-header"><span class="uni-course">CSEN 0242</span><span class="uni-year">2025</span></div>
+        <h3 class="uni-title" data-en="Digital Transformation &lt;span class='italic'&gt;— HumeX Pilot&lt;/span&gt;" data-ar="التحول الرقمي &lt;span class='italic'&gt;— تجربة HumeX&lt;/span&gt;">Digital Transformation <span class="italic">— HumeX Pilot</span></h3>
+        <p class="uni-course-name" data-en="Digital Transformation &amp; AI" data-ar="التحول الرقمي والذكاء الاصطناعي">Digital Transformation &amp; AI</p>
+        <p class="uni-desc" data-en="Proposed an &lt;em&gt;AI-powered crowd flow analytics platform&lt;/em&gt; for the University of Hafr Al-Batin, with live dashboards, heatmaps, and alerts." data-ar="اقترحتُ &lt;em&gt;منصّة تحليل تدفّق الحشود بالذّكاء الاصطناعيّ&lt;/em&gt; لجامعة حفر الباطن، مع لوحات تحكّمٍ لحظيّة وخرائط حراريّة.">Proposed an <em>AI-powered crowd flow analytics platform</em> for the University of Hafr Al-Batin, with live dashboards, heatmaps, and alerts.</p>
+        <div class="uni-tags"><span class="exp-tag" data-en="Team Leader" data-ar="قائد فريق">Team Leader</span><span class="exp-tag">YOLOv8</span><span class="exp-tag">AWS RDS</span><span class="exp-tag" data-en="Computer Vision" data-ar="رؤية حاسوبية">Computer Vision</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HACKATHONS -->
+<section class="section reveal" id="hackathons">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number" data-en="06 / Hackathons" data-ar="٠٦ / الهاكاثونات">06 / Hackathons</div>
+      <h2 class="section-title" data-en="Built under &lt;span class='italic'&gt;pressure&lt;/span&gt;." data-ar="بُنِيَ تحت &lt;span class='italic'&gt;الضّغط&lt;/span&gt;.">Built under <span class="italic">pressure</span>.</h2>
+    </div>
+    <div class="hackathons-list">
+      <div class="hack-item">
+        <div class="hack-year">2023</div>
+        <div class="hack-content">
+          <div class="hack-result"><span class="hack-medal">◉</span><span class="hack-place" data-en="Participant" data-ar="مشارك">Participant</span></div>
+          <h3 class="hack-name" data-en="3rd Programming Hackathon &lt;span class='italic'&gt;— University of Hafr Al-Batin&lt;/span&gt;" data-ar="هاكاثون البرمجة الثالث &lt;span class='italic'&gt;— جامعة حفر الباطن&lt;/span&gt;">3rd Programming Hackathon <span class="italic">— University of Hafr Al-Batin</span></h3>
+          <p class="hack-desc" data-en="Designed and built an &lt;em&gt;electronic attendance system&lt;/em&gt; for university students — my first taste of turning a real campus pain-point into a working product." data-ar="صمّمتُ وبنيتُ &lt;em&gt;نظام حضورٍ إلكترونيّ&lt;/em&gt; لطلّاب الجامعة — كانت تجربتي الأولى في تحويل مشكلةٍ جامعيّةٍ حقيقيّة إلى منتجٍ عامل.">Designed and built an <em>electronic attendance system</em> for university students — my first taste of turning a real campus pain-point into a working product.</p>
+          <div class="hack-tags"><span class="exp-tag">EdTech</span><span class="exp-tag" data-en="First Hackathon" data-ar="أول هاكاثون">First Hackathon</span></div>
+        </div>
+      </div>
+      <div class="hack-item">
+        <div class="hack-year">2024</div>
+        <div class="hack-content">
+          <div class="hack-result"><span class="hack-medal">🥈</span><span class="hack-place" data-en="2nd Place" data-ar="المركز الثاني">2nd Place</span></div>
+          <h3 class="hack-name" data-en="CyberThon &lt;span class='italic'&gt;— Hafr Al-Batin&lt;/span&gt;" data-ar="سايبرثون &lt;span class='italic'&gt;— حفر الباطن&lt;/span&gt;">CyberThon <span class="italic">— Hafr Al-Batin</span></h3>
+          <p class="hack-desc" data-en="Built a platform that &lt;em&gt;detects phishing links and fraudulent messages&lt;/em&gt;. Finished in 2nd place, recognized for the clarity of the analysis behind the detection logic." data-ar="بنيتُ منصّةً &lt;em&gt;تكشف روابط التّصيّد والرّسائل الاحتياليّة&lt;/em&gt;. حصدتُ المركز الثّاني، ونلتُ الإشادة على وضوح التّحليل.">Built a platform that <em>detects phishing links and fraudulent messages</em>. Finished in 2nd place, recognized for the clarity of the analysis behind the detection logic.</p>
+          <div class="hack-tags"><span class="exp-tag" data-en="Cybersecurity" data-ar="الأمن السيبراني">Cybersecurity</span><span class="exp-tag" data-en="Phishing Detection" data-ar="كشف التصيد">Phishing Detection</span><span class="exp-tag" data-en="Web App" data-ar="تطبيق ويب">Web App</span></div>
+        </div>
+      </div>
+      <div class="hack-item">
+        <div class="hack-year">2025</div>
+        <div class="hack-content">
+          <div class="hack-result"><span class="hack-medal">🏁</span><span class="hack-place" data-en="Finalist" data-ar="متأهل للنهائيات">Finalist</span></div>
+          <h3 class="hack-name" data-en="Absher Tuwaiq Hackathon &lt;span class='italic'&gt;— RASHID&lt;/span&gt;" data-ar="هاكاثون أبشر طويق &lt;span class='italic'&gt;— رشيد&lt;/span&gt;">Absher Tuwaiq Hackathon <span class="italic">— RASHID</span></h3>
+          <p class="hack-desc" data-en="Analyzed access-control workflows for government entities and designed &lt;em&gt;RASHID&lt;/em&gt; — a GPT-powered smart gate system. Reached the finals." data-ar="حلّلتُ تدفّقات التّحكّم بالوصول للجهات الحكوميّة، وصمّمتُ &lt;em&gt;رشيد&lt;/em&gt; — نظام بوّابةٍ ذكيّة مدعومٍ بـ GPT. تأهّلتُ إلى النّهائيّات.">Analyzed access-control workflows for government entities and designed <em>RASHID</em> — a GPT-powered smart gate system. Reached the finals.</p>
+          <div class="hack-tags"><span class="exp-tag">GPT / AI</span><span class="exp-tag" data-en="Gov. Tech" data-ar="تقنية حكومية">Gov. Tech</span><span class="exp-tag" data-en="Access Control" data-ar="التحكم بالوصول">Access Control</span></div>
+        </div>
+      </div>
+      <div class="hack-item">
+        <div class="hack-year">2025</div>
+        <div class="hack-content">
+          <div class="hack-result"><span class="hack-medal">◈</span><span class="hack-place" data-en="Stage 2 Qualifier" data-ar="متأهل للمرحلة الثانية">Stage 2 Qualifier</span></div>
+          <h3 class="hack-name" data-en="Channels by stc Hackathon &lt;span class='italic'&gt;— AOUN AI&lt;/span&gt;" data-ar="هاكاثون قنوات stc &lt;span class='italic'&gt;— عون AI&lt;/span&gt;">Channels by stc Hackathon <span class="italic">— AOUN AI</span></h3>
+          <p class="hack-desc" data-en="Contributed to &lt;em&gt;AOUN AI&lt;/em&gt;, an intelligent request management platform. Shaped the business requirements and workflow analysis — qualifying to Stage 2." data-ar="ساهمتُ في &lt;em&gt;عون AI&lt;/em&gt;، منصّة ذكيّة لإدارة الطّلبات. صغتُ متطلّبات الأعمال وحلّلتُ سير العمل — فتأهّل المشروع إلى المرحلة الثّانية.">Contributed to <em>AOUN AI</em>, an intelligent request management platform. Shaped the business requirements and workflow analysis — qualifying to Stage 2.</p>
+          <div class="hack-tags"><span class="exp-tag" data-en="AI Platform" data-ar="منصة ذكاء اصطناعي">AI Platform</span><span class="exp-tag" data-en="Request Mgmt" data-ar="إدارة الطلبات">Request Mgmt</span><span class="exp-tag" data-en="Business Analysis" data-ar="تحليل أعمال">Business Analysis</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS — THE ARSENAL -->
+<section class="section reveal">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number" data-en="07 / The Arsenal" data-ar="٠٧ / الترسانة">07 / The Arsenal</div>
+      <h2 class="section-title" data-en="Three disciplines. &lt;span class='italic'&gt;One builder.&lt;/span&gt;" data-ar="ثلاثة تخصصات. &lt;span class='italic'&gt;صانعٌ واحد.&lt;/span&gt;">Three disciplines. <span class="italic">One builder.</span></h2>
+    </div>
+    <p class="arsenal-intro" data-en="I don't pick sides. I &lt;span class='accent'&gt;analyze&lt;/span&gt; like a consultant, &lt;span class='accent'&gt;deliver&lt;/span&gt; like a PM, and &lt;span class='accent'&gt;build&lt;/span&gt; like an engineer." data-ar="لا أنحاز إلى جانبٍ واحد. &lt;span class='accent'&gt;أُحلّل&lt;/span&gt; كاستشاريٍّ، و&lt;span class='accent'&gt;أُسلّم&lt;/span&gt; كمدير مشاريع، و&lt;span class='accent'&gt;أبني&lt;/span&gt; كمهندس.">I don't pick sides. I <span class="accent">analyze</span> like a consultant, <span class="accent">deliver</span> like a PM, and <span class="accent">build</span> like an engineer.</p>
+    <div class="arsenal">
+      <!-- COLUMN 1: ANALYSIS -->
+      <div class="arsenal-column" data-index="01">
+        <div class="arsenal-header">
+          <div>
+            <div class="arsenal-kicker" data-en="Discipline I" data-ar="التخصص الأول">Discipline I</div>
+            <h3 class="arsenal-title" data-en="Analysis &amp; &lt;br&gt;Process" data-ar="التحليل &lt;br&gt;والعمليات">Analysis &amp; <br>Process</h3>
           </div>
+          <div class="arsenal-count" data-en="06 / skills" data-ar="٠٦ / مهارة">06 / skills</div>
         </div>
+        <ul class="arsenal-list">
+          <li><span class="arsenal-num">01</span><span class="arsenal-skill" data-en="Business Requirements" data-ar="متطلبات الأعمال">Business Requirements</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span></span></li>
+          <li><span class="arsenal-num">02</span><span class="arsenal-skill" data-en="Systems Analysis &amp; Design" data-ar="تحليل وتصميم الأنظمة">Systems Analysis &amp; Design</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span></span></li>
+          <li><span class="arsenal-num">03</span><span class="arsenal-skill" data-en="Functional Requirements" data-ar="المتطلبات الوظيفية">Functional Requirements</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar"></span></span></li>
+          <li><span class="arsenal-num">04</span><span class="arsenal-skill" data-en="UML &amp; BPMN Modeling" data-ar="نمذجة UML و BPMN">UML &amp; BPMN Modeling</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar"></span></span></li>
+          <li><span class="arsenal-num">05</span><span class="arsenal-skill" data-en="SDLC Mastery" data-ar="إتقان دورة الحياة">SDLC Mastery</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar"></span></span></li>
+          <li><span class="arsenal-num">06</span><span class="arsenal-skill" data-en="Stakeholder Management" data-ar="إدارة أصحاب المصلحة">Stakeholder Management</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar"></span></span></li>
+        </ul>
+        <div class="arsenal-footer"><span data-en="Where chaos becomes clarity" data-ar="هنا تتحوّل الفوضى إلى وضوح">Where chaos becomes clarity</span><span class="arsenal-dot"></span></div>
       </div>
-      <ul class="timeline-list">
-        <li><span class="en">Designed and developed the Estrdad Initiative (v1 and v2) — the largest initiative within the commercial ecosystem of the Ministry of Commerce.</span><span class="ar">تصميم وتطوير مبادرة استرداد (الإصداران 1 و2) — أكبر مبادرة ضمن منظومة التجارة في وزارة التجارة.</span></li>
-        <li><span class="en">Reviewed 100+ regulations and bylaws affecting SMEs; identified 30+ core challenges and developed sustainable solutions.</span><span class="ar">مراجعة أكثر من 100 لائحة وتنظيم يؤثر على المنشآت؛ وتحديد أكثر من 30 تحدياً جوهرياً وتطوير حلول مستدامة لها.</span></li>
-        <li><span class="en">Established 19 Ease of Doing Business Offices nationwide in partnership with Chambers of Commerce.</span><span class="ar">تأسيس 19 مكتباً لتحسين بيئة الأعمال على مستوى المملكة بالشراكة مع الغرف التجارية.</span></li>
-        <li><span class="en">Delivered 5 strategic projects, 3 directly linked to Vision 2030 national transformation programs.</span><span class="ar">إنجاز 5 مشاريع استراتيجية، 3 منها مرتبطة مباشرة ببرامج التحول الوطنية لرؤية 2030.</span></li>
-        <li><span class="en">Participated in national strategies for government entities as a representative of the Small and Medium Enterprises General Authority (Monsha'at).</span><span class="ar">المشاركة في الاستراتيجيات الوطنية للجهات الحكومية بصفة ممثل الهيئة العامة للمنشآت الصغيرة والمتوسطة (منشآت).</span></li>
-                <li><span class="en">Launched 18+ internal initiatives; built government fee calculator and break-even analysis tools for SMEs.</span><span class="ar">إطلاق أكثر من 18 مبادرة داخلية؛ وبناء حاسبة الرسوم الحكومية وأدوات تحليل نقطة التعادل للمنشآت.</span></li>
-        <li><span class="en">Supported the Authority's leadership on major files and large-scale strategic projects.</span><span class="ar">دعم قيادات الهيئة في الملفات والمشاريع الكبرى والاستراتيجية.</span></li>
-      </ul>
-    </div>
-
-    <!-- NCNS -->
-    <div class="timeline-item reveal">
-      <div class="timeline-dot"></div>
-      <div class="timeline-period"><span class="en">Sep 2024 – Present</span><span class="ar">سبتمبر 2024 – حتى الآن</span></div>
-      <h3 class="timeline-role"><span class="en">Sr. Business Development Specialist</span><span class="ar">أخصائي أول تطوير الأعمال</span></h3>
-      <p class="timeline-org"><span class="en">National Center for Non-Profit Sector · Riyadh</span><span class="ar">المركز الوطني لتنمية القطاع غير الربحي · الرياض</span></p>
-      <ul class="timeline-list">
-        <li><span class="en">Spearheaded establishment of "Marsad" — a non-profit entity for sector data analytics and decision support.</span><span class="ar">قيادة تأسيس "مرصد" — كيان غير ربحي متخصص في تحليل بيانات القطاع ودعم صنع القرار.</span></li>
-        <li><span class="en">Led development and launch of a national initiative connecting retired experts with non-profit organizations to enhance governance and operational effectiveness.</span><span class="ar">قيادة تطوير وإطلاق مبادرة وطنية لربط الخبراء المتقاعدين بالمنظمات غير الربحية لتعزيز الحوكمة والكفاءة التشغيلية.</span></li>
-        <li><span class="en">Designed a unified health insurance policy framework addressing workforce coverage challenges within the non-profit sector.</span><span class="ar">تصميم إطار موحد لسياسة التأمين الصحي لمعالجة تحديات تغطية القوى العاملة في القطاع غير الربحي.</span></li>
-        <li><span class="en">Developed and published a comprehensive operational guide enabling non-profit organizations to participate effectively during the Hajj season.</span><span class="ar">تطوير ونشر دليل تشغيلي شامل يمكّن المنظمات غير الربحية من المشاركة الفاعلة في موسم الحج.</span></li>
-        <li><span class="en">Analyze sector data to identify key challenges and develop strategic, sustainable solutions with government and private stakeholders.</span><span class="ar">تحليل بيانات القطاع لتحديد التحديات الرئيسية وتطوير حلول استراتيجية مستدامة بالتعاون مع الجهات الحكومية والقطاع الخاص.</span></li>
-        <li><span class="en">Developed the Localization Through Social Investment Program, linking national localization goals with measurable social outcomes.</span><span class="ar">تطوير برنامج التوطين بالاستثمار الاجتماعي، وربط أهداف التوطين الوطنية بمخرجات اجتماعية قابلة للقياس.</span></li>
-        <li><span class="en">Contributed to building the National Strategy for the Non-Profit Sector.</span><span class="ar">المشاركة في بناء الاستراتيجية الوطنية للقطاع غير الربحي.</span></li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══ ACHIEVEMENTS ═══ -->
-<section id="achievements" style="background:var(--bg-alt);border-block:1px solid var(--line)">
-  <div class="section-header reveal">
-    <span class="section-num">03</span>
-    <h2 class="section-title"><span class="en">Key Achievements</span><span class="ar">أبرز الإنجازات</span></h2>
-    <span class="section-line"></span>
-  </div>
-  <div class="achieve-grid">
-    <div class="achieve-card reveal">
-      <div class="achieve-metric">100+</div>
-      <div class="achieve-title"><span class="en">Regulations and Bylaws Reviewed</span><span class="ar">لائحة وتنظيم تمت مراجعتها</span></div>
-      <div class="achieve-desc"><span class="en">Led a large-scale regulatory review shaping the SME landscape across the Kingdom.</span><span class="ar">قيادة مراجعة تنظيمية واسعة النطاق أسهمت في تشكيل بيئة المنشآت في المملكة.</span></div>
-      <span class="achieve-tag">Monsha'at</span>
-    </div>
-    <div class="achieve-card reveal">
-      <div class="achieve-metric">30+</div>
-      <div class="achieve-title"><span class="en">Core SME Challenges Addressed</span><span class="ar">تحدياً جوهرياً للمنشآت عولج</span></div>
-      <div class="achieve-desc"><span class="en">Identified fundamental obstacles facing SMEs and developed practical, sustainable solutions.</span><span class="ar">تحديد العقبات الجوهرية التي تواجه المنشآت وتطوير حلول عملية ومستدامة لها.</span></div>
-      <span class="achieve-tag">Monsha'at</span>
-    </div>
-    <div class="achieve-card reveal">
-      <div class="achieve-metric">19</div>
-      <div class="achieve-title"><span class="en">Business Offices Established Nationwide</span><span class="ar">مكتب لتحسين بيئة الأعمال على مستوى المملكة</span></div>
-      <div class="achieve-desc"><span class="en">Established offices in partnership with Chambers of Commerce to identify and remove obstacles facing SMEs.</span><span class="ar">تأسيس مكاتب بالشراكة مع الغرف التجارية لتحديد العقبات ومعالجتها لصالح المنشآت.</span></div>
-      <span class="achieve-tag">Monsha'at · Vision 2030</span>
-    </div>
-    <div class="achieve-card reveal">
-      <div class="achieve-metric">18+</div>
-      <div class="achieve-title"><span class="en">Internal Initiatives Launched</span><span class="ar">مبادرة داخلية أُطلقت</span></div>
-      <div class="achieve-desc"><span class="en">Contributed to developing and operationalizing internal initiatives with cross-entity impact.</span><span class="ar">المساهمة في تطوير وتشغيل مبادرات داخلية ذات أثر ممتد عبر الجهات الحكومية.</span></div>
-      <span class="achieve-tag">Cross-Entity</span>
-    </div>
-    <div class="achieve-card reveal">
-      <div class="achieve-metric" style="font-size:34px">مبادرة استرداد</div>
-      <div class="achieve-title"><span class="en">Largest Commercial Ecosystem Initiative in the Kingdom</span><span class="ar">أكبر مبادرة منظومة تجارية في المملكة</span></div>
-      <div class="achieve-desc"><span class="en">Designed and developed the Estrdad Initiative (v1 and v2) — the largest initiative within the commercial ecosystem of the Ministry of Commerce, supporting SME growth nationwide.</span><span class="ar">تصميم وتطوير مبادرة استرداد (الإصداران 1 و2) — أكبر مبادرة ضمن منظومة التجارة في وزارة التجارة، لدعم نمو المنشآت الصغيرة والمتوسطة.</span></div>
-      <span class="achieve-tag">Ministry of Commerce</span>
-    </div>
-    <div class="achieve-card reveal">
-      <div class="achieve-metric" style="font-size:28px">استراتيجي</div>
-      <div class="achieve-title"><span class="en">National Strategies Representative — Freelance</span><span class="ar">ممثل في الاستراتيجيات الوطنية — عمل حر</span></div>
-      <div class="achieve-desc"><span class="en">Participated in national strategies for government entities as an independent representative of Monsha'at (SMEA), contributing to cross-sector policy and development work.</span><span class="ar">المشاركة في الاستراتيجيات الوطنية للجهات الحكومية بصفة ممثل مستقل لمنشآت، والإسهام في أعمال السياسات والتطوير متعددة القطاعات.</span></div>
-      <span class="achieve-tag">Freelance · National</span>
-    </div>
-    <div class="achieve-card reveal">
-      <div class="achieve-metric" style="font-size:26px">3 / 5</div>
-      <div class="achieve-title"><span class="en">Strategic Projects Linked to Vision 2030</span><span class="ar">مشاريع استراتيجية مرتبطة برؤية المملكة 2030</span></div>
-      <div class="achieve-desc"><span class="en">Delivered 5 strategic projects, 3 of which are directly aligned with Saudi Vision 2030 national transformation programs.</span><span class="ar">إنجاز 5 مشاريع استراتيجية، 3 منها مرتبطة مباشرة ببرامج التحول الوطنية لرؤية المملكة 2030.</span></div>
-      <span class="achieve-tag">Vision 2030</span>
-    </div>
-    <div class="achieve-card reveal">
-      <div class="achieve-metric" style="font-size:28px">مؤسسة مرصد</div>
-      <div class="achieve-title"><span class="en">Founded Non-Profit Sector Intelligence Entity</span><span class="ar">تأسيس كيان ذكاء القطاع غير الربحي</span></div>
-      <div class="achieve-desc"><span class="en">Led the founding of "Marsad" — a specialized entity for collecting, analyzing, and leveraging non-profit sector data to support evidence-based decision-making and improve sector performance.</span><span class="ar">قيادة تأسيس "مرصد" — كيان متخصص في جمع بيانات القطاع غير الربحي وتحليلها والاستفادة منها لدعم صنع القرار المبني على الأدلة وتحسين أداء القطاع.</span></div>
-      <span class="achieve-tag">NCNS · Current</span>
+      <!-- COLUMN 2: DELIVERY -->
+      <div class="arsenal-column" data-index="02">
+        <div class="arsenal-header">
+          <div>
+            <div class="arsenal-kicker" data-en="Discipline II" data-ar="التخصص الثاني">Discipline II</div>
+            <h3 class="arsenal-title" data-en="Delivery &amp; &lt;br&gt;Execution" data-ar="التسليم &lt;br&gt;والتنفيذ">Delivery &amp; <br>Execution</h3>
+          </div>
+          <div class="arsenal-count" data-en="05 / skills" data-ar="٠٥ / مهارة">05 / skills</div>
+        </div>
+        <ul class="arsenal-list">
+          <li><span class="arsenal-num">01</span><span class="arsenal-skill" data-en="Agile / Scrum" data-ar="أجايل / سكرم">Agile / Scrum</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span></span></li>
+          <li><span class="arsenal-num">02</span><span class="arsenal-skill" data-en="Jira &amp; Confluence" data-ar="Jira و Confluence">Jira &amp; Confluence</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar"></span></span></li>
+          <li><span class="arsenal-num">03</span><span class="arsenal-skill" data-en="API Integration — Postman" data-ar="تكامل API — Postman">API Integration — Postman</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar"></span></span></li>
+          <li><span class="arsenal-num">04</span><span class="arsenal-skill" data-en="Project Management — CAPM" data-ar="إدارة المشاريع — CAPM">Project Management — CAPM</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span></span></li>
+          <li><span class="arsenal-num">05</span><span class="arsenal-skill" data-en="Risk &amp; Governance" data-ar="المخاطر والحوكمة">Risk &amp; Governance</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar"></span></span></li>
+        </ul>
+        <div class="arsenal-footer"><span data-en="Where plans become products" data-ar="هنا تتحوّل الخطط إلى منتجات">Where plans become products</span><span class="arsenal-dot"></span></div>
+      </div>
+      <!-- COLUMN 3: TECHNICAL -->
+      <div class="arsenal-column" data-index="03">
+        <div class="arsenal-header">
+          <div>
+            <div class="arsenal-kicker" data-en="Discipline III" data-ar="التخصص الثالث">Discipline III</div>
+            <h3 class="arsenal-title" data-en="Technical &lt;br&gt;Foundation" data-ar="الأساس &lt;br&gt;التقني">Technical <br>Foundation</h3>
+          </div>
+          <div class="arsenal-count" data-en="06 / skills" data-ar="٠٦ / مهارة">06 / skills</div>
+        </div>
+        <ul class="arsenal-list">
+          <li><span class="arsenal-num">01</span><span class="arsenal-skill" data-en="SQL &amp; Databases" data-ar="SQL وقواعد البيانات">SQL &amp; Databases</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar"></span></span></li>
+          <li><span class="arsenal-num">02</span><span class="arsenal-skill" data-en="Data Analysis" data-ar="تحليل البيانات">Data Analysis</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar"></span></span></li>
+          <li><span class="arsenal-num">03</span><span class="arsenal-skill" data-en="Java &amp; Spring Boot" data-ar="Java و Spring Boot">Java &amp; Spring Boot</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar"></span></span></li>
+          <li><span class="arsenal-num">04</span><span class="arsenal-skill" data-en="Python" data-ar="بايثون">Python</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar"></span></span></li>
+          <li><span class="arsenal-num">05</span><span class="arsenal-skill" data-en="Cloud — Huawei Certified" data-ar="السحابة — معتمد هواوي">Cloud — Huawei Certified</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar"></span></span></li>
+          <li><span class="arsenal-num">06</span><span class="arsenal-skill" data-en="AI / Generative AI" data-ar="الذكاء الاصطناعي / التوليدي">AI / Generative AI</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span></span></li>
+        </ul>
+        <div class="arsenal-footer"><span data-en="Where ideas become real" data-ar="هنا تتحوّل الأفكار إلى واقع">Where ideas become real</span><span class="arsenal-dot"></span></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ EDUCATION ═══ -->
-<section id="education">
-  <div class="section-header reveal">
-    <span class="section-num">04</span>
-    <h2 class="section-title"><span class="en">Education</span><span class="ar">التعليم</span></h2>
-    <span class="section-line"></span>
-  </div>
-  <div class="edu-grid">
-    <div class="edu-card reveal">
-      <svg class="edu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
-      <div class="edu-level"><span class="en">Bachelor's Degree · 2019</span><span class="ar">بكالوريوس · 2019</span></div>
-      <h3 class="edu-degree"><span class="en">Risk Management and Insurance</span><span class="ar">إدارة المخاطر والتأمين</span></h3>
-      <p class="edu-uni"><span class="en">Imam Mohammed bin Saud Islamic University</span><span class="ar">جامعة الإمام محمد بن سعود الإسلامية</span></p>
-      <div class="edu-status"><span class="en">Completed</span><span class="ar">مكتمل</span></div>
+<!-- CERTIFICATIONS -->
+<section class="section reveal">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number" data-en="08 / Certifications" data-ar="٠٨ / الشهادات">08 / Certifications</div>
+      <h2 class="section-title" data-en="Credentialed &amp; <span class='italic'>current</span>." data-ar="شهادات <span class='italic'>معتمدة</span> وسارية.">Credentialed &amp; <span class="italic">current</span>.</h2>
     </div>
-    <div class="edu-card reveal">
-      <svg class="edu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-      <div class="edu-level"><span class="en">Language Training · 2018</span><span class="ar">تدريب لغوي · 2018</span></div>
-      <h3 class="edu-degree"><span class="en">English Language Course</span><span class="ar">دورة اللغة الإنجليزية</span></h3>
-      <p class="edu-uni"><span class="en">Centre of English Studies (CES) · United Kingdom</span><span class="ar">مركز الدراسات الإنجليزية (CES) · المملكة المتحدة</span></p>
-      <div class="edu-status"><span class="en">Completed</span><span class="ar">مكتمل</span></div>
+    <div class="cert-tier-label">
+      <span class="cert-tier-kicker" data-en="Tier I" data-ar="الفئة الأولى">Tier I</span>
+      <h3 class="cert-tier-title" data-en="Professional <span class='italic'>Certifications</span>" data-ar="شهادات <span class='italic'>احترافية</span>">Professional <span class="italic">Certifications</span></h3>
+      <p class="cert-tier-desc" data-en="Globally-recognized, examined, and renewable credentials." data-ar="شهادات معتمدة دولياً، باختبار، وقابلة للتجديد.">Globally-recognized, examined, and renewable credentials.</p>
     </div>
-  </div>
-
-  <!-- PROFESSIONAL CERTIFICATIONS -->
-  <div style="margin-top:70px" class="reveal">
-    <h3 class="section-subtitle"><span class="en">Professional Certifications</span><span class="ar">الشهادات الاحترافية</span></h3>
-    <div class="cert-list">
-      <div class="cert-card">
-        <div class="cert-info">
-          <div class="cert-name"><span class="en">Project Management Professional (PMP)</span><span class="ar">محترف إدارة المشاريع (PMP)</span></div>
-          <div class="cert-issuer"><span class="en">Project Management Institute (PMI)</span><span class="ar">معهد إدارة المشاريع (PMI)</span></div>
-        </div>
-        <div class="cert-year">2025</div>
+    <div class="certs-grid certs-grid-pro">
+      <div class="cert-card cert-card-pro">
+        <div class="cert-badge" data-en="PRO" data-ar="احترافي">PRO</div>
+        <div class="cert-issuer">PMI</div>
+        <h3 class="cert-name" data-en="CAPM — <span class='italic'>Project Management</span>" data-ar="CAPM — <span class='italic'>إدارة المشاريع</span>">CAPM — <span class="italic">Project Management</span></h3>
+        <div class="cert-date" data-en="Valid: May 2026 — May 2029" data-ar="صالحة: مايو ٢٠٢٦ — مايو ٢٠٢٩">Valid: May 2026 — May 2029</div>
       </div>
-      <div class="cert-card">
-        <div class="cert-info">
-          <div class="cert-name"><span class="en">Certified Business Development Professional</span><span class="ar">محترف معتمد في تطوير الأعمال</span></div>
-          <div class="cert-issuer"><span class="en">IMD Business School</span><span class="ar">مدرسة IMD للأعمال</span></div>
-        </div>
-        <div class="cert-year">2023</div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-info">
-          <div class="cert-name"><span class="en">Governance, Risk Management and Compliance Professional (GRCP)</span><span class="ar">محترف الحوكمة وإدارة المخاطر والامتثال (GRCP)</span></div>
-          <div class="cert-issuer"><span class="en">OCEG Academy</span><span class="ar">أكاديمية OCEG</span></div>
-        </div>
-        <div class="cert-year">2021</div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-info">
-          <div class="cert-name"><span class="en">Compliance Foundations Professional</span><span class="ar">محترف أسس الامتثال</span></div>
-          <div class="cert-issuer"><span class="en">Saudi Financial Academy</span><span class="ar">الأكاديمية المالية السعودية</span></div>
-        </div>
-        <div class="cert-year">2021</div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-info">
-          <div class="cert-name"><span class="en">Insurance Foundation Certificate Examination (IFCE)</span><span class="ar">شهادة أسس التأمين (IFCE)</span></div>
-          <div class="cert-issuer"><span class="en">Saudi Financial Academy</span><span class="ar">الأكاديمية المالية السعودية</span></div>
-        </div>
-        <div class="cert-year">2020</div>
+      <div class="cert-card cert-card-pro">
+        <div class="cert-badge" data-en="PRO" data-ar="احترافي">PRO</div>
+        <div class="cert-issuer">Udacity</div>
+        <h3 class="cert-name" data-en="AI Product Manager <span class='italic'>Nanodegree</span>" data-ar="مدير منتجات <span class='italic'>الذكاء الاصطناعي</span>">AI Product Manager <span class="italic">Nanodegree</span></h3>
+        <div class="cert-date" data-en="Issued: Oct 2025" data-ar="صدرت: أكتوبر ٢٠٢٥">Issued: Oct 2025</div>
       </div>
     </div>
-  </div>
-
-  <!-- COURSES -->
-  <div style="margin-top:60px" class="reveal">
-    <h3 class="section-subtitle"><span class="en">Courses and Training</span><span class="ar">الدورات والتدريب</span></h3>
-    <div class="course-list">
-      <div class="course-item"><span class="en">Certificate in Business Decision Models — Meirc Training and Consulting · 2022</span><span class="ar">شهادة نماذج اتخاذ القرار في الأعمال — ميرك للتدريب والاستشارات · 2022</span></div>
-      <div class="course-item"><span class="en">Data Analysis and Business Reporting Using Excel and Power BI — Virginia Institute of Finance · 2022</span><span class="ar">تحليل البيانات وإعداد التقارير باستخدام Excel وPower BI — معهد فيرجينيا للمالية · 2022</span></div>
-      <div class="course-item"><span class="en">Principles of Project Management — Ernst and Young (EY) · 2021</span><span class="ar">مبادئ إدارة المشاريع — إرنست ويونغ (EY) · 2021</span></div>
-      <div class="course-item"><span class="en">Risk Management Professional (PMI-RMP) — PMI · 2018</span><span class="ar">محترف إدارة المخاطر (PMI-RMP) — PMI · 2018</span></div>
+    <div class="cert-tier-label cert-tier-label-2">
+      <span class="cert-tier-kicker" data-en="Tier II" data-ar="الفئة الثانية">Tier II</span>
+      <h3 class="cert-tier-title" data-en="Training &amp; <span class='italic'>Courses</span>" data-ar="تدريبات و<span class='italic'>دورات</span>">Training &amp; <span class="italic">Courses</span></h3>
+      <p class="cert-tier-desc" data-en="Specialized programs from national academies and global institutions." data-ar="برامج متخصصة من أكاديميات وطنية ومؤسسات عالمية.">Specialized programs from national academies and global institutions.</p>
+    </div>
+    <div class="certs-grid">
+      <div class="cert-card"><div class="cert-issuer">IBMI</div><h3 class="cert-name" data-en="Digital <span class='italic'>Transformation</span>" data-ar="<span class='italic'>التحوّل</span> الرقمي">Digital <span class="italic">Transformation</span></h3><div class="cert-date" data-en="Issued: 2026" data-ar="صدرت: ٢٠٢٦">Issued: 2026</div></div>
+      <div class="cert-card"><div class="cert-issuer">Product School</div><h3 class="cert-name" data-en="Product-Led Growth <span class='italic'>PLGC</span>" data-ar="النموّ بقيادة المنتج <span class='italic'>PLGC</span>">Product-Led Growth <span class="italic">PLGC</span></h3><div class="cert-date" data-en="Issued: 2026" data-ar="صدرت: ٢٠٢٦">Issued: 2026</div></div>
+      <div class="cert-card"><div class="cert-issuer" data-en="Tuwaiq Academy" data-ar="أكاديمية طويق">Tuwaiq Academy</div><h3 class="cert-name" data-en="Risk Mgmt in <span class='italic'>Generative AI</span>" data-ar="إدارة مخاطر <span class='italic'>الذكاء التوليدي</span>">Risk Mgmt in <span class="italic">Generative AI</span></h3><div class="cert-date" data-en="Issued: 2025" data-ar="صدرت: ٢٠٢٥">Issued: 2025</div></div>
+      <div class="cert-card"><div class="cert-issuer">SDAIA</div><h3 class="cert-name" data-en="Fundamentals of <span class='italic'>AI</span>" data-ar="أساسيات <span class='italic'>الذكاء الاصطناعي</span>">Fundamentals of <span class="italic">AI</span></h3><div class="cert-date" data-en="Issued: 2024" data-ar="صدرت: ٢٠٢٤">Issued: 2024</div></div>
+      <div class="cert-card"><div class="cert-issuer">Huawei</div><h3 class="cert-name" data-en="Cloud <span class='italic'>Computing</span>" data-ar="الحوسبة <span class='italic'>السحابية</span>">Cloud <span class="italic">Computing</span></h3><div class="cert-date" data-en="Issued: 2024" data-ar="صدرت: ٢٠٢٤">Issued: 2024</div></div>
+      <div class="cert-card"><div class="cert-issuer" data-en="NCA · SITE · KAUST" data-ar="الهيئة الوطنية · سايت · كاوست">NCA · SITE · KAUST</div><h3 class="cert-name" data-en="Cybersecurity <span class='italic'>Training</span>" data-ar="تدريب <span class='italic'>الأمن السيبراني</span>">Cybersecurity <span class="italic">Training</span></h3><div class="cert-date" data-en="6+ specialized courses · 2024" data-ar="أكثر من ٦ دورات متخصّصة · ٢٠٢٤">6+ specialized courses · 2024</div></div>
+      <div class="cert-card"><div class="cert-issuer" data-en="University of Michigan" data-ar="جامعة ميشيغان">University of Michigan</div><h3 class="cert-name" data-en="Python <span class='italic'>Basics</span>" data-ar="أساسيات <span class='italic'>بايثون</span>">Python <span class="italic">Basics</span></h3><div class="cert-date" data-en="Issued: 2023" data-ar="صدرت: ٢٠٢٣">Issued: 2023</div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ SKILLS ═══ -->
-<section id="skills" style="background:var(--bg-alt);border-block:1px solid var(--line)">
-  <div class="section-header reveal">
-    <span class="section-num">05</span>
-    <h2 class="section-title"><span class="en">Core Competencies</span><span class="ar">المهارات والكفاءات الجوهرية</span></h2>
-    <span class="section-line"></span>
-  </div>
-  <div class="skills-grid">
-    <div class="skill-category reveal">
-      <h3><span class="en">Strategic Business Development</span><span class="ar">تطوير الأعمال الاستراتيجي</span></h3>
-      <p class="skill-desc"><span class="en">Identifying growth opportunities and translating insights into scalable, high-value national initiatives.</span><span class="ar">تحديد فرص النمو وتحويل الرؤى إلى مبادرات وطنية قابلة للتوسع وعالية القيمة.</span></p>
-      <ul class="skill-list">
-        <li><span class="en">Ecosystem Design</span><span class="ar">تصميم المنظومات</span></li>
-        <li><span class="en">Initiative Development</span><span class="ar">تطوير المبادرات</span></li>
-        <li><span class="en">Feasibility Studies</span><span class="ar">دراسات الجدوى</span></li>
-        <li><span class="en">Market Strategy</span><span class="ar">استراتيجية السوق</span></li>
-      </ul>
+<!-- RECOGNITION -->
+<section class="section reveal" id="recognition">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number" data-en="09 / Recognition" data-ar="٠٩ / التقدير">09 / Recognition</div>
+      <h2 class="section-title" data-en="Measured in &lt;span class='italic'&gt;institutions&lt;/span&gt;, not opinions." data-ar="مُقاسٌ بـ&lt;span class='italic'&gt;مؤسّساتٍ معتمدة&lt;/span&gt;، لا بالآراء.">Measured in <span class="italic">institutions</span>, not opinions.</h2>
     </div>
-    <div class="skill-category reveal">
-      <h3><span class="en">Partnerships and Stakeholder Management</span><span class="ar">الشراكات وإدارة أصحاب المصلحة</span></h3>
-      <p class="skill-desc"><span class="en">Building and sustaining high-impact relationships across government, private, and non-profit sectors.</span><span class="ar">بناء علاقات عالية الأثر واستدامتها عبر القطاعات الحكومية والخاصة وغير الربحية.</span></p>
-      <ul class="skill-list">
-        <li><span class="en">Strategic Partnerships</span><span class="ar">الشراكات الاستراتيجية</span></li>
-        <li><span class="en">Stakeholder Alignment</span><span class="ar">مواءمة أصحاب المصلحة</span></li>
-        <li><span class="en">Negotiation</span><span class="ar">التفاوض</span></li>
-        <li><span class="en">Cross-sector Collaboration</span><span class="ar">التعاون متعدد القطاعات</span></li>
-      </ul>
-    </div>
-    <div class="skill-category reveal">
-      <h3><span class="en">Project and Program Management</span><span class="ar">إدارة المشاريع والبرامج</span></h3>
-      <p class="skill-desc"><span class="en">Leading complex programs from concept to execution using PMP methodology and adaptive leadership.</span><span class="ar">قيادة البرامج المعقدة من الفكرة حتى التنفيذ بمنهجية PMP وقيادة مرنة.</span></p>
-      <ul class="skill-list">
-        <li>PMP</li>
-        <li><span class="en">Program Management</span><span class="ar">إدارة البرامج</span></li>
-        <li><span class="en">Risk Management</span><span class="ar">إدارة المخاطر</span></li>
-        <li><span class="en">Regulatory Frameworks</span><span class="ar">الأطر التنظيمية</span></li>
-      </ul>
-    </div>
-    <div class="skill-category reveal">
-      <h3><span class="en">Analytics and Decision Making</span><span class="ar">التحليل وصنع القرار</span></h3>
-      <p class="skill-desc"><span class="en">Advanced analytical decision-making to address complex business challenges and mitigate risks.</span><span class="ar">صنع القرارات التحليلية المتقدمة لمعالجة التحديات التجارية المعقدة وتخفيف المخاطر.</span></p>
-      <ul class="skill-list">
-        <li>Power BI</li>
-        <li>Excel</li>
-        <li><span class="en">Data Analysis</span><span class="ar">تحليل البيانات</span></li>
-        <li><span class="en">Benchmarking</span><span class="ar">المقارنات المعيارية</span></li>
-      </ul>
+    <div class="press-grid">
+      <div class="press-card">
+        <div class="press-source" data-en="Project Management Institute" data-ar="معهد إدارة المشاريع">Project Management Institute</div>
+        <div class="press-quote" data-en="Certified Associate in &lt;span class='accent'&gt;Project Management&lt;/span&gt;" data-ar="&lt;span class='accent'&gt;معتمد&lt;/span&gt; في إدارة المشاريع">Certified Associate in <span class="accent">Project Management</span></div>
+        <div class="press-detail" data-en="CAPM · Valid 2026–2029" data-ar="CAPM · سارية ٢٠٢٦–٢٠٢٩">CAPM · Valid 2026–2029</div>
+      </div>
+      <div class="press-card">
+        <div class="press-source">Udacity</div>
+        <div class="press-quote" data-en="&lt;span class='accent'&gt;AI Product Manager&lt;/span&gt; Nanodegree graduate" data-ar="خريج برنامج &lt;span class='accent'&gt;مدير منتجات الذكاء الاصطناعي&lt;/span&gt;"><span class="accent">AI Product Manager</span> Nanodegree graduate</div>
+        <div class="press-detail" data-en="Completed October 2025" data-ar="أنجزت في أكتوبر ٢٠٢٥">Completed October 2025</div>
+      </div>
+      <div class="press-card">
+        <div class="press-source" data-en="Saudi Council of Engineers" data-ar="هيئة المهندسين السعودية">Saudi Council of Engineers</div>
+        <div class="press-quote" data-en="Licensed &lt;span class='accent'&gt;engineering&lt;/span&gt; professional" data-ar="مرخّص كمهندس &lt;span class='accent'&gt;محترف معتمد&lt;/span&gt;">Licensed <span class="accent">engineering</span> professional</div>
+        <div class="press-detail" data-en="Registration # 1009232" data-ar="رقم التسجيل ١٠٠٩٢٣٢">Registration # 1009232</div>
+      </div>
+      <div class="press-card">
+        <div class="press-source" data-en="University of Hafr Al-Batin" data-ar="جامعة حفر الباطن">University of Hafr Al-Batin</div>
+        <div class="press-quote" data-en="Graduating in the <span class='accent'>Top 3</span> of the Computer Science &amp; Engineering Graduates" data-ar="متخرّجٌ ضمن <span class='accent'>أعلى ١٠٪</span> من خرّيجي علوم وهندسة الحاسب">Graduating in the <span class="accent">Top 10%</span> of CS &amp; Engineering</div>
+        <div class="press-detail" data-en="Class of 2026" data-ar="دفعة ٢٠٢٦">Class of 2026</div>
+      </div>
+      <div class="press-card">
+        <div class="press-source" data-en="SDAIA · Tuwaiq · Huawei" data-ar="سدايا · طويق · هواوي">SDAIA · Tuwaiq · Huawei</div>
+        <div class="press-quote" data-en="Trained across <span class='accent'>AI, Cloud &amp; Cybersecurity</span>" data-ar="مُدرَّب في <span class='accent'>الذكاء الاصطناعي والحوسبة السحابية والأمن السيبراني</span>">Trained across <span class="accent">AI, Cloud &amp; Cybersecurity</span></div>
+        <div class="press-detail" data-en="National academies &amp; global programs" data-ar="أكاديميات وطنية وبرامج عالمية">National academies &amp; global programs</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ CONTACT ═══ -->
-<section class="contact" id="contact">
-  <h2><span class="en">Let's Connect</span><span class="ar">لنتواصل</span></h2>
-  <p>
-    <span class="en">Open to strategic partnerships, business development opportunities, and advisory roles across government and non-profit sectors.</span>
-    <span class="ar">منفتح على الشراكات الاستراتيجية وفرص تطوير الأعمال والأدوار الاستشارية عبر القطاعين الحكومي وغير الربحي.</span>
-  </p>
-  <div class="contact-links">
-    <a href="mailto:Abdulmohsin.a.alharthi@hotmail.com" class="contact-btn">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-      Abdulmohsin.a.alharthi@hotmail.com
-    </a>
-    <a href="tel:+966563504555" class="contact-btn">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-      +966 56 350 4555
-    </a>
-    <a href="https://www.linkedin.com/in/abdulmohsinalharthi" target="_blank" rel="noopener noreferrer" class="contact-btn">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M22 9h-4v12h4V9zM10 9h4v2a3 3 0 016 0v10h-4v-8a2 2 0 00-4 0v8h-2V9z"/></svg>
-      LinkedIn
-    </a>
+<!-- REQUEST ON DEMAND -->
+<section class="section reveal" id="request">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number" data-en="10 / The Archive" data-ar="١٠ / الأرشيف">10 / The Archive</div>
+      <h2 class="section-title" data-en="Want to &lt;span class='italic'&gt;dig deeper&lt;/span&gt;? Request it." data-ar="هل تُريد أن &lt;span class='italic'&gt;تتعمّق أكثر&lt;/span&gt;؟ اطلبها.">Want to <span class="italic">dig deeper</span>? Request it.</h2>
+    </div>
+    <p class="request-intro" data-en="My full deliverables — reports, decks, and documentation — are shared &lt;em&gt;on request only&lt;/em&gt;. This isn't a public dropbox; it's a conversation. Tap any card below to send me a pre-filled email, and I'll follow up personally within 24 hours." data-ar="مُخرجاتي الكاملة — التّقارير والعروض والوثائق — تُشارَك &lt;em&gt;عند الطّلب فقط&lt;/em&gt;. انقر على أيّ بطاقةٍ أدناه لإرسال بريدٍ جاهز، وسأردّ عليك شخصيّاً خلال ٢٤ ساعة.">My full deliverables — reports, decks, and documentation — are shared <em>on request only</em>. This isn't a public dropbox; it's a conversation. Tap any card below to send me a pre-filled email, and I'll follow up personally within 24 hours.</p>
+    <div class="request-grid">
+      <a href="mailto:Abdulmalek.Alghamdi@outlook.com?subject=Request%3A%20Full%20CV&amp;body=Hi%20Abdulmalek%2C%0A%0AI%27d%20like%20to%20request%20your%20full%20CV.%0A%0AName%3A%20%0ACompany%2FRole%3A%20%0AReason%3A%20%0A%0AThanks%2C" class="request-card">
+        <div class="request-meta"><span class="request-type" data-en="Resume" data-ar="سيرة ذاتية">Resume</span><span>.docx</span></div>
+        <h3 class="request-title" data-en="The Full &lt;span class='italic'&gt;CV&lt;/span&gt;" data-ar="&lt;span class='italic'&gt;السيرة&lt;/span&gt; الذاتية الكاملة">The Full <span class="italic">CV</span></h3>
+        <p class="request-desc" data-en="Complete professional resume — experience, skills, certifications, and projects. Updated for 2026." data-ar="السّيرة الذّاتيّة المهنيّة الكاملة — الخبرات، والمهارات، والشّهادات، والمشاريع. مُحدَّثة لعام ٢٠٢٦.">Complete professional resume — experience, skills, certifications, and projects. Updated for 2026.</p>
+        <div class="request-cta"><span class="request-cta-text" data-en="Tap to request" data-ar="انقر لطلبها">Tap to request</span><span class="request-arrow">→</span></div>
+      </a>
+      <a href="mailto:Abdulmalek.Alghamdi@outlook.com?subject=Request%3A%20HumeX%20Proposal&amp;body=Hi%20Abdulmalek%2C%0A%0AI%27d%20like%20to%20request%20the%20HumeX%20proposal.%0A%0AName%3A%20%0AContext%3A%20%0A%0AThanks%2C" class="request-card">
+        <div class="request-meta"><span class="request-type" data-en="Report" data-ar="تقرير">Report</span><span>CSEN 0242</span></div>
+        <h3 class="request-title" data-en="HumeX &lt;span class='italic'&gt;— Full Proposal&lt;/span&gt;" data-ar="HumeX &lt;span class='italic'&gt;— المقترح الكامل&lt;/span&gt;">HumeX <span class="italic">— Full Proposal</span></h3>
+        <p class="request-desc" data-en="Digital Transformation pilot for University of Hafr Al-Batin — AI-powered crowd flow analytics with live dashboards, heatmaps, and threshold alerts." data-ar="تجربةُ تحوّلٍ رقميٍّ لجامعة حفر الباطن — تحليل تدفّق الحشود بالذّكاء الاصطناعيّ.">Digital Transformation pilot for University of Hafr Al-Batin — AI-powered crowd flow analytics with live dashboards, heatmaps, and threshold alerts.</p>
+        <div class="request-cta"><span class="request-cta-text" data-en="Tap to request" data-ar="انقر لطلبه">Tap to request</span><span class="request-arrow">→</span></div>
+      </a>
+      <a href="mailto:Abdulmalek.Alghamdi@outlook.com?subject=Request%3A%20RAG%20Research%20Survey&amp;body=Hi%20Abdulmalek%2C%0A%0AI%27d%20like%20to%20request%20the%20full%20RAG%20research%20report.%0A%0AName%3A%20%0APurpose%3A%20%0A%0AThanks%2C" class="request-card">
+        <div class="request-meta"><span class="request-type" data-en="Research" data-ar="بحث">Research</span><span>CSEN 4302</span></div>
+        <h3 class="request-title" data-en="RAG Survey &lt;span class='italic'&gt;— Research Report&lt;/span&gt;" data-ar="دراسة RAG &lt;span class='italic'&gt;— التقرير البحثي&lt;/span&gt;">RAG Survey <span class="italic">— Research Report</span></h3>
+        <p class="request-desc" data-en="Comparative analysis of three landmark Retrieval-Augmented Generation papers. Led a 6-member team." data-ar="تحليلٌ مُقارنٌ لثلاث أوراقٍ بحثيّة محوريّة في التّوليد المُعزَّز بالاسترجاع. قدتُ فريقاً من ستّة أعضاء.">Comparative analysis of three landmark Retrieval-Augmented Generation papers. Led a 6-member team.</p>
+        <div class="request-cta"><span class="request-cta-text" data-en="Tap to request" data-ar="انقر لطلبه">Tap to request</span><span class="request-arrow">→</span></div>
+      </a>
+      <a href="mailto:Abdulmalek.Alghamdi@outlook.com?subject=Request%3A%20RAG%20Presentation%20Deck&amp;body=Hi%20Abdulmalek%2C%0A%0AI%27d%20like%20to%20request%20the%20RAG%20research%20presentation%20slides.%0A%0AName%3A%20%0APurpose%3A%20%0A%0AThanks%2C" class="request-card">
+        <div class="request-meta"><span class="request-type" data-en="Presentation" data-ar="عرض تقديمي">Presentation</span><span>.pptx</span></div>
+        <h3 class="request-title" data-en="RAG Survey &lt;span class='italic'&gt;— Slide Deck&lt;/span&gt;" data-ar="دراسة RAG &lt;span class='italic'&gt;— العرض التقديمي&lt;/span&gt;">RAG Survey <span class="italic">— Slide Deck</span></h3>
+        <p class="request-desc" data-en="Presentation deck summarizing the RAG research project — narrative, architecture diagrams, and conclusions." data-ar="عرضٌ تقديميٌّ يُلخّص مشروع بحث RAG — السّرد، ومُخطّطات البنية، والاستنتاجات.">Presentation deck summarizing the RAG research project — narrative, architecture diagrams, and conclusions.</p>
+        <div class="request-cta"><span class="request-cta-text" data-en="Tap to request" data-ar="انقر لطلبه">Tap to request</span><span class="request-arrow">→</span></div>
+      </a>
+      <a href="mailto:Abdulmalek.Alghamdi@outlook.com?subject=Request%3A%20University%20Project%20Portfolio&amp;body=Hi%20Abdulmalek%2C%0A%0AI%27m%20interested%20in%20documentation%20for%20your%20other%20university%20projects.%0A%0AWhich%20projects%3A%20%0AName%3A%20%0AContext%3A%20%0A%0AThanks%2C" class="request-card">
+        <div class="request-meta"><span class="request-type" data-en="Portfolio" data-ar="أعمال">Portfolio</span><span data-en="Multiple" data-ar="متعدد">Multiple</span></div>
+        <h3 class="request-title" data-en="Other University &lt;span class='italic'&gt;Projects&lt;/span&gt;" data-ar="&lt;span class='italic'&gt;مشاريع&lt;/span&gt; جامعية أخرى">Other University <span class="italic">Projects</span></h3>
+        <p class="request-desc" data-en="Reports, code, and documentation for the remaining course projects — Databases, Networks, Software Engineering, Route Optimizer, Inventory System, and more." data-ar="تقاريرُ وأكوادٌ ووثائقُ بقيّة المشاريع الجامعيّة.">Reports, code, and documentation for the remaining course projects — Databases, Networks, Software Engineering, Route Optimizer, Inventory System, and more.</p>
+        <div class="request-cta"><span class="request-cta-text" data-en="Tap to request" data-ar="انقر لطلبها">Tap to request</span><span class="request-arrow">→</span></div>
+      </a>
+      <a href="mailto:Abdulmalek.Alghamdi@outlook.com?subject=Request%3A%20Awards%20%26%20Certification%20Verification&amp;body=Hi%20Abdulmalek%2C%0A%0AI%27d%20like%20to%20see%20verification%20of%20your%20hackathon%20results%20and%2For%20certifications.%0A%0AWhich%20ones%3A%20%0AName%3A%20%0AContext%3A%20%0A%0AThanks%2C" class="request-card">
+        <div class="request-meta"><span class="request-type" data-en="Credentials" data-ar="وثائق">Credentials</span><span data-en="Verify" data-ar="تحقق">Verify</span></div>
+        <h3 class="request-title" data-en="Awards &amp; &lt;span class='italic'&gt;Certificates&lt;/span&gt;" data-ar="الجوائز و&lt;span class='italic'&gt;الشهادات&lt;/span&gt;">Awards &amp; <span class="italic">Certificates</span></h3>
+        <p class="request-desc" data-en="Proof of hackathon placements (CyberThon 2nd, Tuwaiq Finalist, stc Stage 2) and full certification records (PMI, Udacity, SDAIA, Tuwaiq, Huawei, etc.)." data-ar="إثباتات نتائج الهاكاثونات والسّجلّ الكامل للشّهادات (PMI، و Udacity، وسدايا، وطويق، وهواوي، وغيرها).">Proof of hackathon placements (CyberThon 2nd, Tuwaiq Finalist, stc Stage 2) and full certification records (PMI, Udacity, SDAIA, Tuwaiq, Huawei, etc.).</p>
+        <div class="request-cta"><span class="request-cta-text" data-en="Tap to request" data-ar="انقر لطلبها">Tap to request</span><span class="request-arrow">→</span></div>
+      </a>
+    </div>
   </div>
 </section>
 
-<footer class="fe">
-  <div class="fo">
-    <svg viewBox="0 0 100 20" xmlns="http://www.w3.org/2000/svg">
-      <line x1="0" y1="10" x2="35" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
-      <path d="M50 2 L55 10 L50 18 L45 10 Z" fill="none" stroke="currentColor" stroke-width="0.8"/>
-      <circle cx="50" cy="10" r="1.5" fill="currentColor"/>
-      <line x1="65" y1="10" x2="100" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
-    </svg>
+<!-- CONTACT -->
+<section class="contact reveal" id="contact">
+  <div class="container">
+    <div class="contact-label" data-en="11 / Let's talk" data-ar="١١ / لنتحدّث">11 / Let's talk</div>
+    <h2 class="contact-title" data-en="Got a &lt;span class='italic'&gt;problem&lt;/span&gt; worth&lt;br&gt;analyzing?" data-ar="هل لديك &lt;span class='italic'&gt;مشكلةٌ&lt;/span&gt; تستحقّ&lt;br&gt;التّحليل؟">Got a <span class="italic">problem</span> worth<br>analyzing?</h2>
+    <a href="mailto:Abdulmalek.Alghamdi@outlook.com" class="contact-email">Abdulmalek.Alghamdi@outlook.com →</a>
+    <div class="contact-links">
+      <a href="https://calendar.app.google/KYRBsKQYZcfU3mPaA" target="_blank" rel="noopener" data-en="Book Meeting" data-ar="احجز اجتماعاً">Book Meeting</a>
+      <a href="https://linkedin.com/in/abdulmalek-alghamdi-csegr" target="_blank">LinkedIn</a>
+      <a href="https://github.com/AbdulmalekAlghamdi" target="_blank">GitHub</a>
+      <a href="tel:+966568728387">+966 56 872 8387</a>
+    </div>
   </div>
-  <p class="fq">
-    <span class="en">"Where strategy meets execution, impact is born"</span>
-    <span class="ar">«حيث تلتقي الاستراتيجية بالتنفيذ، يُولَد الأثر»</span>
-  </p>
-  <p class="ft">
-    <span class="en">Building Ecosystems · Driving Growth · Creating Impact</span>
-    <span class="ar">بناء المنظومات · قيادة النمو · صناعة الأثر</span>
-  </p>
-  <div class="fd"></div>
-  <p class="fc">
-    <span class="en">2026 · Abdulmohsin Alharthi</span>
-    <span class="ar">2026 · عبدالمحسن الحارثي</span>
-  </p>
+</section>
+
+<footer>
+  <span data-en="© 2026 Abdulmalek Alghamdi" data-ar="© ٢٠٢٦ عبدالملك الغامدي">© 2026 Abdulmalek Alghamdi</span>
+  <span data-en="Designed with intent" data-ar="صُمِّمَ بقصدٍ ونيّة">Designed with intent</span>
 </footer>
 
 <script>
-function toggleLang(){
-  const h=document.documentElement;
-  const c=h.getAttribute('data-lang');
-  const n=c==='ar'?'en':'ar';
-  h.setAttribute('data-lang',n);h.setAttribute('lang',n);h.setAttribute('dir',n==='ar'?'rtl':'ltr');
-}
-const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.1});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-document.querySelectorAll('nav a').forEach(l=>{l.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'});});});
+  // MOBILE NAV TOGGLE
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+  }
+
+  // LOADER
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    const counter = document.getElementById('loader-count');
+    let count = 0;
+    const interval = setInterval(() => {
+      count += Math.floor(Math.random() * 15) + 5;
+      if (count >= 100) {
+        count = 100;
+        clearInterval(interval);
+        setTimeout(() => loader.classList.add('done'), 400);
+      }
+      counter.textContent = String(count).padStart(2, '0');
+    }, 100);
+  });
+
+  // CURSOR
+  const cursor = document.querySelector('.cursor');
+  const follower = document.querySelector('.cursor-follower');
+  if (window.matchMedia('(hover: hover)').matches) {
+    let mouseX = 0, mouseY = 0, followerX = 0, followerY = 0;
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX; mouseY = e.clientY;
+      cursor.style.left = mouseX + 'px';
+      cursor.style.top = mouseY + 'px';
+    });
+    function animateFollower() {
+      followerX += (mouseX - followerX) * 0.15;
+      followerY += (mouseY - followerY) * 0.15;
+      follower.style.left = followerX + 'px';
+      follower.style.top = followerY + 'px';
+      requestAnimationFrame(animateFollower);
+    }
+    animateFollower();
+    const hoverables = document.querySelectorAll('a, button, .metric, .uni-card, .cert-card, .press-card, .request-card, .capstone-meta-item, .arsenal-column, .arsenal-list li, .experience-item, .hack-item, .journey-row, .nav-book');
+    hoverables.forEach(el => {
+      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+    });
+  }
+
+  // SCROLL PROGRESS + NAV
+  const progressBar = document.getElementById('scroll-progress');
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (scrollTop / docHeight) * 100;
+    progressBar.style.width = progress + '%';
+    const nav = document.getElementById('nav');
+    if (scrollTop > 50) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+
+  // REVEAL ON SCROLL
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ANIMATED COUNTERS
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.target, 10);
+        const duration = 1600;
+        const start = performance.now();
+        function tick(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(eased * target);
+          if (progress < 1) requestAnimationFrame(tick);
+          else el.textContent = target;
+        }
+        requestAnimationFrame(tick);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.count').forEach(el => counterObserver.observe(el));
+
+  // PARALLAX HERO
+  const heroTitle = document.querySelector('.hero-title');
+  if (heroTitle && window.matchMedia('(hover: hover)').matches) {
+    document.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 12;
+      const y = (e.clientY / window.innerHeight - 0.5) * 12;
+      heroTitle.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  }
+
+  // LANGUAGE SWITCH
+  const langBtns = document.querySelectorAll('.lang-btn');
+  const body = document.body;
+  const html = document.documentElement;
+  function setLanguage(lang) {
+    if (lang === 'ar') {
+      body.classList.add('ar'); body.classList.remove('en');
+      html.setAttribute('dir', 'rtl'); html.setAttribute('lang', 'ar');
+    } else {
+      body.classList.add('en'); body.classList.remove('ar');
+      html.setAttribute('dir', 'ltr'); html.setAttribute('lang', 'en');
+    }
+    langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+    document.querySelectorAll('[data-en]').forEach(el => {
+      const content = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+      if (content !== null) el.innerHTML = content;
+    });
+    try { localStorage.setItem('pref-lang', lang); } catch(e) {}
+  }
+  langBtns.forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.lang)));
+  try {
+    const saved = localStorage.getItem('pref-lang');
+    if (saved === 'ar') setLanguage('ar');
+  } catch(e) {}
+
+  // ─── UNI CARDS: REVEAL FROM BELOW + SCROLL PARALLAX ───
+  (function() {
+    const cards = document.querySelectorAll('.uni-card');
+    if (!cards.length) return;
+
+    // Step 1: Reveal — slide up from translateY(70px) to translateY(0) when entering viewport
+    const revObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('card-visible');
+          revObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    cards.forEach(c => revObs.observe(c));
+
+    // Step 2: Scroll parallax — after reveal, cards continue floating upward smoothly
+    let rafPending = false;
+    function updateParallax() {
+      const vH = window.innerHeight;
+      cards.forEach(card => {
+        if (!card.classList.contains('card-visible')) return;
+        const r = card.getBoundingClientRect();
+        // progress: 0 = card just entered viewport bottom, 1 = card center at top
+        const progress = 1 - (r.top + r.height * 0.5) / vH;
+        const clamped = Math.max(0, Math.min(1, progress));
+        // Float up to 40px as card moves through viewport
+        const offset = (-clamped * 40).toFixed(1) + 'px';
+        card.style.transform = 'translateY(' + offset + ')';
+      });
+    }
+    window.addEventListener('scroll', () => {
+      if (rafPending) return;
+      rafPending = true;
+      requestAnimationFrame(() => { rafPending = false; updateParallax(); });
+    }, { passive: true });
+  })();
 </script>
+
 </body>
 </html>
